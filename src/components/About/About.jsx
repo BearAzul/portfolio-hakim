@@ -80,7 +80,7 @@ const About = () => {
                       download
                       data-aos="fade-up"
                       type="button"
-                      className="p-3 text-xs text-white transition duration-300 rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:!scale-75"
+                      className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75"
                     >
                       Download CV
                       <i className="ri-file-line ms-3"></i>

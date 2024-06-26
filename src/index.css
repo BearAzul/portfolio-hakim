@@ -51,7 +51,7 @@ header {
 
 #about {
   .card {
-    @apply p-3 text-center transition duration-300 border border-gray-400 rounded-md shadow-md drop-shadow-md text-slate-800 hover:!-translate-y-4 dark:text-gray-100;
+    @apply p-3 text-center border border-gray-400 rounded-md shadow-md drop-shadow-md text-slate-800 hover:-translate-y-4 dark:text-gray-100;
 
     i {
       @apply text-xl md:text-2xl;

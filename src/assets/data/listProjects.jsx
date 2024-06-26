@@ -1,9 +1,10 @@
-import Project1 from "../img/webapp_imgsearching.png"
-import Project2 from "../img/webkolaborasi_RestSukaJaya.png"
-import Project3 from "../img/website_eightyeight.png"
-import Project4 from "../img/website_ytpromotion.png"
-import Project5 from "../img/webclone_eventy.png"
-import Project6 from "../img/web_reacttask.png"
+import Project1 from "../img/Images_Searching_App.jpg"
+import Project2 from "../img/Cafe_Suka_Jaya.jpg"
+import Project3 from "../img/Website_Eighty_Eight.jpg"
+import Project4 from "../img/Youtube_Promotion.jpg"
+import Project5 from "../img/Web_Clone_Eventy.jpg"
+import Project6 from "../img/Web_React_Task.jpg"
+import Project7 from "../img/Aplikasi_Toko_Mebel.jpg"
 
 export const listProjects = [
   {
@@ -18,13 +19,13 @@ export const listProjects = [
   },
   {
     id: 2,
-    title: "Project Collaboration - Web SUKA JAYA",
+    title: "Web Cafe Suka Jaya",
     description:
       "Website yang dibuat secara kolaborasi/tim menggunakan Framework css Bootstrap",
     image: Project2,
     demo: "https://bearazul.github.io/projectcollaboration_sukajaya/",
     sourceCode: "#",
-    delay: 300,
+    delay: 200,
   },
   {
     id: 3,
@@ -34,7 +35,7 @@ export const listProjects = [
     image: Project3,
     demo: "https://bearazul.github.io/eightyeightwebsite/",
     sourceCode: "#",
-    delay: 600,
+    delay: 400,
   },
   {
     id: 4,
@@ -44,7 +45,7 @@ export const listProjects = [
     image: Project4,
     demo: "https://bearazul.github.io/YTPromotion/",
     sourceCode: "#",
-    delay: 900,
+    delay: 600,
   },
   {
     id: 5,
@@ -64,6 +65,16 @@ export const listProjects = [
     image: Project6,
     demo: "http://myreactask.infinityfreeapp.com/",
     sourceCode: "#",
-    delay: 1500,
+    delay: 1400,
+  },
+  {
+    id: 7,
+    title: "Aplikasi Toko Mebel",
+    description:
+      "Website yang dikembangkan oleh frontend Development dan backend Development dengan menerapkan methode MERN STACK",
+    image: Project7,
+    demo: "https://fe-msib-6-toko-mebel-03.educalab.id/",
+    sourceCode: "#",
+    delay: 1600,
   },
 ];

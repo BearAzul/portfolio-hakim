@@ -22,11 +22,12 @@ const Project = () => {
               {listProjects.map((project) => (
                 <div key={project.id}>
                   <div
-                    className="card relative w-full h-[200px] md:h-[280px] lg:h-[320px] overflow-hidden rounded-md border border-gray-400 shadow-lg"
-                    style={{ backgroundImage: `url(${project.image})` }}
+                    className="relative w-full h-full overflow-hidden border border-gray-400 rounded-md shadow-lg card"
+                   
                     data-aos-delay={project.delay}
                     data-aos="zoom-out-down"
                   >
+                    <img src={project.image} alt={project.name} className="block object-contain w-full h-full" />
                     <div className="overlay !w-full !h-full p-3 flex flex-col justify-end md:gap-5 gap-2 z-0">
                       <h2 className="text-xs font-semibold text-gray-100 md:text-lg">
                         {project.title}
