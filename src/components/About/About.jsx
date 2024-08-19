@@ -1,6 +1,6 @@
 import "../../index.css";
-import ScrollDown from "../../common/Buttons/ScrollDown.jsx"
-import MyCV from "../../assets/files/CV - Adya Abdu Azizul Hakim.pdf"
+import ScrollDown from "../../common/Buttons/ScrollDown.jsx";
+import MyCV from "../../assets/files/CV - Adya Abdu Azizul Hakim.pdf";
 
 const About = () => {
   const handleDownload = (event, downloadLink) => {
@@ -68,9 +68,9 @@ const About = () => {
                   <div className="text-sm text-justify md:text-base dark:text-gray-100">
                     <p>
                       Frontend Developer, Saya membuat sebuah halaman web dari
-                      UI/UX untuk antarmuka kedalam program. Saya telah
-                      berpengalaman selama 2 tahun lebih dan banyak klien yang
-                      senang dan puas dengan hasil pekerjaan saya.
+                      UI/UX untuk antarmuka kedalam bentuk program. Saya telah
+                      berpengalaman selama 1 tahun lebih dan telah membuat
+                      beberapa project website.
                     </p>
                   </div>
                   <div className="flex items-center justify-between">
