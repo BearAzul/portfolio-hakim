@@ -63,7 +63,7 @@ export const listProjects = [
     description:
       "Website yang berisi hasil tugas tugas saya selama belajar React JS di Gamelab Indonesia selama 1 minggu menggunakan react js dan tailwindcss",
     image: Project6,
-    demo: "http://myreactask.infinityfreeapp.com/",
+    demo: "https://myreactask.vercel.app/",
     sourceCode: "#",
     delay: 1400,
   },
