@@ -44,7 +44,7 @@ const About = () => {
                     <div className="card" data-aos="fade-down">
                       <i className="ri-award-fill"></i>
                       <h1>Pengalaman</h1>
-                      <p>2+ Tahun</p>
+                      <p>1+ Tahun</p>
                     </div>
                     <div
                       className="card"
