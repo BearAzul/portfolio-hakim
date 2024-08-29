@@ -17,6 +17,7 @@ const HardSkills = (props) => {
             <CardSkill judul="HTML" level="Advanced" />
             <CardSkill judul="CSS" level="Advanced" />
             <CardSkill judul="JavaScript" level="Intermediate" />
+            <CardSkill judul="RESTful API" level="Intermediate" />
             <CardSkill judul="Next.Js" level="Beginner" />
           </div>
           <div className="grid gap-3 text-slate-800 dark:text-gray-100">
