@@ -20,6 +20,7 @@ AOS.init()
 AOS.init({
   duration: 1000,
   once: true,
+  delay: 300,
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(

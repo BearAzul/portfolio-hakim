@@ -73,7 +73,7 @@ export const listProjects = [
     description:
       "Website yang dikembangkan oleh frontend Development dan backend Development dengan menerapkan methode MERN STACK",
     image: Project7,
-    demo: "https://fe-msib-6-toko-mebel-03.educalab.id/",
+    demo: "https://fe-tokomebel.vercel.app/",
     sourceCode: "#",
     delay: 1600,
   },
