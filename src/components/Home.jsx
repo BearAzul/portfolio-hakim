@@ -66,8 +66,7 @@ const Home = () => {
                   <AnimateType />
                 </div>
                 <p className="mb-5 text-sm text-justify md:text-base">
-                  Saya seorang mahasiswa USM yang sangat berpengalaman di bidang
-                  Frontend Developer.
+                  Saya merupakan seorang mahasiswa di Universitas Semarang yang sangat berpengalaman di bidang Frontend Developer.
                 </p>
                 <a
                   href="#about"
