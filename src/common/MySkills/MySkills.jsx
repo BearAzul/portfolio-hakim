@@ -1,5 +1,6 @@
 import CardSkill from "./CardSkill.jsx";
 import PropTypes from "prop-types";
+import { listHardSkills, listSoftSkills } from "../../assets/data/listData.jsx";
 
 const HardSkills = (props) => {
   return (
@@ -12,15 +13,12 @@ const HardSkills = (props) => {
           Hard Skills
         </h1>
         <div className="grid grid-cols-2 gap-2 px-4 mt-6 md:gap-4 lg:px-8 text-slate-800 dark:text-gray-100">
-          <CardSkill judul="HTML" level="Advanced" />
-          <CardSkill judul="CSS" level="Advanced" />
-          <CardSkill judul="JavaScript" level="Intermediate" />
-          <CardSkill judul="RESTful API" level="Intermediate" />
-          <CardSkill judul="React.Js" level="Intermediate" />
-          <CardSkill judul="Vue.Js" level="Advanced Beginner" />
-          <CardSkill judul="Next.Js" level="Beginner" />
-          <CardSkill judul="Bootstrap CSS" level="Advanced" />
-          <CardSkill judul="Tailwind CSS" level="Intermediate" />
+          {listHardSkills.map((skill) => (
+            <CardSkill
+              skill={skill}
+              key={skill.id}
+            />
+          ))}
         </div>
       </div>
     </>
@@ -38,13 +36,9 @@ const SoftSkills = (props) => {
           Soft Skills
         </h1>
         <div className="grid grid-cols-2 gap-2 px-4 mt-6 lg:px-8 md:gap-4 text-slate-800 dark:text-gray-100">
-          <CardSkill judul="Bekerja Keras/Tekun" />
-          <CardSkill judul="Komunikasi" />
-          <CardSkill judul="Bertanggung Jawab" />
-          <CardSkill judul="Pemikiran Kritis" />
-          <CardSkill judul="Problem Solver" />
-          <CardSkill judul="Memperhatikan Detail" />
-          <CardSkill judul="Disiplin" />
+          {listSoftSkills.map((skill) => (
+            <CardSkill skill={skill} key={skill.id} />
+          ))}
         </div>
       </div>
     </>

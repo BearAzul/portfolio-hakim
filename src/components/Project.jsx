@@ -1,4 +1,4 @@
-import { listProjects } from "../assets/data/listProjects.jsx";
+import { listProjects } from "../assets/data/listData.jsx";
 import CardProject from "../common/CardProject.jsx";
 
 const Project = () => {

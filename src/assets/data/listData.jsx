@@ -78,3 +78,87 @@ export const listProjects = [
     delay: 1600,
   },
 ];
+
+
+export const listHardSkills = [
+  {
+    id: 1,
+    name: "HTML",
+    level: "Advanced",
+  },
+  {
+    id: 2,
+    name: "CSS",
+    level: "Advanced",
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+    level: "Intermediate",
+  },
+  {
+    id: 4,
+    name: "RESTful API",
+    level: "Intermediate",
+  },
+  {
+    id: 5,
+    name: "React.js",
+    level: "Intermediate",
+  },
+  {
+    id: 6,
+    name: "Vue.js",
+    level: "Intermediate",
+  },
+  {
+    id: 7,
+    name: "Bootstrap CSS",
+    level: "Advanced",
+  },
+  {
+    id: 8,
+    name: "Tailwind CSS",
+    level: "Intermediate",
+  },
+  {
+    id: 9,
+    name: "Next.js",
+    level: "Intermediate",
+  },
+];
+
+export const listSoftSkills = [
+  {
+    id: 1,
+    name: "Bekerja Keras/Tekun",
+  },
+  {
+    id: 2,
+    name: "Bekerja dalam Tim/Individu",
+  },
+  {
+    id: 3,
+    name: "Memperhatikan Detail",
+  },
+  {
+    id: 4,
+    name: "Bertanggung Jawab",
+  },
+  {
+    id: 5,
+    name: "Pemikiran Kritis",
+  },
+  {
+    id: 6,
+    name: "Problem Solver",
+  },
+  {
+    id: 7,
+    name: "Komunikasi",
+  },
+  {
+    id: 8,
+    name: "Disiplin",
+  },
+];
