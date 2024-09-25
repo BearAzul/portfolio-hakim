@@ -1,5 +1,4 @@
-import "../../index.css";
-import { HardSkills, SoftSkills } from "../../common/MySkills/MySkills.jsx";
+import { HardSkills, SoftSkills } from "../common/MySkills/MySkills.jsx";
 
 const Skills = () => {
   return (

@@ -1,4 +1,3 @@
-import "../../index.css";
 import CardSkill from "./CardSkill.jsx";
 import PropTypes from "prop-types";
 

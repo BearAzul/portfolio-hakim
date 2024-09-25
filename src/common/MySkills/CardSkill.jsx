@@ -1,4 +1,3 @@
-import "../../index.css"
 import PropTypes from "prop-types"
 
 const CardSkill = (props) => {

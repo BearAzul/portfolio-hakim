@@ -1,6 +1,5 @@
-import "../../index.css";
-import ScrollDown from "../../common/Buttons/ScrollDown.jsx";
-import MyCV from "../../assets/files/CV - Adya Abdu Azizul Hakim.pdf";
+import ScrollDown from "../common/ScrollDown.jsx";
+import MyCV from "../assets/files/CV - Adya Abdu Azizul Hakim.pdf";
 
 const About = () => {
   const handleDownload = (event, downloadLink) => {

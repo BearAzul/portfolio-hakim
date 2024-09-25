@@ -1,4 +1,3 @@
-import "../../index.css"
 import { useEffect, useState } from "react";
 
 const BtnTop = () => {
@@ -36,7 +35,7 @@ const BtnTop = () => {
         isVisible ? "opacity-100 translate-y-0" : "translate-y-[100px]"
       }`}
     >
-      <i className="ri-arrow-up-s-line md:text-2xl px-2"></i>
+      <i className="px-2 ri-arrow-up-s-line md:text-2xl"></i>
     </button>
   );
 }

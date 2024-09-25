@@ -1,6 +1,5 @@
-import "../../index.css";
 import { useState, useEffect } from "react";
-import DarkMode from "../../common/Buttons/DarkMode"
+import DarkMode from "../common/DarkMode"
 
 const Header = () => {
   const [showNav, setVisible] = useState(false);

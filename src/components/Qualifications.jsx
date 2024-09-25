@@ -1,7 +1,6 @@
-import "../../index.css";
-import { CardLeft, CardRight } from "../../common/CardJourney/CardJourney.jsx";
+import { CardLeft, CardRight } from "../common/CardJourney.jsx";
 import { useState } from "react";
-import SertifikatGamelab from "../../assets/files/Sertifikat - MSIB GameLab [PT. Educa Sisfomedia Indonesia].zip";
+import SertifikatGamelab from "../assets/files/Sertifikat - MSIB GameLab [PT. Educa Sisfomedia Indonesia].zip";
 
 const Qualifications = () => {
   const [isMove, setIsMove] = useState(false);

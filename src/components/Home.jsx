@@ -1,6 +1,5 @@
-import "../../index.css";
-import "../../common/icons_around/IconAround.jsx";
-import IconSkills from "../../common/icons_around/IconAround.jsx";
+import "../common/IconAround.jsx";
+import IconSkills from "../common/IconAround.jsx";
 import { TypeAnimation } from "react-type-animation";
 
 const AnimateType = () => {
