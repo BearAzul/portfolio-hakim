@@ -6,6 +6,17 @@ import Project5 from "../img/Web_Clone_Eventy.jpg"
 import Project6 from "../img/Web_React_Task.jpg"
 import Project7 from "../img/Aplikasi_Toko_Mebel.jpg"
 
+import iconHTML from "../img/html.png"
+import iconCSS from "../img/css.png"
+import iconJS from "../img/javascript.png"
+import iconReact from "../img/react.png"
+import iconVue from "../img/vue.png"
+import iconNext from "../img/next.png"
+import iconBootstrap from "../img/bootstrap.png"
+import iconTailwindcss from "../img/tailwind.png"
+import iconAPI from "../img/restfulapi.png"
+
+
 export const listProjects = [
   {
     id: 1,
@@ -83,48 +94,57 @@ export const listProjects = [
 export const listHardSkills = [
   {
     id: 1,
+    icon: iconHTML,
     name: "HTML",
     level: "Advanced",
   },
   {
     id: 2,
+    icon: iconCSS,
     name: "CSS",
     level: "Advanced",
   },
   {
     id: 3,
+    icon: iconJS,
     name: "JavaScript",
     level: "Intermediate",
   },
   {
     id: 4,
+    icon: iconAPI,
     name: "RESTful API",
     level: "Intermediate",
   },
   {
     id: 5,
+    icon: iconReact,
     name: "React.js",
     level: "Intermediate",
   },
   {
     id: 6,
+    icon: iconVue,
     name: "Vue.js",
     level: "Intermediate",
   },
   {
     id: 7,
+    icon: iconBootstrap,
     name: "Bootstrap CSS",
     level: "Advanced",
   },
   {
     id: 8,
+    icon: iconTailwindcss,
     name: "Tailwind CSS",
     level: "Intermediate",
   },
   {
     id: 9,
+    icon: iconNext,
     name: "Next.js",
-    level: "Intermediate",
+    level: "Beginner",
   },
 ];
 
