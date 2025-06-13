@@ -19,7 +19,6 @@ import iconAPI from "../img/restfulapi.png"
 
 export const listProjects = [
   {
-    id: 1,
     title: "Web App Pencarian Gambar",
     description:
       "Website yang dibuat menggunakan HTML, CSS Vanila dengan penerapan API yang diambil dari Platform Unsplash.",
@@ -29,7 +28,6 @@ export const listProjects = [
     delay: 0,
   },
   {
-    id: 2,
     title: "Web Cafe Suka Jaya",
     description:
       "Website yang dibuat secara kolaborasi/tim menggunakan Framework css Bootstrap",
@@ -39,7 +37,6 @@ export const listProjects = [
     delay: 200,
   },
   {
-    id: 3,
     title: "Bill Eighty Eight",
     description:
       "Website yang dibuat untuk mempromosikan brands Kemeja Eighty Eight menggunakan HTML, CSS Vanilla, dan JavaScript Vanilla",
@@ -49,7 +46,6 @@ export const listProjects = [
     delay: 400,
   },
   {
-    id: 4,
     title: "Youtube Promotion",
     description:
       "Website yang dibuat untuk mempromosikan channel youtube saya sendiri menggunakan HTML, CSS Vanilla, dan JavaScript Vanilla",
@@ -59,7 +55,6 @@ export const listProjects = [
     delay: 600,
   },
   {
-    id: 5,
     title: "Website Clone - Eventy",
     description:
       "Website clone dari Web Eventy yang dibuat untuk tugas semester 3 menggunakan Bootstrap",
@@ -69,7 +64,6 @@ export const listProjects = [
     delay: 1200,
   },
   {
-    id: 6,
     title: "Web React Task",
     description:
       "Website yang berisi hasil tugas tugas saya selama belajar React JS di Gamelab Indonesia selama 1 minggu menggunakan react js dan tailwindcss",
@@ -79,7 +73,6 @@ export const listProjects = [
     delay: 1400,
   },
   {
-    id: 7,
     title: "Aplikasi Toko Mebel",
     description:
       "Website yang dikembangkan oleh frontend Development dan backend Development dengan menerapkan methode MERN STACK",
@@ -93,55 +86,41 @@ export const listProjects = [
 
 export const listHardSkills = [
   {
-    id: 1,
     icon: iconHTML,
     name: "HTML",
     level: "Advanced",
   },
   {
-    id: 2,
     icon: iconCSS,
     name: "CSS",
     level: "Advanced",
   },
   {
-    id: 3,
     icon: iconJS,
     name: "JavaScript",
     level: "Intermediate",
   },
   {
-    id: 4,
     icon: iconAPI,
     name: "RESTful API",
     level: "Intermediate",
   },
   {
-    id: 5,
     icon: iconReact,
     name: "React.js",
     level: "Intermediate",
   },
   {
-    id: 6,
-    icon: iconVue,
-    name: "Vue.js",
-    level: "Intermediate",
-  },
-  {
-    id: 7,
     icon: iconBootstrap,
     name: "Bootstrap CSS",
     level: "Advanced",
   },
   {
-    id: 8,
     icon: iconTailwindcss,
     name: "Tailwind CSS",
     level: "Intermediate",
   },
   {
-    id: 9,
     icon: iconNext,
     name: "Next.js",
     level: "Beginner",
@@ -150,35 +129,27 @@ export const listHardSkills = [
 
 export const listSoftSkills = [
   {
-    id: 1,
     name: "Bekerja Keras/Tekun",
   },
   {
-    id: 2,
     name: "Bekerja dalam Tim/Individu",
   },
   {
-    id: 3,
     name: "Memperhatikan Detail",
   },
   {
-    id: 4,
     name: "Bertanggung Jawab",
   },
   {
-    id: 5,
     name: "Pemikiran Kritis",
   },
   {
-    id: 6,
     name: "Problem Solver",
   },
   {
-    id: 7,
     name: "Komunikasi",
   },
   {
-    id: 8,
     name: "Disiplin",
   },
 ];

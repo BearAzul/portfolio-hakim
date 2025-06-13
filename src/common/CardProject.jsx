@@ -9,7 +9,7 @@ const CardProject = ({ project }) => {
     >
       <img
         src={project.image}
-        alt={project.name}
+        alt={project.title}
         className="block object-contain w-full h-full"
       />
       <div className="overlay !w-full !h-full p-3 flex flex-col justify-between md:gap-5 gap-2 z-0">

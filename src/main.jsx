@@ -5,9 +5,11 @@ import "remixicon/fonts/remixicon.css"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import './index.css'
+import { HelmetProvider } from "react-helmet-async"
 
 import App from './App.jsx';
 import BtnTop from './common/BtnTop.jsx'
+
 
 AOS.init()
 AOS.init({
@@ -17,7 +19,9 @@ AOS.init({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App  />
-    <BtnTop />
+    <HelmetProvider>
+      <App />
+      <BtnTop />
+    </HelmetProvider>
   </React.StrictMode>,
 )

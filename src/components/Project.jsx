@@ -18,8 +18,8 @@ const Project = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
-            {listProjects.map((project) => (
-              <CardProject project={project} key={project.id} />
+            {listProjects.map((project, index) => (
+              <CardProject project={project} key={index} />
             ))}
           </div>
         </div>
