@@ -50,7 +50,7 @@ const About = () => {
                   <p>Online 24/7</p>
                 </div>
               </div>
-              <div className="text-sm text-justify md:text-base dark:text-gray-100">
+              <div className="text-sm text-justify text-slate-800 md:text-base dark:text-gray-100">
                 <p>
                   Frontend Developer, Saya membuat sebuah halaman web dari UI/UX
                   untuk antarmuka kedalam bentuk program. Saya telah

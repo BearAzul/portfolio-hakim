@@ -117,7 +117,7 @@ const Contact = () => {
               <form
                 ref={form}
                 onSubmit={onSubmit}
-                className="form"
+                className="form text-slate-800 dark:text-gray-100"
                 data-aos="fade-left"
               >
                 <div className="group relative z-[1] w-full mb-4">
