@@ -101,7 +101,7 @@ const Header = () => {
                 type="button"
                 className="text-lg transition duration-500 lg:hidden ms-4 w-[20px]"
                 onClick={toggleNav}
-                aria-label="Toggle tema gelap"
+                aria-label="Toggle Menu"
               >
                 <i
                   className={`${showNav ? "ri-close-line" : "ri-menu-line"}`}

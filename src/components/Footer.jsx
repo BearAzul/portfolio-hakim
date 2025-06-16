@@ -21,6 +21,7 @@ const Footer = () => {
                   href="https://instagram.com/az.izul_"
                   target="_blank"
                   className="text-2xl text-gray-500"
+                  aria-label="Lihat Instagram"
                 >
                   <i className="ri-instagram-line"></i>
                 </a>
@@ -28,7 +29,9 @@ const Footer = () => {
               <li>
                 <a
                   href="https://github.com/bearazul"
+                  target="_blank"
                   className="text-2xl text-gray-500"
+                  aria-label="Lihat Github"
                 >
                   <i className="ri-github-fill"></i>
                 </a>
@@ -38,6 +41,7 @@ const Footer = () => {
                   href="#"
                   target="_blank"
                   className="text-2xl text-gray-500"
+                  aria-label="Lihat LinkedIn"
                 >
                   <i className="ri-linkedin-box-fill"></i>
                 </a>
@@ -47,6 +51,7 @@ const Footer = () => {
                   href="https://wa.me/+6289613742316"
                   target="_blank"
                   className="text-2xl text-gray-500"
+                  aria-label="Lihat WhatsApp"
                 >
                   <i className="ri-whatsapp-line"></i>
                 </a>

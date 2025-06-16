@@ -37,6 +37,7 @@ const DarkMode = () => {
         type="button"
         className="relative flex items-center justify-center gap-2 py-[.22rem] px-[.35rem]  text-xs border rounded-full h-max text-slate-500 border-teal-600 w-max drop-shadow-sm"
         onClick={toggleTheme}
+        aria-label="Toggle Dark Mode"
       >
         <i className="text-gray-300 ri-sun-line"></i>
         <i className="ri-moon-fill"></i>

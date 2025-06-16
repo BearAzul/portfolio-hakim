@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     partytownVite({
-      dest: path.join(__dirname, "public", "~partytown"),
+      dest: path.join(__dirname, "dist", "~partytown"),
     }),
   ],
   assetsInclude: ["**/*.zip", "**/*.pdf"],
