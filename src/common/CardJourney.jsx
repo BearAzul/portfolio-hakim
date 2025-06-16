@@ -36,6 +36,7 @@ const CardRight = (props) => {
                 download
                 onClick={(event) => handleDownload(event, props.download)}
                 className="transition active:scale-90 hover:text-teal-600 hover:dark:text-teal-400 text-slate-800 dark:text-gray-100 "
+                aria-label="Download File"
               >
                 <i className="ri-download-2-line"></i>
               </a>

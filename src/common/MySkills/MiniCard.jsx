@@ -6,7 +6,7 @@ const MiniCard = ({ skill }) => {
         <img src={skill.icon} alt={skill.name} className="block object-cover w-full h-full" />
       </figure>
       <div>
-        <h3 className="text-xs font-medium lg:text-base">{skill.name}</h3>
+        <h2 className="text-xs font-medium lg:text-base">{skill.name}</h2>
         <p className="text-xs !text-teal-500 text-secondary">{skill.level}</p>
       </div>
     </div>

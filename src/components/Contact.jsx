@@ -69,6 +69,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btnWrite"
+                    aria-label="contact"
                   >
                     <span>Write Me</span>
                     <i className="ri-arrow-right-line"></i>
@@ -86,6 +87,7 @@ const Contact = () => {
                     href="https://instagram.com/az.izul_"
                     target="_blank"
                     className="btnWrite"
+                    aria-label="contact"
                   >
                     <span>Write Me</span>
                     <i className="ri-arrow-right-line"></i>
@@ -103,6 +105,7 @@ const Contact = () => {
                     href="https://wa.me/+6289613742316"
                     target="_blank"
                     className="btnWrite"
+                    aria-label="contact"
                   >
                     <span>Write Me</span>
                     <i className="ri-arrow-right-line"></i>
