@@ -62,7 +62,7 @@ const Contact = () => {
               <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
                 <div className="card" data-aos="fade-down-right">
                   <i className="ri-mail-line"></i>
-                  <h3>Email</h3>
+                  <h2>Email</h2>
                   <p>adyaabduah@gmail.com</p>
                   <a
                     href="mailto:adyaabduazizulhakim@gmail.com?subject=Hallo&body=Hi, I would like to get in touch."
@@ -80,7 +80,7 @@ const Contact = () => {
                   data-aos-delay="300"
                 >
                   <i className="ri-instagram-line"></i>
-                  <h3>Instagram</h3>
+                  <h2>Instagram</h2>
                   <p>@az.izul_</p>
                   <a
                     href="https://instagram.com/az.izul_"
@@ -97,7 +97,7 @@ const Contact = () => {
                   data-aos-delay="600"
                 >
                   <i className="ri-whatsapp-line"></i>
-                  <h3>WhatsApp</h3>
+                  <h2>WhatsApp</h2>
                   <p>+62 896 - 1374 - 2316</p>
                   <a
                     href="https://wa.me/+6289613742316"

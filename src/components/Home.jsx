@@ -38,13 +38,14 @@ const Home = () => {
                   <a
                     href="https://instagram.com/az.izul_"
                     target="_blank"
-                    className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
+                    className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max" aria-label="Lihat Instagram"
                   >
                     <i className="ri-instagram-line"></i>
                   </a>
                   <a
                     href="#"
                     className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
+                    aria-label="Lihat LinkedIn"
                   >
                     <i className="ri-linkedin-box-fill"></i>
                   </a>
@@ -52,6 +53,7 @@ const Home = () => {
                     href="https://github.com/bearazul"
                     target="_blank"
                     className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
+                    aria-label="Lihat Github"
                   >
                     <i className="ri-github-fill"></i>
                   </a>
