@@ -86,7 +86,7 @@ export const listProjects = [
     description:
       "Aplikasi Chat Me yang dibangun menggunakan MERN stack. Dilengkapi dengan socket.io untuk fungsionalitas obrolan instan dan real-time",
     image: Project8,
-    demo: "https://chatme-frontend-beta.app/",
+    demo: "https://chatme-frontend-beta.vercel.app/",
     sourceCode: "#",
     delay: 1800,
   },
