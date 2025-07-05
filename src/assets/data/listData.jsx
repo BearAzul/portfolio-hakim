@@ -5,12 +5,12 @@ import Project4 from "../img/Youtube_Promotion.jpg"
 import Project5 from "../img/Web_Clone_Eventy.jpg"
 import Project6 from "../img/Web_React_Task.jpg"
 import Project7 from "../img/Aplikasi_Toko_Mebel.jpg"
+import Project8 from "../img/chatme-app.png"
 
 import iconHTML from "../img/html.png"
 import iconCSS from "../img/css.png"
 import iconJS from "../img/javascript.png"
 import iconReact from "../img/react.png"
-import iconVue from "../img/vue.png"
 import iconNext from "../img/next.png"
 import iconBootstrap from "../img/bootstrap.png"
 import iconTailwindcss from "../img/tailwind.png"
@@ -32,7 +32,7 @@ export const listProjects = [
     description:
       "Website yang dibuat secara kolaborasi/tim menggunakan Framework css Bootstrap",
     image: Project2,
-    demo: "https://bearazul.github.io/projectcollaboration_sukajaya/",
+    demo: "https://sukajayacafe.vercel.app/",
     sourceCode: "#",
     delay: 200,
   },
@@ -41,7 +41,7 @@ export const listProjects = [
     description:
       "Website yang dibuat untuk mempromosikan brands Kemeja Eighty Eight menggunakan HTML, CSS Vanilla, dan JavaScript Vanilla",
     image: Project3,
-    demo: "https://bearazul.github.io/eightyeightwebsite/",
+    demo: "https://eightyeightwebsite.vercel.app/",
     sourceCode: "#",
     delay: 400,
   },
@@ -80,6 +80,15 @@ export const listProjects = [
     demo: "https://fe-tokomebel.vercel.app/",
     sourceCode: "#",
     delay: 1600,
+  },
+  {
+    title: "Chat Me App",
+    description:
+      "Aplikasi Chat Me yang dibangun menggunakan MERN stack. Dilengkapi dengan socket.io untuk fungsionalitas obrolan instan dan real-time",
+    image: Project8,
+    demo: "https://chatme-frontend-beta.app/",
+    sourceCode: "#",
+    delay: 1800,
   },
 ];
 
