@@ -5,7 +5,7 @@ import Project4 from "../img/Youtube_Promotion.jpg"
 import Project5 from "../img/Web_Clone_Eventy.jpg"
 import Project6 from "../img/Web_React_Task.jpg"
 import Project7 from "../img/Aplikasi_Toko_Mebel.jpg"
-import Project8 from "../img/chatme-app.png"
+import Project8 from "../img/web_chatme.png"
 
 import iconHTML from "../img/html.png"
 import iconCSS from "../img/css.png"
