@@ -6,7 +6,7 @@ import Project5 from "../img/Web_Clone_Eventy.jpg"
 import Project6 from "../img/Web_React_Task.jpg"
 import Project7 from "../img/Aplikasi_Toko_Mebel.jpg"
 import Project8 from "../img/web_chatme.png"
-import Project9 from "../img/snakegame.png"
+import Project9 from "../img/snakegameapp.png"
 
 import iconHTML from "../img/html.png"
 import iconCSS from "../img/css.png"
