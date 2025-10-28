@@ -15,7 +15,7 @@ const HardSkills = ({ animate, skills }) => {
       </div>
 
       <div className="flex-auto">
-        <div className="flex gap-2 overflow-x-auto md:flex-wrap md:gap-4 text-slate-800 dark:text-gray-100 animate-loop-scroll group" aria-hidden="true">
+        <div className="flex flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100" aria-hidden="true">
           {skills.map((skill, i) => (
             <div key={i}>
               <CardSkill
