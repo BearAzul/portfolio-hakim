@@ -1,6 +1,5 @@
 import { CardLeft, CardRight } from "../common/CardJourney.jsx";
 import { useState, useEffect, useCallback } from "react";
-import SertifikatGamelab from "../assets/files/Sertifikat - MSIB GameLab [PT. Educa Sisfomedia Indonesia].zip";
 import apiClient from "../api.js";
 
 
