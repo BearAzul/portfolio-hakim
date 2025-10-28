@@ -10,7 +10,7 @@ const HardSkills = ({ animate, skills }) => {
     >
       <div className="flex-none">
         <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
-          <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Technology
+          <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Teknologi
         </h1>
       </div>
 
@@ -38,7 +38,7 @@ const SoftSkills = ({ animate, skills }) => {
     >
       <div className="flex-none">
         <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
-          <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Personality
+          <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Interpersonal
         </h1>
       </div>
       <div className="flex-1">
