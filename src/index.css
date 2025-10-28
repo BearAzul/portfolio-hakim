@@ -3,6 +3,12 @@
 @tailwind utilities;
 @plugin "daisyui";
 
+@layer utilities{
+  .paused{
+    animation-play-state: paused;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -22,9 +28,6 @@ body {
 .animate__delay-1s{
   animation-delay: var(--animate-delay);
 }
-
-  
-
 
 header {
   .btn-effect {

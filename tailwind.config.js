@@ -1,11 +1,22 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from 'daisyui';
+import daisyui from "daisyui";
+import scrollbarHide from "tailwind-scrollbar-hide";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "loop-scroll": "loopScroll 40s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        }
+      }
+    },
   },
   daisyui: {
     themes: [
@@ -24,5 +35,5 @@ export default {
       },
     ],
   },
-  plugins: [daisyui],
+  plugins: [daisyui, scrollbarHide],
 };

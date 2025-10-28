@@ -12,4 +12,12 @@ export default defineConfig({
     }),
   ],
   assetsInclude: ["**/*.zip", "**/*.pdf"],
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://portfolio-manage.vercel.app",
+        changeOrigin: true,
+      },
+    },
+  },
 });

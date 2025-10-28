@@ -6,9 +6,42 @@ import Skills from "./components/Skills.jsx";
 import Projects from "./components/Project.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
-import {Helmet} from "react-helmet-async"
+import BtnTop from "./common/BtnTop.jsx";
+import { Helmet } from "react-helmet-async"
+import { useState, useEffect, useCallback } from "react";
+import Loading from "./common/Loading.jsx";
+import apiClient from "./api.js";
+
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showApp, setShowApp] = useState(false);
+
+  const [isSlidingUp, setIsSlidingUp] = useState(false);
+
+  const loadAllData = useCallback(async () => {
+    await apiClient.get('/profile');
+    await apiClient.get('/about');
+    await apiClient.get('/educations');
+    await apiClient.get('/experiences');
+    await apiClient.get('/skills');
+    await apiClient.get('/projects');
+
+    return new Promise(resolve => setTimeout(resolve, 1500));
+  }, []);
+
+  useEffect(() => {
+    loadAllData().then(() => {
+      setIsSlidingUp(true);
+
+      const animationDuration = 700;
+      setTimeout(() => {
+        setIsLoading(false);
+        setShowApp(true);
+      }, animationDuration);
+    });
+  }, [loadAllData]);
+
   return (
     <>
       <Helmet>
@@ -36,14 +69,29 @@ const App = () => {
 
         <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/103102235?v=4" type="image/x-icon" />
       </Helmet>
-      <Header />
-      <Home />
-      <About />
-      <Qualification />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
+
+      {isLoading && (
+        <div
+          className={`fixed inset-0 z-[9999] flex items-center justify-center 
+                      bg-gray-100 dark:bg-slate-900 transition-transform 
+                      duration-700 ease-out ${isSlidingUp ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}
+        >
+          <Loading />
+        </div>
+      )}
+      {showApp && (
+        <>
+          <Header />
+          <Home />
+          <About />
+          <Qualification />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />
+          <BtnTop />
+        </>
+      )}
     </>
   );
 };

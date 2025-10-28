@@ -1,57 +1,69 @@
 import CardSkill from "./CardSkill.jsx";
-import MiniCard from "./MiniCard.jsx";
 import PropTypes from "prop-types";
-import { listHardSkills, listSoftSkills } from "../../assets/data/listData.jsx";
 
-const HardSkills = (props) => {
+
+const HardSkills = ({ animate, skills }) => {
   return (
-    <>
-      <div
-        className="w-full py-8 mx-auto transition duration-500 border border-gray-400 rounded-lg shadow-md card hover:!-translate-y-4"
-        data-aos={props.animate}
-      >
-        <h1 className="font-bold text-center text-slate-800 dark:text-gray-100">
-          Hard Skills
+    <div
+      className="items-center w-full gap-2 py-6 mx-auto md:flex"
+      data-aos={animate}
+    >
+      <div className="flex-none">
+        <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
+          <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Technology
         </h1>
-        <div className="grid grid-cols-2 gap-2 px-4 mt-6 lg:grid-cols-2 md:grid-cols-3 md:gap-4 md:px-8 text-slate-800 dark:text-gray-100">
-          {listHardSkills.map((skill, index) => (
-            <MiniCard
-              skill={skill}
-              key={index}
-            />
+      </div>
+
+      <div className="flex-auto">
+        <div className="flex gap-2 overflow-x-auto md:flex-wrap md:gap-4 text-slate-800 dark:text-gray-100 animate-loop-scroll group" aria-hidden="true">
+          {skills.map((skill, i) => (
+            <div key={i}>
+              <CardSkill
+                skill={skill}
+                key={i}
+              />
+            </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-const SoftSkills = (props) => {
+const SoftSkills = ({ animate, skills }) => {
   return (
-    <>
-      <div
-        className="w-full py-8 mx-auto transition duration-500 border border-gray-400 rounded-lg shadow-md card hover:!-translate-y-4"
-        data-aos={props.animate}
-      >
-        <h1 className="font-bold text-center text-slate-800 dark:text-gray-100">
-          Soft Skills
+    <div
+      className="items-center w-full gap-2 py-6 mx-auto md:flex"
+      data-aos={animate}
+    >
+      <div className="flex-none">
+        <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
+          <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Personality
         </h1>
-        <div className="grid grid-cols-2 gap-2 px-4 mt-6 md:px-8 md:gap-4 text-slate-800 dark:text-gray-100">
-          {listSoftSkills.map((skill, index) => (
-            <CardSkill skill={skill} key={index} />
+      </div>
+      <div className="flex-1">
+        <div className="flex flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100">
+          {skills.map((skill, i) => (
+            <div key={i}>
+              <CardSkill
+                skill={skill}
+              />
+            </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 SoftSkills.propTypes = {
   animate: PropTypes.string,
+  skills: PropTypes.array.isRequired,
 };
 
 HardSkills.propTypes = {
   animate: PropTypes.string,
+  skills: PropTypes.array.isRequired,
 };
 
 export { HardSkills, SoftSkills };

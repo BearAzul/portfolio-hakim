@@ -1,15 +1,6 @@
 import PropTypes from "prop-types";
 
 const CardRight = (props) => {
-    const handleDownload = (event, downloadLink) => {
-      event.preventDefault();
-      const userConfirmed = window.confirm(
-        "Apakah Anda ingin mengunduh file ini?"
-      );
-      if (userConfirmed) {
-        window.location.href = downloadLink;
-      }
-    };
   return (
     <>
       <div className="flex items-start justify-center gap-4 !text-slate-800">
@@ -33,8 +24,7 @@ const CardRight = (props) => {
             >
               <a
                 href={props.download}
-                download
-                onClick={(event) => handleDownload(event, props.download)}
+                target="_blink"
                 className="transition active:scale-90 hover:text-teal-600 hover:dark:text-teal-400 text-slate-800 dark:text-gray-100 "
                 aria-label="Download File"
               >
@@ -80,8 +70,9 @@ const CardLeft = (props) => {
               data-tip="Download Sertifikat"
             >
               <a
-                href={props.download} download
-                className="transition active:scale-95 text-slate-800 dark:text-gray-100 "
+                href={props.download} target="_blink"
+                className="transition active:scale-95 text-slate-800 dark:text-gray-100"
+                aria-label="Download File"
               >
                 <i className="ri-download-2-line"></i>
               </a>
