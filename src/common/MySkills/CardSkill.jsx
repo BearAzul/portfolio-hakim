@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const CardSkill = ({ skill }) => {
   if (skill.imageUrl) {
     return (
-      <div className="flex items-center gap-3 p-2 transition duration-300 border border-gray-400 rounded-lg shadow-md md:px-3 hover:bg-slate-900 hover:border-teal-600 hover:text-white group-hover:paused">
+      <div className="flex items-center gap-3 p-2 transition duration-300 border border-gray-400 rounded-lg shadow-md md:px-3 hover:bg-slate-900 hover:border-teal-600 hover:text-white">
         <div className="flex-none">
           <figure className="md:w-[30px] w-[20px] overflow-hidden rounded-sm">
             <img
