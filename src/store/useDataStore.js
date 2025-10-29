@@ -11,7 +11,7 @@ export const useDataStore = create((set, get) => ({
     hardSkills: [],
     softSkills: [],
   },
-  isLoading: false,
+  isLoading: true,
 
   fetchAllData: async () => {
     set({ isLoading: true });

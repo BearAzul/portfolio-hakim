@@ -8,35 +8,22 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import BtnTop from "./common/BtnTop.jsx";
 import { Helmet } from "react-helmet-async"
-import { useState, useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import Loading from "./common/Loading.jsx";
 import { useDataStore } from "./store/useDataStore.js";
 
 
 const App = () => {
-  const isDataLoading = useDataStore((state) => state.isLoading);
-  const fetchAllData = useDataStore((state) => state.fetchAllData);
-
-  const [isUiLoading, setIsUiLoading] = useState(true);
-  const [showApp, setShowApp] = useState(false);
-  const [isSlidingUp, setIsSlidingUp] = useState(false);
+  const { isLoading, fetchAllData } = useDataStore((state) => state);
 
   useEffect(() => {
     fetchAllData();
   }, [fetchAllData]);
 
-  useEffect(() => {
-    if (isDataLoading === false) {
-      setIsSlidingUp(true);
+  if (isLoading) {
+    return <Loading />;
+  }
 
-      const animationDuration = 700;
-      setTimeout(() => {
-        setIsUiLoading(false);
-        setShowApp(true);
-      }, animationDuration);
-    }
-  }, [isDataLoading]);
-  
 
   return (
     <>
@@ -65,29 +52,16 @@ const App = () => {
 
         <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/103102235?v=4" type="image/x-icon" />
       </Helmet>
+      <Header />
+      <Home />
+      <About />
+      <Qualification />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+      <BtnTop />
 
-      {isUiLoading && (
-        <div
-          className={`fixed inset-0 z-[9999] flex items-center justify-center 
-                      bg-gray-100 dark:bg-slate-900 transition-transform 
-                      duration-700 ease-out ${isSlidingUp ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}
-        >
-          <Loading />
-        </div>
-      )}
-      {showApp && (
-        <>
-          <Header />
-          <Home />
-          <About />
-          <Qualification />
-          <Skills />
-          <Projects />
-          <Contact />
-          <Footer />
-          <BtnTop />
-        </>
-      )}
     </>
   );
 };
