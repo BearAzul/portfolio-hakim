@@ -11,12 +11,13 @@ export const useDataStore = create((set, get) => ({
     hardSkills: [],
     softSkills: [],
   },
+  certificates: [],
   isLoading: true,
 
   fetchAllData: async () => {
     set({ isLoading: true });
     try {
-      const [profileRes, aboutRes, eduRes, expRes, projectRes, skillRes] =
+      const [profileRes, aboutRes, eduRes, expRes, projectRes, skillRes, certificateRes] =
         await Promise.all([
           apiClient.get("/profile"),
           apiClient.get("/about"),
@@ -24,6 +25,7 @@ export const useDataStore = create((set, get) => ({
           apiClient.get("/experiences"),
           apiClient.get("/projects"),
           apiClient.get("/skills"),
+          apiClient.get("/certificates"),
         ]);
 
       const allSkills = skillRes.data;
@@ -37,6 +39,7 @@ export const useDataStore = create((set, get) => ({
         experiences: expRes.data,
         projects: projectRes.data.data,
         skills: { hardSkills, softSkills },
+        certificates: certificateRes.data,
         isLoading: false,
       });
     } catch (error) {

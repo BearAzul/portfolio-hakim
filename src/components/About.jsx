@@ -1,8 +1,30 @@
 import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
 
+const services = [
+  {
+    title: "Pengalaman",
+    description: "2+ Tahun",
+    icon: "ri-award-fill",
+    link: "#",
+  },
+  {
+    title: "Selesai / Sukses",
+    description: "7 Proyek",
+    icon: "ri-suitcase-fill",
+    link: "#project",
+  },
+  {
+    title: "Sertifikat",
+    description: "7+",
+    icon: "ri-verified-badge-line",
+    link: "/certificates",
+  }
+]
+
 const About = () => {
   const { about } = useDataStore((state) => state);
+
 
   return (
     <section
@@ -16,43 +38,37 @@ const About = () => {
           </h1>
           <p className="text-xs text-teal-600 md:text-sm">Perkenalkan Saya</p>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="img-about w-full lg:w-[300px] h-full lg:h-[300px] mx-auto rounded-lg">
-            <img
-              src={about?.imageUrl}
-              alt="image hakim"
-              className="block object-cover w-full h-full rounded-lg drop-shadow-lg"
-            />
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-12 md:row-span-3 md:col-span-6">
+            <figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md">
+              <img
+                src={about?.imageUrl}
+                alt="image hakim"
+                className="block object-cover w-full h-full"
+              />
+            </figure>
           </div>
-          <div className="space-y-6">
-            <div className="grid grid-cols-3 gap-3 lg:gap-4">
-              <div className="card" data-aos="fade-down">
-                <i className="ri-award-fill"></i>
-                <h1>Pengalaman</h1>
-                <p>2+ Tahun</p>
-              </div>
-              <div className="card" data-aos="fade-down" data-aos-delay="300">
-                <i className="ri-suitcase-fill"></i>
-                <h1>Selesai / Sukses</h1>
-                <p>7 Proyek</p>
-              </div>
-              <div className="card" data-aos="fade-down" data-aos-delay="600">
-                <i className="ri-customer-service-2-fill"></i>
-                <h1>Layanan</h1>
-                <p>Online 24/7</p>
-              </div>
+          {services.map((service, index) => (
+            <div key={index} className="col-span-4 md:col-span-2">
+              <a href={service.link} className="cursor-pointer card" data-aos="fade-down" data-aos-delay={index * 100}>
+                <i className={service.icon}></i>
+                <h1 className="text-nowrap">{service.title}</h1>
+                <p>{service.description}</p>
+              </a>
             </div>
-            <div className="text-sm text-justify text-slate-800 md:text-base dark:text-gray-100">
-              <p>
-                {about?.description}
-              </p>
-            </div>
-            <div className="flex items-center justify-between">
+          ))}
+          <div className="col-span-12 md:col-span-6">
+            <p className="text-sm text-justify text-slate-800 md:text-base dark:text-gray-100">
+              {about?.description}
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <div className="flex items-center justify-between w-full">
               <a
                 href={about?.cvUrl}
                 target="_blink"
                 data-aos="fade-up"
-          
+
                 className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75"
                 aria-label="Download CV"
               >

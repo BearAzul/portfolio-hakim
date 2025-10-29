@@ -1,17 +1,27 @@
-import Header from "./components/Navbar.jsx";
-import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
-import Qualification from "./components/Qualifications.jsx";
-import Skills from "./components/Skills.jsx";
-import Projects from "./components/Project.jsx";
-import Contact from "./components/Contact.jsx";
-import Footer from "./components/Footer.jsx";
-import BtnTop from "./common/BtnTop.jsx";
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react";
 import Loading from "./common/Loading.jsx";
 import { useDataStore } from "./store/useDataStore.js";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
 
+import HomePage from "./pages/HomePage.jsx";
+import CertificatePage from "./pages/CertificatePage.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/certificates",
+    element: <CertificatePage />
+  },
+  {
+    path: "*",
+    element: <HomePage />
+  }
+]);
 
 const App = () => {
   const { isLoading, fetchAllData } = useDataStore((state) => state);
@@ -52,16 +62,7 @@ const App = () => {
 
         <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/103102235?v=4" type="image/x-icon" />
       </Helmet>
-      <Header />
-      <Home />
-      <About />
-      <Qualification />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-      <BtnTop />
-
+      <RouterProvider router={router} />
     </>
   );
 };

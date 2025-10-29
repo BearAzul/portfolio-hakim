@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
     "react-proptypes": "^1.0.0",
+    "react-router": "^7.9.4",
     "react-type-animation": "^3.2.0",
     "remixicon": "^4.2.0",
     "sweetalert2": "^11.10.8",
