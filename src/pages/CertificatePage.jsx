@@ -55,7 +55,7 @@ const CertificatePage = () => {
 
           <DarkMode display="hidden" />
           
-          <span className="text-gray-200 badge badge-lg badge-secondary">{certificates.length}</span>
+          <span className="text-gray-200 badge badge-secondary">{certificates.length}</span>
         </div>
         <div className="mt-8 mb-4 text-center title">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
