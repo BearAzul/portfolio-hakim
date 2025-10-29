@@ -9,7 +9,7 @@ const services = [
     link: "#",
   },
   {
-    title: "Selesai / Sukses",
+    title: "Selesai/Sukses",
     description: "7 Proyek",
     icon: "ri-suitcase-fill",
     link: "#project",
