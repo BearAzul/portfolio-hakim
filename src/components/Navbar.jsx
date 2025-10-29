@@ -95,7 +95,7 @@ const Header = () => {
                 </ul>
               </nav>
 
-              <DarkMode />
+              <DarkMode display="flex" />
 
               <button
                 type="button"
