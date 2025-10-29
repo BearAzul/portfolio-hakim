@@ -45,7 +45,7 @@ const CertificatePage = () => {
   };
 
   return (
-    <section id="certificate" className="transition-all dark:bg-slate-800 w-full flex items-center justify-center min-h-screen py-10 bg-gray-200">
+    <section id="certificate" className="transition-all dark:bg-slate-800 w-full flex items-start justify-center min-h-screen py-10 bg-gray-200">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="font-medium dark:text-gray-100 text-nowrap text-slate-800">
