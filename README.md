@@ -5,3 +5,5 @@ Build with:
 - Tailwind css
 - Daisy Ui
 - Vite
+- Zustand
+- Axios
