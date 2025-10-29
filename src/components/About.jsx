@@ -38,7 +38,7 @@ const About = () => {
           </h1>
           <p className="text-xs text-teal-600 md:text-sm">Perkenalkan Saya</p>
         </div>
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-3 md:gap-4">
           <div className="col-span-12 md:row-span-3 md:col-span-6">
             <figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md">
               <img
@@ -52,7 +52,7 @@ const About = () => {
             <div key={index} className="col-span-4 md:col-span-2">
               <a href={service.link} className="cursor-pointer card" data-aos="fade-down" data-aos-delay={index * 100}>
                 <i className={service.icon}></i>
-                <h1 className="text-nowrap">{service.title}</h1>
+                <h1 className="text-center">{service.title}</h1>
                 <p>{service.description}</p>
               </a>
             </div>
