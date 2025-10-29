@@ -1,23 +1,8 @@
 import ScrollDown from "../common/ScrollDown.jsx";
-import apiClient from "../api.js";
-import { useState, useEffect } from "react";
+import { useDataStore } from "../store/useDataStore.js";
 
 const About = () => {
-
-
-  const [data, setData] = useState(null);
-  const getAbout = async () => {
-    try {
-      const response = await apiClient.get("/about");
-      setData(response.data);
-    } catch (error) {
-      console.error("Error fetching about data:", error);
-    }
-  }
-
-  useEffect(() => {
-    getAbout()
-  }, [getAbout])
+  const { about } = useDataStore((state) => state);
 
   return (
     <section
@@ -34,7 +19,7 @@ const About = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="img-about w-full lg:w-[300px] h-full lg:h-[300px] mx-auto rounded-lg">
             <img
-              src={data?.imageUrl}
+              src={about?.imageUrl}
               alt="image hakim"
               className="block object-cover w-full h-full rounded-lg drop-shadow-lg"
             />
@@ -59,12 +44,12 @@ const About = () => {
             </div>
             <div className="text-sm text-justify text-slate-800 md:text-base dark:text-gray-100">
               <p>
-                {data?.description}
+                {about?.description}
               </p>
             </div>
             <div className="flex items-center justify-between">
               <a
-                href={data?.cvUrl}
+                href={about?.cvUrl}
                 target="_blink"
                 data-aos="fade-up"
           

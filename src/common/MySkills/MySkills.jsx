@@ -16,13 +16,11 @@ const HardSkills = ({ animate, skills }) => {
 
       <div className="flex-auto">
         <div className="flex flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100" aria-hidden="true">
-          {skills.map((skill, i) => (
-            <div key={i}>
-              <CardSkill
-                skill={skill}
-                key={i}
-              />
-            </div>
+          {skills.map((skill) => (
+            <CardSkill
+              key={skill._id}
+              skill={skill}
+            />
           ))}
         </div>
       </div>
@@ -41,14 +39,13 @@ const SoftSkills = ({ animate, skills }) => {
           <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Interpersonal
         </h1>
       </div>
-      <div className="flex-1">
+      <div className="flex-auto">
         <div className="flex flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100">
-          {skills.map((skill, i) => (
-            <div key={i}>
-              <CardSkill
-                skill={skill}
-              />
-            </div>
+          {skills.map((skill) => (
+            <CardSkill
+              key={skill._id}
+              skill={skill}
+            />
           ))}
         </div>
       </div>

@@ -6,17 +6,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {
-      animation: {
-        "loop-scroll": "loopScroll 40s linear infinite",
-      },
-      keyframes: {
-        "loop-scroll": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
-        }
-      }
-    },
+    extend: {},
   },
   daisyui: {
     themes: [

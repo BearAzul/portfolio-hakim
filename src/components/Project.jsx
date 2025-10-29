@@ -1,23 +1,8 @@
 import CardProject from "../common/CardProject.jsx";
-import apiClient from "../api.js";
-import { useState, useEffect, useCallback } from "react";
+import { useDataStore } from "../store/useDataStore.js";
 
 const Project = () => {
-  const [projects, setProjects] = useState([]);
-
-  const getProjects = useCallback(async () => {
-    try {
-      const response = await apiClient.get("/projects");
-      setProjects(response.data.data);
-    } catch (error) {
-      console.error("Error fetching projects data:", error);
-    }
-  }, [])
-
-  
-  useEffect(() => {
-    getProjects()
-  }, [getProjects])
+  const { projects } = useDataStore((state) => state);
 
   return (
     <section

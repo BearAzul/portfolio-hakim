@@ -1,8 +1,8 @@
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import apiClient from "../api";
+import { useDataStore } from "../store/useDataStore.js";
 
 const Contact = () => {
   const form = useRef();
@@ -50,19 +50,7 @@ const Contact = () => {
       );
   };
 
-  const [contactData, setContactData] = useState(null);
-  const getContact = async () => { 
-    try {
-      const response = await apiClient.get("/profile");
-      setContactData(response.data);
-    } catch (error) {
-      
-    }
-  }
-
-  useEffect(() => { 
-    getContact()
-  },[getContact])
+  const { profiles } = useDataStore((state) => state);
 
   return (
     <section
@@ -79,7 +67,7 @@ const Contact = () => {
                 <h2>Email</h2>
                 <p>adyaabduah@gmail.com</p>
                 <a
-                  href={`${contactData?.socials?.email}?subject=Hallo&body=Hi, I would like to get in touch.`}
+                  href={`${profiles?.socials?.email}?subject=Hallo&body=Hi, I would like to get in touch.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btnWrite"
@@ -98,7 +86,7 @@ const Contact = () => {
                 <h2>Instagram</h2>
                 <p>@az.izul_</p>
                 <a
-                  href={contactData?.socials?.instagram}
+                  href={profiles?.socials?.instagram}
                   target="_blank"
                   className="btnWrite"
                   aria-label="contact"
@@ -116,7 +104,7 @@ const Contact = () => {
                 <h2>WhatsApp</h2>
                 <p>+62 896 - 1374 - 2316</p>
                 <a
-                  href={contactData?.socials?.whatsapp}
+                  href={profiles?.socials?.whatsapp}
                   target="_blank"
                   className="btnWrite"
                   aria-label="contact"

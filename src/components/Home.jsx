@@ -1,8 +1,7 @@
 import "../common/IconAround.jsx";
 import IconSkills from "../common/IconAround.jsx";
 import { TypeAnimation } from "react-type-animation";
-import apiClient from "../api.js";
-import { useState, useEffect } from "react";
+import { useDataStore } from "../store/useDataStore.js";
 
 const AnimateType = () => {
   return (
@@ -26,20 +25,7 @@ const AnimateType = () => {
 }
 
 const Home = () => {
-  const [data, setData] = useState(null);
-
-  const getHome = async () => { 
-    try {
-      const response = await apiClient.get("/profile");
-      setData(response.data);
-    } catch (error) {
-      console.error("Error fetching profile data:", error);
-    }
-  }
-  
-  useEffect(() => { 
-    getHome()
-  }, [getHome])
+  const { profiles } = useDataStore((state) => state);
   
   return (
     <section
@@ -52,21 +38,21 @@ const Home = () => {
             <div className="w-1/6 md:w-1/4">
               <div className="grid gap-2 text-lg animate__animated animate__fadeInLeft md:gap-3 md:text-2xl text-slate-800 dark:text-gray-100">
                 <a
-                  href={data?.socials?.instagram}
+                  href={profiles?.socials?.instagram}
                   target="_blank"
                   className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max" aria-label="Lihat Instagram"
                 >
                   <i className="ri-instagram-line"></i>
                 </a>
                 <a
-                  href={data?.socials?.linkedin}
+                  href={profiles?.socials?.linkedin}
                   className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
                   aria-label="Lihat LinkedIn"
                 >
                   <i className="ri-linkedin-box-fill"></i>
                 </a>
                 <a
-                  href={data?.socials?.github}
+                  href={profiles?.socials?.github}
                   target="_blank"
                   className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
                   aria-label="Lihat Github"
@@ -84,7 +70,7 @@ const Home = () => {
                 <AnimateType />
               </div>
               <p className="mb-5 text-sm text-justify md:text-base">
-                {data?.heroText}
+                {profiles?.heroText}
               </p>
               <a
                 href="#about"
@@ -98,7 +84,7 @@ const Home = () => {
           <div className="relative w-full col">
             <div className="img-blob w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] mx-auto rounded-full overflow-hidden border-8 border-slate-800 dark:border-teal-600 drop-shadow-md animate__animated animate__fadeInRight">
               <img
-                src={data?.profileImageUrl}
+                src={profiles?.profileImageUrl}
                 alt="profile Hakim"
                 className="block object-cover w-full transition duration-500 hover:scale-125"
               />

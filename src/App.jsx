@@ -10,37 +10,33 @@ import BtnTop from "./common/BtnTop.jsx";
 import { Helmet } from "react-helmet-async"
 import { useState, useEffect, useCallback } from "react";
 import Loading from "./common/Loading.jsx";
-import apiClient from "./api.js";
+import { useDataStore } from "./store/useDataStore.js";
 
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showApp, setShowApp] = useState(false);
+  const isDataLoading = useDataStore((state) => state.isLoading);
+  const fetchAllData = useDataStore((state) => state.fetchAllData);
 
+  const [isUiLoading, setIsUiLoading] = useState(true);
+  const [showApp, setShowApp] = useState(false);
   const [isSlidingUp, setIsSlidingUp] = useState(false);
 
-  const loadAllData = useCallback(async () => {
-    await apiClient.get('/profile');
-    await apiClient.get('/about');
-    await apiClient.get('/educations');
-    await apiClient.get('/experiences');
-    await apiClient.get('/skills');
-    await apiClient.get('/projects');
-
-    return new Promise(resolve => setTimeout(resolve, 1500));
-  }, []);
+  useEffect(() => {
+    fetchAllData();
+  }, [fetchAllData]);
 
   useEffect(() => {
-    loadAllData().then(() => {
+    if (isDataLoading === false) {
       setIsSlidingUp(true);
 
       const animationDuration = 700;
       setTimeout(() => {
-        setIsLoading(false);
+        setIsUiLoading(false);
         setShowApp(true);
       }, animationDuration);
-    });
-  }, [loadAllData]);
+    }
+  }, [isDataLoading]);
+  
 
   return (
     <>
@@ -70,7 +66,7 @@ const App = () => {
         <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/103102235?v=4" type="image/x-icon" />
       </Helmet>
 
-      {isLoading && (
+      {isUiLoading && (
         <div
           className={`fixed inset-0 z-[9999] flex items-center justify-center 
                       bg-gray-100 dark:bg-slate-900 transition-transform 

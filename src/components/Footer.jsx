@@ -1,5 +1,8 @@
+import { useDataStore } from "../store/useDataStore.js";
 
 const Footer = () => {
+  const { profiles } = useDataStore((state) => state);
+
   return (
     <>
       <footer className="flex items-center w-full pt-10 pb-4 transition-all bg-slate-800 dark:bg-slate-950">
@@ -18,7 +21,7 @@ const Footer = () => {
             <ul className="flex items-center justify-center gap-8 text-center">
               <li>
                 <a
-                  href="https://instagram.com/az.izul_"
+                  href={profiles?.socials?.instagram}
                   target="_blank"
                   className="text-2xl text-gray-500"
                   aria-label="Lihat Instagram"
@@ -28,7 +31,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://github.com/bearazul"
+                  href={profiles?.socials?.github}
                   target="_blank"
                   className="text-2xl text-gray-500"
                   aria-label="Lihat Github"
@@ -38,7 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href={profiles?.socials?.linkedin}
                   target="_blank"
                   className="text-2xl text-gray-500"
                   aria-label="Lihat LinkedIn"
@@ -48,7 +51,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://wa.me/+6289613742316"
+                  href={profiles?.socials?.whatsapp}
                   target="_blank"
                   className="text-2xl text-gray-500"
                   aria-label="Lihat WhatsApp"
@@ -60,7 +63,7 @@ const Footer = () => {
           </div>
           <hr className="border-gray-500" />
           <p className="text-[10px] text-center md:text-left md:text-xs mt-4 text-gray-400">
-            &copy; Adya Abdu Azizul Hakim. All Right Reserved
+            &copy; Adya Abdu Azizul Hakim. All Right Reserved - {new Date().getFullYear()}
           </p>
         </div>
       </footer>

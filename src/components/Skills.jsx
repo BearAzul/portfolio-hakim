@@ -1,28 +1,8 @@
 import { HardSkills, SoftSkills } from "../common/MySkills/MySkills.jsx";
-import apiClient from "../api.js";
-import { useState, useEffect, useCallback } from "react";
+import { useDataStore } from "../store/useDataStore.js";
 
 const Skills = () => {
-  const [hardSkills, setHardSkills] = useState([]);
-  const [softSkills, setSoftSkills] = useState([]);
-
-  const getSkills = useCallback(async () => { 
-    try {
-      const response = await apiClient.get("/skills");
-      const allSkills = response.data;
-
-      setHardSkills(allSkills.filter(skill => skill.type === 'Hard'));
-      setSoftSkills(allSkills.filter(skill => skill.type === 'Soft'));
-      
-    } catch (error) {
-      console.error("Error fetching skills data:", error);
-    }
-  },[])
-
-  useEffect(() => { 
-    getSkills()
-  }, [getSkills])
-  
+  const { hardSkills, softSkills } = useDataStore((state) => state.skills);
   
   return (
     <section

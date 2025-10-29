@@ -1,6 +1,6 @@
 import { CardLeft, CardRight } from "../common/CardJourney.jsx";
-import { useState, useEffect, useCallback } from "react";
-import apiClient from "../api.js";
+import { useState } from "react";
+import { useDataStore } from "../store/useDataStore.js";
 
 
 const Qualifications = () => {
@@ -9,24 +9,7 @@ const Qualifications = () => {
     setIsMove(!isMove);
   };
 
-  const [educationData, setEducationData] = useState(null);
-  const [experienceData, setExperienceData] = useState(null);
-
-  const getQualifications = useCallback(async () => {
-    try {
-      const resEdu = await apiClient.get("/educations");
-      const resExp = await apiClient.get("/experiences");
-      setExperienceData(resExp.data);
-      setEducationData(resEdu.data);
-    } catch (error) {
-      console.error("Error fetching qualifications data:", error);
-    }
-  }, [])
-
-  useEffect(() => {
-    getQualifications()
-  }, [getQualifications])
-
+  const { educations, experiences } = useDataStore((state) => state);
 
   return (
 
@@ -67,7 +50,7 @@ const Qualifications = () => {
         </div>
         <div className="container max-w-2xl mx-auto">
           <div className={`${isMove ? "hidden" : "block"} h-full`}>
-            {educationData && educationData.map((education, index) => (
+            {educations && educations.map((education, index) => (
               index % 2 === 0 ? (
                 <CardRight
                   key={education._id}
@@ -92,7 +75,7 @@ const Qualifications = () => {
             ))}
           </div>
           <div className={`${isMove ? "block" : "hidden"} h-full`}>
-            {experienceData && experienceData.map((experience, index) => (
+            {experiences && experiences.map((experience, index) => (
               index % 2 === 0 ? (
                 <CardLeft
                   key={experience._id}
@@ -111,8 +94,8 @@ const Qualifications = () => {
                   elemen={experience.position}
                   address={experience.location}
                   years={experience.years}
-                  display={exp.downloadUrl ? "block" : "hidden"}
-                  download={exp.downloadUrl}
+                  display={experience.downloadUrl ? "block" : "hidden"}
+                  download={experience.downloadUrl}
                 />
               )
             ))}
