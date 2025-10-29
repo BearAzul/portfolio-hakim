@@ -2,7 +2,7 @@ import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
 
 const About = () => {
-  const { about, certificates } = useDataStore((state) => state);
+  const { about, certificates, projects } = useDataStore((state) => state);
 
   const services = [
     {
@@ -13,7 +13,7 @@ const About = () => {
     },
     {
       title: "Selesai/Sukses",
-      description: "7 Proyek",
+      description: `${projects.length} proyek`,
       icon: "ri-suitcase-fill",
       link: "#project",
     },
