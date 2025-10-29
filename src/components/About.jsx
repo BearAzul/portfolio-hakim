@@ -1,29 +1,30 @@
 import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
 
-const services = [
-  {
-    title: "Pengalaman",
-    description: "2+ Tahun",
-    icon: "ri-award-fill",
-    link: "#",
-  },
-  {
-    title: "Selesai/Sukses",
-    description: "7 Proyek",
-    icon: "ri-suitcase-fill",
-    link: "#project",
-  },
-  {
-    title: "Sertifikat",
-    description: "7+",
-    icon: "ri-verified-badge-line",
-    link: "/certificates",
-  }
-]
-
 const About = () => {
-  const { about } = useDataStore((state) => state);
+  const { about, certificates } = useDataStore((state) => state);
+
+  const services = [
+    {
+      title: "Pengalaman",
+      description: "2+ Tahun",
+      icon: "ri-award-fill",
+      link: "#",
+    },
+    {
+      title: "Selesai/Sukses",
+      description: "7 Proyek",
+      icon: "ri-suitcase-fill",
+      link: "#project",
+    },
+    {
+      title: "Sertifikat",
+      description: `${certificates.length}+` ,
+      icon: "ri-verified-badge-line",
+      link: "/certificates",
+    }
+  ]
+
 
 
   return (
