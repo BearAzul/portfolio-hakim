@@ -6,8 +6,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import './index.css'
 import { HelmetProvider } from "react-helmet-async"
+import { pdfjs } from 'react-pdf';
 
 import App from './App.jsx';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 AOS.init()
 AOS.init({

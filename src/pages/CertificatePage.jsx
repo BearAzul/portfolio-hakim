@@ -2,6 +2,7 @@ import { Link } from "react-router"
 import { useDataStore } from "../store/useDataStore.js";
 import { useState, useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
+import PdfThumbnail from "../common/PdfThumbnail.jsx";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -82,9 +83,9 @@ const CertificatePage = () => {
                   <i className="ri-file-download-line"></i>
                 </a>
               </div>
-              <iframe src={certificate.fileUrl} frameborder="0" className="overflow-hidden border-2 border-teal-600 rounded-lg shadow-md aspect-video">
-                <embed src={certificate.fileUrl} type="pdf" className="block object-cover w-full h-full transition-all hover:scale-125" />
-              </iframe>
+              <div className="overflow-hidden border-2 border-teal-600 rounded-lg shadow-md aspect-video">
+                <PdfThumbnail fileUrl={certificate.fileUrl} />
+              </div>
             </div>
           ))}
         </div>
