@@ -8,7 +8,7 @@ const HardSkills = ({ animate, skills }) => {
       className="items-center w-full gap-2 py-6 mx-auto md:flex"
       data-aos={animate}
     >
-      <div className="flex-none">
+      <div className="flex-none px-6">
         <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
           <span className="mr-2 bg-teal-500 sm:hidden">&nbsp;</span>Teknologi
         </h1>
@@ -27,7 +27,7 @@ const HardSkills = ({ animate, skills }) => {
                 />
               ))}
             </div>
-            <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused" aria-hidden="true">
+            <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused md:hidden" aria-hidden="true">
               {skills.map((skill) => (
                 <CardSkill
                   key={skill._id + '-2'}
@@ -66,7 +66,7 @@ const HardSkills = ({ animate, skills }) => {
 const SoftSkills = ({ animate, skills }) => {
   return (
     <div
-      className="items-center w-full gap-2 py-6 mx-auto md:flex"
+      className="items-center w-full gap-2 py-6 mx-auto md:flex px-6"
       data-aos={animate}
     >
       <div className="flex-none">

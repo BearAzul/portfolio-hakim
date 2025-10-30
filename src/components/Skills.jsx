@@ -9,7 +9,7 @@ const Skills = () => {
       id="skills"
       className="transition-all bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:min-h-screen min-h-[auto] py-20 lg:py-0 w-full overflow-hidden"
     >
-      <div className="container px-6 mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl">
+      <div className="container mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl">
         <div className="text-center title">
           <h1 className="text-xl font-semibold md:text-3xl text-slate-800 dark:text-gray-100">
             Kemampuan
