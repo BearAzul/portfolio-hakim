@@ -13,7 +13,7 @@ const About = () => {
     },
     {
       title: "Selesai/Sukses",
-      description: `${projects.length} proyek`,
+      description: `${projects.length} Proyek`,
       icon: "ri-suitcase-fill",
       link: "#project",
     },
@@ -70,7 +70,7 @@ const About = () => {
                 target="_blink"
                 data-aos="fade-up"
 
-                className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75"
+                className="p-3 text-xs text-white !transition !duration-500 rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75"
                 aria-label="Download CV"
               >
                 Download CV

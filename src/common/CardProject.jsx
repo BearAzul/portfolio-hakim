@@ -23,8 +23,8 @@ const CardProject = ({ project }) => {
               <i className="text-sm ri-github-fill lg:text-base"></i> Source
             </a>
           </div>
-          <h1 className="text-sm font-semibold dark:text-base-200">{project.title}</h1>
-          <p className="text-xs text-justify dark:text-base-100">{project.description}</p>
+          <h1 className="mt-2 text-sm font-semibold lg:mt-3 dark:text-gray-100">{project.title}</h1>
+          <p className="text-xs text-justify dark:text-gray-100 text-slate-800">{project.description}</p>
         </div>
         <div className="col-span-12 p-3">
           <div className="flex flex-wrap gap-1">

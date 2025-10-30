@@ -27,17 +27,17 @@ const Qualifications = () => {
           </p>
         </div>
         <div className="relative z-[1] bg-transparent flex items-center justify-center mx-auto rounded w-max text-slate-800 gap-4 dark:text-gray-100 text-center overflow-hidden">
-          <button
+          <button type="button"
             onClick={handleMove}
-            className={`transition duration-300  text-center text-sm lg:text-lg py-1 px-3 ${isMove ? "text-slate-800 dark:text-gray-100" : "text-gray-100"
+            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer ${isMove ? "text-slate-800 dark:text-gray-100" : "text-gray-100"
               }`}
           >
             <i className="ri-graduation-cap-fill me-3"></i>
             Pendidikan
           </button>
-          <button
+          <button type="button"
             onClick={handleMove}
-            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 ${isMove ? "text-gray-100" : "text-slate-800 dark:text-gray-100"
+            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer ${isMove ? "text-gray-100" : "text-slate-800 dark:text-gray-100"
               }`}
           >
             <i className="ri-briefcase-4-fill me-3"></i>

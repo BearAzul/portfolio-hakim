@@ -29,7 +29,7 @@ const Header = () => {
       <header
         className={`animate__animated animate__fadeInDown transition-all bg-gray-100 lg:fixed sticky top-0 left-0 w-full flex items-center justify-center z-10 dark:bg-slate-800 ${
           windowScroll
-            ? "bg-opacity-40 backdrop-blur-md shadow-md dark:bg-opacity-40"
+            ? "bg-slate-100/40 backdrop-blur-sm shadow-md dark:bg-slate-800/40 "
             : ""
         }`}
       >

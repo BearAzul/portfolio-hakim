@@ -171,7 +171,7 @@ const Contact = () => {
               <div className="mb-4">
                 <button
                   type="submit"
-                  className="p-3 text-sm text-white transition duration-500 shadow-md dark:bg-teal-600 bg-slate-800 rounded-xl hover:bg-teal-600 active:scale-75"
+                  className="p-3 text-sm text-white transition duration-500 shadow-md cursor-pointer dark:bg-teal-600 bg-slate-800 rounded-xl hover:bg-teal-600 active:scale-75"
                 >
                   Send Message
                   <i className="ri-send-plane-fill ms-3"></i>

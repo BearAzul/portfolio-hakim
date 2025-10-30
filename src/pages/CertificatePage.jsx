@@ -45,7 +45,7 @@ const CertificatePage = () => {
   };
 
   return (
-    <section id="certificate" className="transition-all dark:bg-slate-800 w-full flex items-start justify-center min-h-screen py-10 bg-gray-200">
+    <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10 transition-all bg-gray-200 dark:bg-slate-800">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="font-medium dark:text-gray-100 text-nowrap text-slate-800">
@@ -55,7 +55,7 @@ const CertificatePage = () => {
 
           <DarkMode display="hidden" />
           
-          <span className="text-gray-200 badge badge-secondary">{certificates.length}</span>
+          <span className="text-gray-100 bg-teal-600 border-0 badge">{certificates.length}</span>
         </div>
         <div className="mt-8 mb-4 text-center title">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
@@ -67,10 +67,10 @@ const CertificatePage = () => {
         </div>
         <div className="flex flex-wrap items-center justify-center w-full gap-1 mb-6 md:gap-3 md:flex-nowrap">
           {filters.map((filter, index) => (
-            <button key={index} className={`font-normal btn btn-sm dark:text-gray-200 hover:!text-gray-200 shadow-md
+            <button key={index} className={`text-sm text-teal-600 py-2 px-3 rounded-md dark:text-gray-200 shadow-sm cursor-pointer
                 ${activeFilter === filter
-                ? 'btn-secondary text-gray-200'
-                : 'btn-outline btn-secondary'}`}
+                ? 'bg-teal-600 !text-gray-200'
+                : 'border border-teal-600'}`}
               onClick={() => setActiveFilter(filter)}>{filter}</button>
           ))}
         </div>
@@ -79,7 +79,7 @@ const CertificatePage = () => {
             <div className="col-span-12 space-y-2 md:col-span-6 lg:col-span-4" key={certificate._id}>
               <div className="flex items-start justify-between gap-4">
                 <h1 className="text-xs font-medium md:text-sm dark:text-gray-200 text-slate-800">{certificate.title}</h1>
-                <a href={certificate.fileUrl} target="_blink" className="font-normal text-gray-200 btn btn-sm btn-square btn-secondary">
+                <a href={certificate.fileUrl} target="_blink" className="font-normal text-gray-100 bg-teal-600 border-0 shadow-sm btn btn-sm btn-square">
                   <i className="ri-file-download-line"></i>
                 </a>
               </div>
@@ -91,7 +91,7 @@ const CertificatePage = () => {
         </div>
         <div className="flex items-center justify-center mt-8 join">
           <button
-            className="hover:!text-gray-200 join-item btn btn-outline btn-sm btn-secondary"
+            className="join-item btn btn-sm btn-outline btn-success"
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
@@ -103,9 +103,9 @@ const CertificatePage = () => {
             return (
               <button
                 key={pageNumber}
-                className={`join-item btn btn-outline btn-sm hover:!text-gray-200 ${pageNumber === currentPage
-                  ? "btn-active btn-secondary !text-gray-200"
-                  : "btn-secondary"
+                className={`join-item btn btn-outline btn-sm btn-success ${pageNumber === currentPage
+                  ? "btn-active text-primary-content dark:text-neutral"
+                  : "text-neutral dark:text-primary-content"
                   }`}
                 onClick={() => handlePageChange(pageNumber)}
               >
@@ -115,7 +115,7 @@ const CertificatePage = () => {
           })}
 
           <button
-            className="join-item btn btn-outline btn-sm btn-secondary hover:!text-gray-200"
+            className="join-item btn btn-outline btn-sm btn-success"
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
