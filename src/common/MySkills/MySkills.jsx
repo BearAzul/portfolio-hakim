@@ -15,13 +15,23 @@ const HardSkills = ({ animate, skills }) => {
       </div>
 
       <div className="flex-auto">
-        <div className="flex flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100" aria-hidden="true">
-          {skills.map((skill) => (
-            <CardSkill
-              key={skill._id}
-              skill={skill}
-            />
-          ))}
+        <div className="flex overflow-x-hidden group w-full">
+          <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused" aria-hidden="true">
+            {skills.map((skill) => (
+              <CardSkill
+                key={skill._id + '-1'}
+                skill={skill}
+              />
+            ))}
+          </div>
+          <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused md:hidden" aria-hidden="true">
+            {skills.map((skill) => (
+              <CardSkill
+                key={skill._id + '-2'}
+                skill={skill}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
