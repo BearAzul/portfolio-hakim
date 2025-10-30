@@ -14,24 +14,49 @@ const HardSkills = ({ animate, skills }) => {
         </h1>
       </div>
 
-      <div className="flex-auto">
-        <div className="flex overflow-x-hidden group gap-2">
-          <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused" aria-hidden="true">
-            {skills.map((skill) => (
-              <CardSkill
-                key={skill._id + '-1'}
-                skill={skill}
-              />
-            ))}
+      <div class="flex-auto">
+        <div className="flex flex-col gap-2">
+
+          {/* Loop Pertama */}
+          <div className="flex overflow-x-hidden group gap-2">
+            <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused" aria-hidden="true">
+              {skills.map((skill) => (
+                <CardSkill
+                  key={skill._id + '-1'}
+                  skill={skill}
+                />
+              ))}
+            </div>
+            <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused" aria-hidden="true">
+              {skills.map((skill) => (
+                <CardSkill
+                  key={skill._id + '-2'}
+                  skill={skill}
+                />
+              ))}
+            </div>
           </div>
-          <div className="flex animate-loop-scroll md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused md:hidden" aria-hidden="true">
-            {skills.map((skill) => (
-              <CardSkill
-                key={skill._id + '-2'}
-                skill={skill}
-              />
-            ))}
+
+          {/* Loop Kedua */}
+          <div className="flex overflow-x-hidden group gap-2">
+            <div className="flex animate-loop-scroll-reverse md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused md:hidden" aria-hidden="true">
+              {skills.map((skill) => (
+                <CardSkill
+                  key={skill._id + '-3'}
+                  skill={skill}
+                />
+              ))}
+            </div>
+            <div className="flex animate-loop-scroll-reverse md:flex-wrap gap-2 md:gap-4 text-slate-800 dark:text-gray-100 md:!animate-none group-hover:paused md:hidden" aria-hidden="true">
+              {skills.map((skill) => (
+                <CardSkill
+                  key={skill._id + '-4'}
+                  skill={skill}
+                />
+              ))}
+            </div>
           </div>
+
         </div>
       </div>
     </div>

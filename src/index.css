@@ -39,7 +39,11 @@
   }
 
   .animate-loop-scroll{
-    animation: loop-scroll 25s linear infinite;
+    animation: loop-scroll 30s linear infinite;
+  }
+
+  .animate-loop-scroll-reverse{
+    animation: loop-scroll 30s linear infinite reverse;
   }
 }
 
