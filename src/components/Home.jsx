@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="transition-all w-full lg:min-h-screen min-h-[auto] bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:py-0 py-20 overflow-hidden"
+      className="scroll-section transition-all w-full lg:min-h-screen min-h-[auto] bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:py-0 py-20 overflow-hidden"
     >
       <div className="container mx-auto md:max-w-2xl lg:max-w-5xl">
         <div className="flex flex-col-reverse items-center px-6 md:px-4 md:flex-row gap-y-10">

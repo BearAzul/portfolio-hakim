@@ -47,9 +47,9 @@
   }
 
   .animate-underline {
-    position: relative;
+    position: relative !important;
 
-    &::before{
+    &::after{
       content: "";
       position: absolute;
       bottom: 0;
@@ -60,11 +60,11 @@
       @apply bg-teal-600 dark:bg-slate-800
     }
 
-    &:hover::before{
+    &:hover::after{
       width: 100%;
     }
 
-    &:hover::before.navActive{
+    &.navActive::after{
       width: 100%;
     }
   }

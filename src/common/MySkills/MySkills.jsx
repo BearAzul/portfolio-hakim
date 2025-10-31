@@ -14,7 +14,7 @@ const HardSkills = ({ animate, skills }) => {
         </h1>
       </div>
 
-      <div class="flex-auto">
+      <div className="flex-auto">
         <div className="flex flex-col gap-2">
 
           {/* Loop Pertama */}

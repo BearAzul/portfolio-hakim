@@ -7,7 +7,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="transition-all bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:min-h-screen min-h-[auto] py-20 lg:py-0 w-full overflow-hidden"
+      className="scroll-section transition-all bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:min-h-screen min-h-[auto] py-20 lg:py-0 w-full overflow-hidden"
     >
       <div className="container mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl">
         <div className="text-center title">
