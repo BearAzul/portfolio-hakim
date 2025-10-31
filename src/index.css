@@ -45,6 +45,29 @@
   .animate-loop-scroll-reverse{
     animation: loop-scroll 30s linear infinite reverse;
   }
+
+  .animate-underline {
+    position: relative;
+
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      transition: .3s ease-in;
+      @apply bg-teal-600 dark:bg-slate-800
+    }
+
+    &:hover::before{
+      width: 100%;
+    }
+
+    &:hover::before.navActive{
+      width: 100%;
+    }
+  }
 }
 
 
@@ -69,30 +92,6 @@ body {
   animation-delay: var(--animate-delay);
 }
 
-header {
-  .btn-effect {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1px;
-      @apply bg-teal-600 dark:bg-slate-800;
-      transition: 0.3s;
-    }
-
-    &:hover:before {
-      width: 100%;
-    }
-
-    &:hover:before.navActive {
-      width: 100%;
-    }
-  }
-}
 
 #about {
   .card {
@@ -103,7 +102,7 @@ header {
     }
 
     h1 {
-      @apply font-bold  dark:font-semibold lg:text-sm text-[10px];
+      @apply font-bold dark:font-semibold lg:text-sm text-[10px];
     }
 
     p {

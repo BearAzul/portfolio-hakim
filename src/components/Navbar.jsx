@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import DarkMode from "../common/DarkMode"
+import DarkMode from "../common/DarkMode.jsx"
 
 const Header = () => {
   const [showNav, setVisible] = useState(false);
@@ -29,7 +29,7 @@ const Header = () => {
       <header
         className={`animate__animated animate__fadeInDown transition-all bg-gray-100 lg:fixed sticky top-0 left-0 w-full flex items-center justify-center z-10 dark:bg-slate-800 ${
           windowScroll
-            ? "bg-slate-100/40 backdrop-blur-sm shadow-md dark:bg-slate-800/40 "
+            ? "bg-slate-100/40 backdrop-blur-sm shadow-md dark:bg-slate-800/40"
             : ""
         }`}
       >
@@ -55,7 +55,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#"
-                      className="py-1 m-4 text-sm !btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm animate-underline text-slate-800 dark:text-gray-100"
                     >
                       Utama
                     </a>
@@ -63,7 +63,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#about"
-                      className="py-1 m-4 text-sm !btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm animate-underline text-slate-800 dark:text-gray-100"
                     >
                       Tentang
                     </a>
@@ -71,7 +71,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#skills"
-                      className="py-1 m-4 text-sm !btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm animate-underline text-slate-800 dark:text-gray-100"
                     >
                       Kemampuan
                     </a>
@@ -79,7 +79,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#project"
-                      className="py-1 m-4 text-sm btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm animate-underline text-slate-800 dark:text-gray-100"
                     >
                       Proyek
                     </a>
@@ -87,7 +87,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#contact"
-                      className="py-1 m-4 text-sm btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm animate-underline text-slate-800 dark:text-gray-100"
                     >
                       Kontak
                     </a>
