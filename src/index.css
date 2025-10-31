@@ -71,7 +71,7 @@ body {
 
 header {
   .btn-effect {
-    @apply relative;
+    position: relative;
 
     &::before {
       content: "";

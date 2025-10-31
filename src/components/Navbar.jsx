@@ -55,7 +55,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#"
-                      className="py-1 m-4 text-sm btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm !btn-effect text-slate-800 dark:text-gray-100"
                     >
                       Utama
                     </a>
@@ -63,7 +63,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#about"
-                      className="py-1 m-4 text-sm btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm !btn-effect text-slate-800 dark:text-gray-100"
                     >
                       Tentang
                     </a>
@@ -71,7 +71,7 @@ const Header = () => {
                   <li className="group">
                     <a
                       href="#skills"
-                      className="py-1 m-4 text-sm btn-effect text-slate-800 dark:text-gray-100"
+                      className="py-1 m-4 text-sm !btn-effect text-slate-800 dark:text-gray-100"
                     >
                       Kemampuan
                     </a>
