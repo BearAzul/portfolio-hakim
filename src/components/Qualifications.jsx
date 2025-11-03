@@ -54,7 +54,6 @@ const Qualifications = () => {
               index % 2 === 0 ? (
                 <CardRight
                   key={education._id}
-                  delay={index * 300}
                   title={education.school}
                   elemen={education.major}
                   address={education.location}
@@ -64,7 +63,6 @@ const Qualifications = () => {
               ) : (
                 <CardLeft
                   key={education._id}
-                  delay={index * 300}
                   title={education.school}
                   elemen={education.major}
                   address={education.location}
@@ -79,7 +77,6 @@ const Qualifications = () => {
               index % 2 === 0 ? (
                 <CardLeft
                   key={experience._id}
-                  delay={index * 300}
                   title={experience.company}
                   elemen={experience.position}
                   address={experience.location}
@@ -89,7 +86,6 @@ const Qualifications = () => {
               ) : (
                 <CardRight
                   key={experience._id}
-                  delay={index * 300}
                   title={experience.company}
                   elemen={experience.position}
                   address={experience.location}

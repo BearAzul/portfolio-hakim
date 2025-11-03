@@ -2,6 +2,7 @@ import "../common/IconAround.jsx";
 import IconSkills from "../common/IconAround.jsx";
 import { TypeAnimation } from "react-type-animation";
 import { useDataStore } from "../store/useDataStore.js";
+import { motion } from "framer-motion";
 
 const AnimateType = () => {
   return (
@@ -26,7 +27,23 @@ const AnimateType = () => {
 
 const Home = () => {
   const { profiles } = useDataStore((state) => state);
-  
+
+  const socials = [
+    {
+      title: "Instagram",
+      icon: "ri-instagram-line",
+      link: profiles?.socials?.instagram,
+    }, {
+      title: "LinkedIn",
+      icon: "ri-linkedin-box-fill",
+      link: profiles?.socials?.linkedin,
+    }, {
+      title: "Github",
+      icon: "ri-github-fill",
+      link: profiles?.socials?.github,
+    }
+  ]
+
   return (
     <section
       id="home"
@@ -36,32 +53,30 @@ const Home = () => {
         <div className="flex flex-col-reverse items-center px-6 md:px-4 md:flex-row gap-y-10">
           <div className="flex items-center w-full">
             <div className="w-1/6 md:w-1/4">
-              <div className="grid gap-2 text-lg animate__animated animate__fadeInLeft md:gap-3 md:text-2xl text-slate-800 dark:text-gray-100">
-                <a
-                  href={profiles?.socials?.instagram}
-                  target="_blank"
-                  className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max" aria-label="Lihat Instagram"
-                >
-                  <i className="ri-instagram-line"></i>
-                </a>
-                <a
-                  href={profiles?.socials?.linkedin}
-                  className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
-                  aria-label="Lihat LinkedIn"
-                >
-                  <i className="ri-linkedin-box-fill"></i>
-                </a>
-                <a
-                  href={profiles?.socials?.github}
-                  target="_blank"
-                  className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
-                  aria-label="Lihat Github"
-                >
-                  <i className="ri-github-fill"></i>
-                </a>
+              <div className="grid gap-2 text-lg md:gap-3 md:text-2xl text-slate-800 dark:text-gray-100">
+                {socials.map((social, index) => (
+                  <motion.a
+                    href={social.link}
+                    key={index}
+                    target="_blank"
+                    className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
+                    aria-label={`Lihat ${social.title}`}
+                    initial={{ opacity: 0, y: -30, x: -30 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <i className={social.icon}></i>
+                  </motion.a>
+                ))}
               </div>
             </div>
-            <div className="w-full text-slate-800 dark:text-gray-100 animate__animated animate__fadeInUp">
+            <motion.div className="w-full text-slate-800 dark:text-gray-100"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h1 className="mb-3 text-2xl font-semibold md:text-4xl drop-shadow-md">
                 Adya Abdu Azizul Hakim 🙌
               </h1>
@@ -79,16 +94,22 @@ const Home = () => {
                 Berkenalan?
                 <i className="ri-send-plane-fill ms-3"></i>
               </a>
-            </div>
+            </motion.div>
           </div>
           <div className="relative w-full col">
-            <div className="img-blob w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] mx-auto rounded-full overflow-hidden border-8 border-slate-800 dark:border-teal-600 drop-shadow-md animate__animated animate__fadeInRight">
+            <motion.div className="img-blob w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] mx-auto rounded-full overflow-hidden border-8 border-slate-800 dark:border-teal-600 drop-shadow-md"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            
+            >
               <img
                 src={profiles?.profileImageUrl}
                 alt="profile Hakim"
                 className="block object-cover w-full transition duration-500 hover:scale-125"
               />
-            </div>
+            </motion.div>
 
             <IconSkills />
           </div>

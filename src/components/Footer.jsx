@@ -3,6 +3,25 @@ import { useDataStore } from "../store/useDataStore.js";
 const Footer = () => {
   const { profiles } = useDataStore((state) => state);
 
+  const socials = [
+    {
+      icons: "ri-instagram-line",
+      link: profiles?.socials?.instagram,
+    },
+    {
+      icons: "ri-github-fill",
+      link: profiles?.socials?.github,
+    },
+    {
+      icons: "ri-linkedin-box-fill",
+      link: profiles?.socials?.linkedin,
+    },
+    {
+      icons: "ri-whatsapp-line",
+      link: profiles?.socials?.whatsapp,
+    },
+  ]
+
   return (
 
     <footer className="flex items-center w-full pt-10 pb-4 transition-all bg-slate-800 dark:bg-slate-950">
@@ -19,46 +38,18 @@ const Footer = () => {
         </div>
         <div className="block max-w-xl mx-auto mb-3">
           <ul className="flex items-center justify-center gap-8 text-center">
-            <li>
-              <a
-                href={profiles?.socials?.instagram}
-                target="_blank"
-                className="text-2xl text-gray-500"
-                aria-label="Lihat Instagram"
-              >
-                <i className="ri-instagram-line"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href={profiles?.socials?.github}
-                target="_blank"
-                className="text-2xl text-gray-500"
-                aria-label="Lihat Github"
-              >
-                <i className="ri-github-fill"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href={profiles?.socials?.linkedin}
-                target="_blank"
-                className="text-2xl text-gray-500"
-                aria-label="Lihat LinkedIn"
-              >
-                <i className="ri-linkedin-box-fill"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href={profiles?.socials?.whatsapp}
-                target="_blank"
-                className="text-2xl text-gray-500"
-                aria-label="Lihat WhatsApp"
-              >
-                <i className="ri-whatsapp-line"></i>
-              </a>
-            </li>
+            {socials.map((social, index) => (
+              <li key={index}>
+                <a
+                  href={social.link}
+                  target="_blank"
+                  className="text-2xl text-gray-500"
+                  aria-label="Lihat Sosial Media"
+                >
+                  <i className={social.icons}></i>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <hr className="border-gray-500" />

@@ -1,12 +1,28 @@
 import CardSkill from "./CardSkill.jsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
+
+const animateVariants = {
+  "fade-right": {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+  },
+  "fade-left": {
+    initial: { opacity: 0, x: 50 },
+    animate: { opacity: 1, x: 0 },
+  }
+}
 
 
 const HardSkills = ({ animate, skills }) => {
   return (
-    <div
+    <motion.div
       className="items-center w-full gap-2 py-6 mx-auto md:flex"
-      data-aos={animate}
+      variants={animateVariants[animate]}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
     >
       <div className="flex-none px-6">
         <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
@@ -59,15 +75,19 @@ const HardSkills = ({ animate, skills }) => {
 
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const SoftSkills = ({ animate, skills }) => {
   return (
-    <div
+    <motion.div
       className="items-center w-full gap-2 py-6 mx-auto md:flex px-6"
-      data-aos={animate}
+      variants={animateVariants[animate]}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
     >
       <div className="flex-none">
         <h1 className="mb-6 font-bold md:-rotate-90 md:mb-0 text-slate-800 dark:text-gray-100">
@@ -84,7 +104,7 @@ const SoftSkills = ({ animate, skills }) => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

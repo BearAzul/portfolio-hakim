@@ -1,5 +1,7 @@
 import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
+import { motion } from "framer-motion";
+
 
 const About = () => {
   const { about, certificates, projects } = useDataStore((state) => state);
@@ -19,7 +21,7 @@ const About = () => {
     },
     {
       title: "Sertifikat",
-      description: `${certificates.length}+` ,
+      description: `${certificates.length}+`,
       icon: "ri-verified-badge-line",
       link: "/certificates",
     }
@@ -41,22 +43,33 @@ const About = () => {
         </div>
         <div className="grid grid-cols-12 gap-3 md:gap-4">
           <div className="col-span-12 md:row-span-3 md:col-span-6">
-            <figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md">
+            <motion.figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <img
                 src={about?.imageUrl}
                 alt="image hakim"
                 className="block object-cover w-full h-full"
               />
-            </figure>
+            </motion.figure>
           </div>
           {services.map((service, index) => (
-            <div key={index} className="col-span-4 md:col-span-2">
-              <a href={service.link} className="cursor-pointer card" data-aos="fade-down" data-aos-delay={index * 100}>
+            <motion.div key={index}
+              className="col-span-4 md:col-span-2"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: index * 0.3 }}
+              viewport={{ once: true }}>
+              <a href={service.link} className="cursor-pointer card"
+              >
                 <i className={service.icon}></i>
                 <h1 className="text-center">{service.title}</h1>
                 <p>{service.description}</p>
               </a>
-            </div>
+            </motion.div>
           ))}
           <div className="col-span-12 md:col-span-6">
             <p className="text-sm text-justify text-slate-800 md:text-base dark:text-gray-100">
@@ -65,17 +78,19 @@ const About = () => {
           </div>
           <div className="col-span-12 md:col-span-6">
             <div className="flex items-center justify-between w-full">
-              <a
+              <motion.a
                 href={about?.cvUrl}
                 target="_blink"
-                data-aos="fade-up"
-
                 className="p-3 text-xs text-white !transition !duration-500 rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75"
                 aria-label="Download CV"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
               >
                 Download CV
                 <i className="ri-file-line ms-3"></i>
-              </a>
+              </motion.a>
               <ScrollDown link="#qualification" query="Pendidikan" />
             </div>
           </div>

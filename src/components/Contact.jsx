@@ -1,8 +1,8 @@
-
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useDataStore } from "../store/useDataStore.js";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const form = useRef();
@@ -52,6 +52,27 @@ const Contact = () => {
 
   const { profiles } = useDataStore((state) => state);
 
+  const socials = [
+    {
+      title: "Email",
+      icon: "ri-mail-line",
+      subtitle: "adyaabduaah@gmail.com",
+      link: `${profiles?.socials?.email}?subject=Hallo&body=Hi, I would like to get in touch.`,
+    },
+    {
+      title: "Instagram",
+      icon: "ri-instagram-line",
+      subtitle: "@az.izul_",
+      link: profiles?.socials?.instagram,
+    },
+    {
+      title: "WhatsApp",
+      icon: "ri-whatsapp-line",
+      subtitle: "+62 896 - 1374 - 2316",
+      link: profiles?.socials?.whatsapp,
+    }
+  ]
+
   return (
     <section
       id="contact"
@@ -62,68 +83,44 @@ const Contact = () => {
           <div className="w-full text-center col text-slate-800 dark:text-gray-100 md:w-3/4 lg:w-1/2">
             <h1 className="mb-4 font-semibold md:text-lg">Hubungi Saya</h1>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
-              <div className="card" data-aos="fade-down-right">
-                <i className="ri-mail-line"></i>
-                <h2>Email</h2>
-                <p>adyaabduah@gmail.com</p>
-                <a
-                  href={`${profiles?.socials?.email}?subject=Hallo&body=Hi, I would like to get in touch.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btnWrite"
-                  aria-label="contact"
+              {socials.map((social, index) => (
+                <motion.div
+                  key={index}
+                  className="card"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: index * 0.3 }}
+                  viewport={{ once: true }}
                 >
-                  <span>Write Me</span>
-                  <i className="ri-arrow-right-line"></i>
-                </a>
-              </div>
-              <div
-                className="card"
-                data-aos="fade-down-right"
-                data-aos-delay="300"
-              >
-                <i className="ri-instagram-line"></i>
-                <h2>Instagram</h2>
-                <p>@az.izul_</p>
-                <a
-                  href={profiles?.socials?.instagram}
-                  target="_blank"
-                  className="btnWrite"
-                  aria-label="contact"
-                >
-                  <span>Write Me</span>
-                  <i className="ri-arrow-right-line"></i>
-                </a>
-              </div>
-              <div
-                className="card"
-                data-aos="fade-down-right"
-                data-aos-delay="600"
-              >
-                <i className="ri-whatsapp-line"></i>
-                <h2>WhatsApp</h2>
-                <p>+62 896 - 1374 - 2316</p>
-                <a
-                  href={profiles?.socials?.whatsapp}
-                  target="_blank"
-                  className="btnWrite"
-                  aria-label="contact"
-                >
-                  <span>Write Me</span>
-                  <i className="ri-arrow-right-line"></i>
-                </a>
-              </div>
+                  <i className={social.icon}></i>
+                  <h2>{social.title}</h2>
+                  <p>{social.subtitle}</p>
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btnWrite"
+                    aria-label="contact"
+                  >
+                    <span>Write Me</span>
+                    <i className="ri-arrow-right-line"></i>
+                  </a>
+                </motion.div>
+              ))}
             </div>
           </div>
           <div className="w-full col">
             <h1 className="mb-4 font-semibold text-center md:text-lg text-slate-800 dark:text-gray-100">
               Tuliskan Projek Anda Inginkan
             </h1>
-            <form
+            <motion.form
               ref={form}
               onSubmit={onSubmit}
               className="form text-slate-800 dark:text-gray-100"
-              data-aos="fade-left"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              viewport={{ once: true }} 
             >
               <div className="group relative z-[1] w-full mb-4">
                 <label
@@ -177,7 +174,7 @@ const Contact = () => {
                   <i className="ri-send-plane-fill ms-3"></i>
                 </button>
               </div>
-            </form>
+            </motion.form>
           </div>
         </div>
       </div>
