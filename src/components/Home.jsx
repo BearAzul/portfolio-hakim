@@ -3,6 +3,7 @@ import IconSkills from "../common/IconAround.jsx";
 import { TypeAnimation } from "react-type-animation";
 import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
+import { Instagram, Linkedin, Github, Send } from "lucide-react"
 
 const AnimateType = () => {
   return (
@@ -31,15 +32,15 @@ const Home = () => {
   const socials = [
     {
       title: "Instagram",
-      icon: "ri-instagram-line",
+      icon: <Instagram />,
       link: profiles?.socials?.instagram,
     }, {
       title: "LinkedIn",
-      icon: "ri-linkedin-box-fill",
+      icon: <Linkedin />,
       link: profiles?.socials?.linkedin,
     }, {
       title: "Github",
-      icon: "ri-github-fill",
+      icon: <Github />,
       link: profiles?.socials?.github,
     }
   ]
@@ -53,7 +54,7 @@ const Home = () => {
         <div className="flex flex-col-reverse items-center px-6 md:px-4 md:flex-row gap-y-10">
           <div className="flex items-center w-full">
             <div className="w-1/6 md:w-1/4">
-              <div className="grid gap-2 text-lg md:gap-3 md:text-2xl text-slate-800 dark:text-gray-100">
+              <div className="grid gap-3 text-lg md:gap-3 md:text-2xl text-slate-800 dark:text-gray-100">
                 {socials.map((social, index) => (
                   <motion.a
                     href={social.link}
@@ -66,7 +67,7 @@ const Home = () => {
                     transition={{ duration: 0.6, delay: index * 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <i className={social.icon}></i>
+                    {social.icon}
                   </motion.a>
                 ))}
               </div>
@@ -92,7 +93,7 @@ const Home = () => {
                 className="flex items-center px-4 py-2 text-xs text-white transition-all bg-slate-800 dark:bg-teal-600 w-max rounded-xl md:text-sm hover:bg-teal-600 drop-shadow-md active:scale-95"
               >
                 Berkenalan?
-                <i className="ri-send-plane-fill ms-3"></i>
+                <Send className="size-4 ml-1" />
               </a>
             </motion.div>
           </div>
@@ -102,7 +103,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-            
+
             >
               <img
                 src={profiles?.profileImageUrl}

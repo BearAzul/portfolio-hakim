@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import "animate.css"
-import "remixicon/fonts/remixicon.css"
 import './index.css'
 import { HelmetProvider } from "react-helmet-async"
 import { pdfjs } from 'react-pdf';

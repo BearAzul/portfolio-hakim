@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import { CalendarCheck, Download } from "lucide-react";
 
 const CardRight = (props) => {
   return (
@@ -31,7 +32,7 @@ const CardRight = (props) => {
                 className="transition active:scale-90 hover:text-teal-600 hover:dark:text-teal-400 text-slate-800 dark:text-gray-100 "
                 aria-label="Download File"
               >
-                <i className="ri-download-2-line"></i>
+                <Download className="size-4" />
               </a>
             </div>
           </div>
@@ -40,8 +41,8 @@ const CardRight = (props) => {
           </p>
           <p className="mb-4 text-xs">{props.address}</p>
 
-          <p className="text-sm">
-            <i className="ri-calendar-line me-3"></i>
+          <p className="text-sm flex items-center gap-2">
+            <CalendarCheck className="size-4" />
             {props.years}
           </p>
         </motion.div>
@@ -78,7 +79,7 @@ const CardLeft = (props) => {
               className="transition active:scale-95 text-slate-800 dark:text-gray-100"
               aria-label="Download File"
             >
-              <i className="ri-download-2-line"></i>
+              <Download className="size-4" />
             </a>
           </div>
         </div>
@@ -86,8 +87,8 @@ const CardLeft = (props) => {
           {props.elemen}
         </p>
         <p className="mb-4 text-xs">{props.address}</p>
-        <p className="text-sm">
-          <i className="ri-calendar-line me-3"></i>
+        <p className="text-sm flex items-center gap-2">
+          <CalendarCheck className="size-4" />
           {props.years}
         </p>
       </motion.div>

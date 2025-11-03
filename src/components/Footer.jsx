@@ -1,23 +1,24 @@
 import { useDataStore } from "../store/useDataStore.js";
+import { Instagram, Github, Linkedin, MessageCircle } from "lucide-react"
 
 const Footer = () => {
   const { profiles } = useDataStore((state) => state);
 
   const socials = [
     {
-      icons: "ri-instagram-line",
+      icons: <Instagram />,
       link: profiles?.socials?.instagram,
     },
     {
-      icons: "ri-github-fill",
+      icons: <Github />,
       link: profiles?.socials?.github,
     },
     {
-      icons: "ri-linkedin-box-fill",
+      icons: <Linkedin />,
       link: profiles?.socials?.linkedin,
     },
     {
-      icons: "ri-whatsapp-line",
+      icons: <MessageCircle />,
       link: profiles?.socials?.whatsapp,
     },
   ]
@@ -46,7 +47,7 @@ const Footer = () => {
                   className="text-2xl text-gray-500"
                   aria-label="Lihat Sosial Media"
                 >
-                  <i className={social.icons}></i>
+                  {social.icons}
                 </a>
               </li>
             ))}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
 import Footer from "../components/Footer.jsx";
+import { CircleArrowLeft, FileDown } from "lucide-react"
 
 const ITEMS_PER_PAGE = 6;
 
@@ -50,8 +51,8 @@ const CertificatePage = () => {
       <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10 transition-all bg-gray-200 dark:bg-slate-800">
         <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="font-medium dark:text-gray-100 text-nowrap text-slate-800">
-              <i className="mr-2 text-lg ri-arrow-left-circle-line"></i>
+            <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800">
+              <CircleArrowLeft className="size-5 mr-2" />
               Kembali
             </Link>
 
@@ -82,7 +83,7 @@ const CertificatePage = () => {
                 <div className="flex items-start justify-between gap-4">
                   <h1 className="text-xs font-medium md:text-sm dark:text-gray-200 text-slate-800">{certificate.title}</h1>
                   <a href={certificate.fileUrl} target="_blink" className="font-normal text-gray-100 bg-teal-600 border-0 shadow-sm btn btn-sm btn-square">
-                    <i className="ri-file-download-line"></i>
+                    <FileDown className="size-4 md:size-5" />
                   </a>
                 </div>
                 <div className="overflow-hidden border-2 border-teal-600 rounded-lg shadow-md aspect-video">

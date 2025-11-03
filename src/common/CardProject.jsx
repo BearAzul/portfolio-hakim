@@ -1,8 +1,9 @@
 import { useId } from "react";
+import { ExternalLink, Github } from 'lucide-react';
 
 const CardProject = ({ project }) => {
   const zoomId = useId();
-  
+
   return (
     <div className="mb-6 border rounded-lg shadow-md border-slate-800 dark:border-accent break-inside-avoid">
       <input type="checkbox" id={zoomId} className="hidden peer" />
@@ -16,11 +17,11 @@ const CardProject = ({ project }) => {
         </div>
         <div className="relative col-span-12 p-3 space-y-2">
           <div className="absolute flex items-center justify-center gap-2 -translate-x-1/2 -top-4 left-1/2">
-            <a href={project.projectUrl} target="_blank" className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100">
-              <i className="text-sm ri-external-link-line lg:text-base"></i> Demo
+            <a href={project.projectUrl} target="_blank" className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100 flex items-center gap-1">
+              <ExternalLink className="size-4" /> Demo
             </a>
-            <a href={project.repoUrl} target="_blank" className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100">
-              <i className="text-sm ri-github-fill lg:text-base"></i> Source
+            <a href={project.repoUrl} target="_blank" className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100 flex items-center gap-1">
+              <Github className="size-4" /> Source
             </a>
           </div>
           <h1 className="mt-2 text-sm font-semibold lg:mt-3 dark:text-gray-100">{project.title}</h1>

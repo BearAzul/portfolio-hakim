@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
+import { MoveDown } from "lucide-react"
 
 const ScrollDown = (props) => {
   return (
@@ -17,7 +18,7 @@ const ScrollDown = (props) => {
       </div>
       <div className="flex items-center space-x-2">
         <p className="text-sm font-medium md:text-base">{props.query}</p>
-        <i className="text-xl ri-arrow-down-line"></i>
+        <MoveDown />
       </div>
     </motion.a>
   );

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { CircleCheck } from "lucide-react";
 
 const CardSkill = ({ skill }) => {
   if (skill.imageUrl) {
@@ -24,7 +25,7 @@ const CardSkill = ({ skill }) => {
   return (
     <div className="flex items-center gap-2 flex-none">
       <div className="flex-none text-teal-600">
-        <i className="ri-checkbox-circle-fill"></i>
+        <CircleCheck className="size-5" />
       </div>
       <div className="flex-auto">
         <h2 className="text-sm font-semibold lg:text-lg text-wrap">{skill.name}</h2>

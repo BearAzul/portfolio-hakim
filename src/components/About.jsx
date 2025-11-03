@@ -1,6 +1,7 @@
 import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
+import { History, Briefcase, FileBadge, FileUser } from "lucide-react"
 
 
 const About = () => {
@@ -10,19 +11,19 @@ const About = () => {
     {
       title: "Pengalaman",
       description: "2+ Tahun",
-      icon: "ri-award-fill",
+      icon: <History />,
       link: "#",
     },
     {
       title: "Selesai/Sukses",
       description: `${projects.length} Proyek`,
-      icon: "ri-suitcase-fill",
+      icon: <Briefcase />,
       link: "#project",
     },
     {
       title: "Sertifikat",
       description: `${certificates.length}+`,
-      icon: "ri-verified-badge-line",
+      icon: <FileBadge />,
       link: "/certificates",
     }
   ]
@@ -63,10 +64,10 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.3 }}
               viewport={{ once: true }}>
-              <a href={service.link} className="cursor-pointer card"
+              <a href={service.link} className="cursor-pointer card flex flex-col items-center"
               >
-                <i className={service.icon}></i>
-                <h1 className="text-center">{service.title}</h1>
+                {service.icon}
+                <h1 className="text-center mt-1">{service.title}</h1>
                 <p>{service.description}</p>
               </a>
             </motion.div>
@@ -81,7 +82,7 @@ const About = () => {
               <motion.a
                 href={about?.cvUrl}
                 target="_blink"
-                className="p-3 text-xs text-white !transition !duration-500 rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75"
+                className="p-3 text-xs text-white !transition !duration-500 rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75 flex items-center"
                 aria-label="Download CV"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +90,7 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 Download CV
-                <i className="ri-file-line ms-3"></i>
+                <FileUser className="size-5 ml-2" />
               </motion.a>
               <ScrollDown link="#qualification" query="Pendidikan" />
             </div>

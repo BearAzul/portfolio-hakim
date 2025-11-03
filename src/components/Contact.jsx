@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
+import { Mail, Instagram, MessageCircle, SendHorizontal } from "lucide-react"
 
 const Contact = () => {
   const form = useRef();
@@ -55,19 +56,19 @@ const Contact = () => {
   const socials = [
     {
       title: "Email",
-      icon: "ri-mail-line",
+      icon: <Mail />,
       subtitle: "adyaabduaah@gmail.com",
       link: `${profiles?.socials?.email}?subject=Hallo&body=Hi, I would like to get in touch.`,
     },
     {
       title: "Instagram",
-      icon: "ri-instagram-line",
+      icon: <Instagram />,
       subtitle: "@az.izul_",
       link: profiles?.socials?.instagram,
     },
     {
       title: "WhatsApp",
-      icon: "ri-whatsapp-line",
+      icon: <MessageCircle />,
       subtitle: "+62 896 - 1374 - 2316",
       link: profiles?.socials?.whatsapp,
     }
@@ -86,14 +87,14 @@ const Contact = () => {
               {socials.map((social, index) => (
                 <motion.div
                   key={index}
-                  className="card"
+                  className="card flex flex-col items-center"
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay: index * 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <i className={social.icon}></i>
-                  <h2>{social.title}</h2>
+                  {social.icon}
+                  <h2 className="mt-1">{social.title}</h2>
                   <p>{social.subtitle}</p>
                   <a
                     href={social.link}
@@ -120,7 +121,7 @@ const Contact = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              viewport={{ once: true }} 
+              viewport={{ once: true }}
             >
               <div className="group relative z-[1] w-full mb-4">
                 <label
@@ -168,10 +169,10 @@ const Contact = () => {
               <div className="mb-4">
                 <button
                   type="submit"
-                  className="p-3 text-sm text-white transition duration-500 shadow-md cursor-pointer dark:bg-teal-600 bg-slate-800 rounded-xl hover:bg-teal-600 active:scale-75"
+                  className="p-3 text-sm text-white transition duration-500 shadow-md cursor-pointer dark:bg-teal-600 bg-slate-800 rounded-xl hover:bg-teal-600 active:scale-75 flex items-center"
                 >
                   Send Message
-                  <i className="ri-send-plane-fill ms-3"></i>
+                  <SendHorizontal className="size-4 ml-2" />
                 </button>
               </div>
             </motion.form>
