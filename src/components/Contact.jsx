@@ -100,7 +100,7 @@ const Contact = () => {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btnWrite flex items-center"
+                    className="btnWrite"
                     aria-label="contact"
                   >
                     <span>Write Me</span>
