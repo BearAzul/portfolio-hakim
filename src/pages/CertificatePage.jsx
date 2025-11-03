@@ -69,10 +69,10 @@ const CertificatePage = () => {
           </div>
           <div className="flex flex-wrap items-center justify-center w-full gap-1 mb-6 md:gap-3 md:flex-nowrap">
             {filters.map((filter, index) => (
-              <button key={index} className={`text-sm text-teal-600 py-2 px-3 rounded-md dark:text-gray-200 shadow-sm cursor-pointer
+              <button key={index} className={`text-sm text-teal-600 py-2 px-3 rounded-md dark:text-gray-200 shadow-sm cursor-pointer hover:bg-teal-600 border border-teal-600 active:scale-85 transition-all
                 ${activeFilter === filter
                   ? 'bg-teal-600 !text-gray-200'
-                  : 'border border-teal-600'}`}
+                  : ''}`}
                 onClick={() => setActiveFilter(filter)}>{filter}</button>
             ))}
           </div>
