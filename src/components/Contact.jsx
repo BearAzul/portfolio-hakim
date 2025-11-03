@@ -104,7 +104,7 @@ const Contact = () => {
                     aria-label="contact"
                   >
                     <span>Write Me</span>
-                   <ArrowRight className="size-5 ml-1"/>
+                   <ArrowRight className="size-4"/>
                   </a>
                 </motion.div>
               ))}
