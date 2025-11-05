@@ -75,7 +75,7 @@ const CardLeft = (props) => {
             data-tip="Download Sertifikat"
           >
             <a
-              href={props.download} target="_blink"
+              href={props.download} target="_blank"
               className="transition active:scale-95 text-slate-800 dark:text-gray-100"
               aria-label="Download File"
             >
