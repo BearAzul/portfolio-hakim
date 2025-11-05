@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import DarkMode from "../common/DarkMode.jsx"
-import { motion } from "framer-motion"
+import DarkMode from "../common/DarkMode.jsx";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [showNav, setVisible] = useState(false);
@@ -120,9 +121,7 @@ const Header = () => {
               onClick={toggleNav}
               aria-label="Toggle Menu"
             >
-              <i
-                className={`${showNav ? "ri-close-line" : "ri-menu-line"}`}
-              ></i>
+{showNav ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
           </div>
         </div>

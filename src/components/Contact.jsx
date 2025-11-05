@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
-import { Mail, Instagram, MessageCircle, SendHorizontal } from "lucide-react"
+import { Mail, Instagram, MessageCircle, SendHorizontal, ArrowRight } from "lucide-react"
 
 const Contact = () => {
   const form = useRef();
@@ -104,7 +104,7 @@ const Contact = () => {
                     aria-label="contact"
                   >
                     <span>Write Me</span>
-                    <i className="ri-arrow-right-line"></i>
+                   <ArrowRight className="size-4"/>
                   </a>
                 </motion.div>
               ))}
