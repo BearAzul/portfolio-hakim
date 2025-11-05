@@ -1,0 +1,4 @@
+# https://akimdev.vercel.app
+User-agent: *
+
+Sitemap: https://akimdev.vercel.app/sitemap.xml
