@@ -3,7 +3,9 @@ Web Portfolio Hakim
 Build with:
 - React Js
 - Tailwind css
-- Daisy Ui
+- Daisy UI
 - Vite
 - Zustand
 - Axios
+- Framer Motion
+- Lucide
