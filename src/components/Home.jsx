@@ -5,29 +5,6 @@ import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Github, Send } from "lucide-react"
 
-const AnimateType = () => {
-  return (
-    <TypeAnimation
-      sequence={[
-        "Frontend Developer",
-        1000,
-        "Fresh Graduates",
-        1000,
-        "Teknik Informatika",
-        1000,
-        "I ❤️ Simple Code",
-        1000,
-        "Web Engineer",
-        1000,
-      ]}
-      wrapper="p"
-      speed={20}
-      style={{ fontSize: "1rem", display: "inline-block", background: "transparent" }}
-      repeat={Infinity}
-    />
-  );
-}
-
 const Home = () => {
   const { profiles } = useDataStore((state) => state);
 
@@ -46,6 +23,16 @@ const Home = () => {
       link: profiles?.socials?.github,
     }
   ]
+
+  const sequence = profiles?.typingTexts?.reduce((acc, text) => {
+    acc.push(text)
+    acc.push(1000)
+    return acc
+  }, [])
+
+  const finalSequence = (sequence && sequence.length > 0)
+    ? sequence
+    : ["Frontend Developer", 1000, "Teknik Informatika", 1000];
 
   return (
     <section
@@ -85,7 +72,13 @@ const Home = () => {
               </h1>
               <div className="flex items-center justify-start gap-2 mb-2 text-sm md:text-base">
                 <hr className="w-1/3 border-slate-800 dark:border-gray-100" />
-                <AnimateType />
+                <TypeAnimation
+                  sequence={finalSequence}
+                  wrapper="p"
+                  speed={20}
+                  style={{ fontSize: "1rem", display: "inline-block", background: "transparent" }}
+                  repeat={Infinity}
+                />
               </div>
               <p className="mb-5 text-sm text-justify md:text-base">
                 {profiles?.heroText}
