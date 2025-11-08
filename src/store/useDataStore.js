@@ -37,7 +37,7 @@ export const useDataStore = create((set, get) => ({
         about: aboutRes.data,
         educations: eduRes.data,
         experiences: expRes.data,
-        projects: projectRes.data.data,
+        projects: projectRes.data,
         skills: { hardSkills, softSkills },
         certificates: certificateRes.data,
         isLoading: false,
