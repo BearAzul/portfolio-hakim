@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
 import Footer from "../components/Footer.jsx";
-import { CircleArrowLeft, FileDown } from "lucide-react"
+import { CircleArrowLeft, FileDown, StepForward, StepBack } from "lucide-react"
 
 const ITEMS_PER_PAGE = 6;
 
@@ -98,7 +98,7 @@ const CertificatePage = () => {
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
             >
-              Sebelumnya
+              <StepBack className="size-4"  />
             </button>
 
             {Array.from({ length: totalPages }, (_, index) => {
@@ -122,7 +122,7 @@ const CertificatePage = () => {
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
             >
-              Selanjutnya
+              <StepForward className="size-4" />
             </button>
           </div>
         </div>
