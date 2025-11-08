@@ -98,7 +98,7 @@ const CertificatePage = () => {
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
             >
-              «
+              Sebelumnya
             </button>
 
             {Array.from({ length: totalPages }, (_, index) => {
@@ -122,7 +122,7 @@ const CertificatePage = () => {
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
             >
-              »
+              Selanjutnya
             </button>
           </div>
         </div>
