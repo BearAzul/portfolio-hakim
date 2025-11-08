@@ -11,11 +11,13 @@ const AnimateType = () => {
       sequence={[
         "Frontend Developer",
         1000,
-        "Mahasiswa USM",
+        "Fresh Graduates",
         1000,
         "Teknik Informatika",
         1000,
         "I ❤️ Simple Code",
+        1000,
+        "Web Engineer",
         1000,
       ]}
       wrapper="p"
