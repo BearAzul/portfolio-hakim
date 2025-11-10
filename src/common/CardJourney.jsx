@@ -28,7 +28,7 @@ const CardRight = (props) => {
             >
               <a
                 href={props.download}
-                target="_blink"
+                target="_blank"
                 className="transition active:scale-90 hover:text-teal-600 hover:dark:text-teal-400 text-slate-800 dark:text-gray-100 "
                 aria-label="Download File"
               >
