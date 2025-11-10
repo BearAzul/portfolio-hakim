@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
 
 const BtnTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,19 +26,27 @@ const BtnTop = () => {
     return () => {
       window.removeEventListener("scroll", handleTop);
     };
-  })
+  }, [])
 
 
   return (
-    <button
-      type="button"
-      onClick={btn}
-      className={`fixed z-10 text-white transition-transform duration-500 ease-[cubic-bezier(0.5, 1.6, 0.4, 0.7)] bottom-6 rounded-sm right-6 btn btn-sm btn-error btn-square ${isVisible ? "opacity-100 translate-y-0" : "translate-y-[100px]"
-        }`}
-      aria-label="Button Top"
-    >
-      <ChevronUp className="md:size-5 size-4" />
-    </button>
+    <AnimatePresence>
+      {isVisible &&
+        <motion.button
+          type="button"
+          onClick={btn}
+          className="fixed z-10 text-white bottom-6 rounded-sm right-6 btn btn-sm btn-error btn-square"
+          aria-label="Button Top"
+
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        >
+          <ChevronUp className="md:size-5 size-4" />
+        </motion.button>
+      }
+    </AnimatePresence>
   );
 }
 
