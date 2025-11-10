@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { CalendarCheck, Download } from "lucide-react";
+import { CalendarCheck } from "lucide-react";
 
 const CardRight = (props) => {
   return (
@@ -18,24 +18,11 @@ const CardRight = (props) => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <div className="flex items-start justify-between">
-            <h1 className="text-base font-semibold lg:text-lg">
-              {props.title}
-            </h1>
-            <div
-              className={`tooltip tooltip-left md:tooltip-top tooltip-primary dark:tooltip-accent ${props.display}`}
-              data-tip="Download Sertifikat"
-            >
-              <a
-                href={props.download}
-                target="_blank"
-                className="transition active:scale-90 hover:text-teal-600 hover:dark:text-teal-400 text-slate-800 dark:text-gray-100 "
-                aria-label="Download File"
-              >
-                <Download className="size-4" />
-              </a>
-            </div>
-          </div>
+
+          <h1 className="text-base font-semibold lg:text-lg">
+            {props.title}
+          </h1>
+
           <p className="text-sm text-teal-600 dark:text-teal-400">
             {props.elemen}
           </p>
@@ -66,23 +53,11 @@ const CardLeft = (props) => {
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <div className="flex items-start justify-between">
-          <h1 className="text-base font-semibold lg:text-lg">
-            {props.title}
-          </h1>
-          <div
-            className={`tooltip tooltip-left md:tooltip-top tooltip-primary dark:tooltip-accent ${props.display}`}
-            data-tip="Download Sertifikat"
-          >
-            <a
-              href={props.download} target="_blank"
-              className="transition active:scale-95 text-slate-800 dark:text-gray-100"
-              aria-label="Download File"
-            >
-              <Download className="size-4" />
-            </a>
-          </div>
-        </div>
+
+        <h1 className="text-base font-semibold lg:text-lg">
+          {props.title}
+        </h1>
+
         <p className="text-sm text-teal-600 dark:text-teal-400">
           {props.elemen}
         </p>
@@ -101,8 +76,6 @@ CardLeft.propTypes = {
   elemen: PropTypes.string,
   address: PropTypes.string.isRequired,
   years: PropTypes.string.isRequired,
-  display: PropTypes.string,
-  download: PropTypes.string,
 };
 
 CardRight.propTypes = {
@@ -110,8 +83,6 @@ CardRight.propTypes = {
   elemen: PropTypes.string,
   address: PropTypes.string.isRequired,
   years: PropTypes.string.isRequired,
-  display: PropTypes.string,
-  download: PropTypes.string,
 };
 
 export { CardRight, CardLeft };

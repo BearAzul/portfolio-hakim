@@ -59,7 +59,6 @@ const Qualifications = () => {
                   elemen={education.major}
                   address={education.location}
                   years={education.years}
-                  display="hidden"
                 />
               ) : (
                 <CardLeft
@@ -68,7 +67,6 @@ const Qualifications = () => {
                   elemen={education.major}
                   address={education.location}
                   years={education.years}
-                  display="hidden"
                 />
               )
             ))}
@@ -81,8 +79,6 @@ const Qualifications = () => {
                   title={experience.company}
                   elemen={experience.position}
                   address={experience.location}
-                  years={experience.years}
-                  display="hidden"
                 />
               ) : (
                 <CardRight
@@ -91,8 +87,6 @@ const Qualifications = () => {
                   elemen={experience.position}
                   address={experience.location}
                   years={experience.years}
-                  display={experience.downloadUrl ? "block" : "hidden"}
-                  download={experience.downloadUrl}
                 />
               )
             ))}
