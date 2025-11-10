@@ -68,6 +68,18 @@
       width: 100%;
     }
   }
+
+  .animate-follow-cursor{
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 9999;
+    background-color: #0d9488;
+    opacity: .5;
+    box-shadow: 0 0 25px 10px #0d9488;
+  }
 }
 
 
@@ -122,11 +134,11 @@ body {
     @apply w-full p-3 border border-gray-400 rounded-lg shadow-lg;
 
     i {
-      @apply text-base md:text-2xl ;
+      @apply text-base md:text-2xl;
     }
 
     h3 {
-      @apply text-sm font-semibold md:text-lg ;
+      @apply text-sm font-semibold md:text-lg;
     }
 
     p {

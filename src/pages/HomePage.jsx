@@ -5,8 +5,6 @@ import Qualification from "../components/Qualifications.jsx"
 import Skills from "../components/Skills.jsx"
 import Projects from "../components/Project.jsx"
 import Contact from "../components/Contact.jsx"
-import Footer from "../components/Footer.jsx"
-import BtnTop from "../common/BtnTop.jsx"
 
 const HomePage = () => {
   return (
@@ -18,8 +16,6 @@ const HomePage = () => {
       <Skills />
       <Projects />
       <Contact />
-      <Footer />
-      <BtnTop />
     </>
   )
 }

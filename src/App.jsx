@@ -7,6 +7,9 @@ import { RouterProvider } from "react-router/dom";
 
 import HomePage from "./pages/HomePage.jsx";
 import CertificatePage from "./pages/CertificatePage.jsx";
+import Footer from "./components/Footer.jsx";
+import BtnTop from "./common/BtnTop.jsx";
+import CustomCursor from "./common/CustomCursor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -62,7 +65,10 @@ const App = () => {
 
         <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/103102235?v=4" type="image/x-icon" />
       </Helmet>
+      <CustomCursor />
       <RouterProvider router={router} />
+      <Footer />
+      <BtnTop />
     </>
   );
 };
