@@ -79,6 +79,7 @@ const Qualifications = () => {
                   title={experience.company}
                   elemen={experience.position}
                   address={experience.location}
+                  years={experience.years}
                 />
               ) : (
                 <CardRight
