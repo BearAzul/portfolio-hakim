@@ -59,7 +59,8 @@ const About = () => {
           </div>
           {services.map((service, index) => (
             <motion.div key={index}
-              className="col-span-4 md:col-span-2"
+              className="col-span-4 md:col-span-2 lg:tooltip tooltip-success"
+              data-tip="click me"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.3 }}
