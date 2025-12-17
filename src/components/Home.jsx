@@ -71,7 +71,7 @@ const Home = () => {
                 Adya Abdu Azizul Hakim 🙌
               </h1>
               <div className="flex items-center justify-start gap-2 mb-2 text-sm md:text-base">
-                <hr className="w-1/4 sm:w-1/3 border-slate-800 dark:border-gray-100" />
+                <hr className="w-1/7 sm:w-1/3 border-slate-800 dark:border-gray-100" />
                 <TypeAnimation
                   sequence={finalSequence}
                   wrapper="p"
