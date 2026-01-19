@@ -5,8 +5,6 @@ import { RouterProvider } from "react-router/dom";
 import HomePage from "./pages/HomePage.jsx";
 import CertificatePage from "./pages/CertificatePage.jsx";
 import Layouts from "./layouts/Layouts.jsx";
-import Footer from "./components/Footer.jsx";
-import BtnTop from "./common/BtnTop.jsx";
 import CustomCursor from "./common/CustomCursor.jsx";
 
 const router = createBrowserRouter([
