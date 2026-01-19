@@ -1,14 +1,17 @@
-import { Link } from "react-router"
+import { Link, useSearchParams } from "react-router"
 import { useDataStore } from "../store/useDataStore.js";
 import { useState, useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
 import { CircleArrowLeft, FileDown, StepForward, StepBack } from "lucide-react"
-
-const ITEMS_PER_PAGE = 6;
+import Loading from "../common/Loading.jsx";
 
 const CertificatePage = () => {
-  const { certificates } = useDataStore((state) => state);
+  const { certificates, totalPages, totalData, fetchCertificates} = useDataStore();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const currentPage = parseInt(searchParams.get("page")) || 1;
+  const activeFilter = searchParams.get("level") || "Semua";
 
   const filters = [
     "Semua",
@@ -19,30 +22,18 @@ const CertificatePage = () => {
     "Internasional"
   ]
 
-  const [activeFilter, setActiveFilter] = useState("Semua");
-  const [currentPage, setCurrentPage] = useState(1);
-
   useEffect(() => {
-    setCurrentPage(1);
-  }, [activeFilter]);
+    fetchCertificates(currentPage, activeFilter);
+  }, [currentPage, activeFilter, fetchCertificates]);
 
-  const filteredCertificates = activeFilter === "Semua"
-    ? certificates
-    : certificates.filter(cert => cert.level === activeFilter);
-
-  const totalPages = Math.ceil(filteredCertificates.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-
-  const currentCertificates = filteredCertificates.slice(startIndex, endIndex);
+  const handleFilterChange = (filter) => {
+    if (filter === activeFilter) return;
+    setSearchParams({ page: 1, level: filter });
+  };
 
   const handlePageChange = (page) => {
-    if (page < 1) {
-      page = 1;
-    } else if (page > totalPages) {
-      page = totalPages;
-    }
-    setCurrentPage(page);
+    if (page < 1 || page > totalPages) return;
+    setSearchParams({ page, level: activeFilter });
   };
 
   return (
@@ -56,7 +47,7 @@ const CertificatePage = () => {
 
           <DarkMode display="hidden" />
 
-          <span className="text-gray-100 bg-teal-600 border-0 badge">{certificates.length}</span>
+          <span className="text-gray-100 bg-teal-600 border-0 badge">{totalData}</span>
         </div>
         <div className="mt-8 mb-4 text-center title">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
@@ -72,11 +63,11 @@ const CertificatePage = () => {
                 ${activeFilter === filter
                 ? 'bg-teal-600 !text-gray-200'
                 : ''}`}
-              onClick={() => setActiveFilter(filter)}>{filter}</button>
+              onClick={() => handleFilterChange(filter)}>{filter}</button>
           ))}
         </div>
         <div className="grid grid-cols-12 gap-6">
-          {currentCertificates.map((certificate) => (
+          {certificates.map((certificate) => (
             <div className="col-span-12 space-y-2 md:col-span-6 lg:col-span-4" key={certificate._id}>
               <div className="flex items-start justify-between gap-4">
                 <h1 className="text-xs font-medium md:text-sm dark:text-gray-200 text-slate-800">{certificate.title}</h1>
@@ -90,8 +81,11 @@ const CertificatePage = () => {
             </div>
           ))}
         </div>
+
+
         <div className="flex items-center justify-center mt-8 join">
           <button
+            type="button"
             className="join-item btn btn-sm btn-outline btn-success"
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
@@ -99,12 +93,13 @@ const CertificatePage = () => {
             <StepBack className="size-4" />
           </button>
 
-          {Array.from({ length: totalPages }, (_, index) => {
+          {[...Array(totalPages)].map((_, index) => {
             const pageNumber = index + 1;
             return (
               <button
+                type="button"
                 key={pageNumber}
-                className={`join-item btn btn-outline btn-sm btn-success ${pageNumber === currentPage
+                className={`join-item btn btn-outline btn-sm btn-success ${currentPage === pageNumber
                   ? "btn-active text-primary-content dark:text-neutral"
                   : "text-neutral dark:text-primary-content"
                   }`}
@@ -116,6 +111,7 @@ const CertificatePage = () => {
           })}
 
           <button
+            type="button"
             className="join-item btn btn-outline btn-sm btn-success"
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
@@ -123,6 +119,7 @@ const CertificatePage = () => {
             <StepForward className="size-4" />
           </button>
         </div>
+
       </div>
     </section>
   )

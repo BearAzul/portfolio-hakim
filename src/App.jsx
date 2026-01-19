@@ -1,12 +1,10 @@
 import { Helmet } from "react-helmet-async"
-import { useEffect } from "react";
-import Loading from "./common/Loading.jsx";
-import { useDataStore } from "./store/useDataStore.js";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
 import HomePage from "./pages/HomePage.jsx";
 import CertificatePage from "./pages/CertificatePage.jsx";
+import Layouts from "./layouts/Layouts.jsx";
 import Footer from "./components/Footer.jsx";
 import BtnTop from "./common/BtnTop.jsx";
 import CustomCursor from "./common/CustomCursor.jsx";
@@ -14,30 +12,21 @@ import CustomCursor from "./common/CustomCursor.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Layouts />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />
+      },
+      {
+        path: "/certificates",
+        element: <CertificatePage />
+      }
+    ]
   },
-  {
-    path: "/certificates",
-    element: <CertificatePage />
-  },
-  {
-    path: "*",
-    element: <HomePage />
-  }
 ]);
 
 const App = () => {
-  const { isLoading, fetchAllData } = useDataStore((state) => state);
-
-  useEffect(() => {
-    fetchAllData();
-  }, [fetchAllData]);
-
-  if (isLoading) {
-    return <Loading />;
-  }
-
-
   return (
     <>
       <Helmet>
@@ -67,8 +56,6 @@ const App = () => {
       </Helmet>
       <CustomCursor />
       <RouterProvider router={router} />
-      <Footer />
-      <BtnTop />
     </>
   );
 };

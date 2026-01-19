@@ -5,7 +5,7 @@ import { History, Briefcase, FileBadge, FileUser } from "lucide-react"
 
 
 const About = () => {
-  const { about, certificates, projects } = useDataStore((state) => state);
+  const { about, totalData, projects } = useDataStore((state) => state);
 
   const services = [
     {
@@ -22,7 +22,7 @@ const About = () => {
     },
     {
       title: "Sertifikat",
-      description: `${certificates.length}+`,
+      description: `${totalData}+`,
       icon: <FileBadge />,
       link: "/certificates",
     }

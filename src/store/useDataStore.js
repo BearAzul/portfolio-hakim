@@ -12,12 +12,15 @@ export const useDataStore = create((set, get) => ({
     softSkills: [],
   },
   certificates: [],
-  isLoading: true,
+  totalPages: 1,
+  totalData: 0,
+  isLoading: false,
+  isCertLoading: false,
 
   fetchAllData: async () => {
     set({ isLoading: true });
     try {
-      const [profileRes, aboutRes, eduRes, expRes, projectRes, skillRes, certificateRes] =
+      const [profileRes, aboutRes, eduRes, expRes, projectRes, skillRes] =
         await Promise.all([
           apiClient.get("/profile"),
           apiClient.get("/about"),
@@ -25,7 +28,6 @@ export const useDataStore = create((set, get) => ({
           apiClient.get("/experiences"),
           apiClient.get("/projects"),
           apiClient.get("/skills"),
-          apiClient.get("/certificates"),
         ]);
 
       const allSkills = skillRes.data;
@@ -39,13 +41,31 @@ export const useDataStore = create((set, get) => ({
         experiences: expRes.data,
         projects: projectRes.data,
         skills: { hardSkills, softSkills },
-        certificates: certificateRes.data,
-        isLoading: false,
       });
     } catch (error) {
-      console.error("Error fetching all data:", error);
+      console.error("Error fetching all data: ", error);
     } finally {
       set({ isLoading: false });
+    }
+  },
+
+  fetchCertificates: async (page = 1, level = "Semua") => {
+    set({ isCertLoading: true });
+    try {
+      const params = { page };
+      if (level !== "Semua") params.level = level;
+
+      const response = await apiClient.get("/certificates", { params });
+
+      set({
+        certificates: response.data.data,
+        totalPages: response.data.pagination.totalPages,
+        totalData: response.data.pagination.totalData,
+      });
+    } catch (error) {
+      console.error("Error fetching certificates: ", error);
+    } finally {
+      set({ isCertLoading: false });
     }
   },
 
@@ -55,7 +75,7 @@ export const useDataStore = create((set, get) => ({
       const response = await apiClient.get("/projects");
       set({ projects: response.data });
     } catch (error) {
-      console.error("Error refreshing projects:", error);
+      console.error("Error refreshing projects: ", error);
     } finally {
       set({ isLoading: false });
     }
