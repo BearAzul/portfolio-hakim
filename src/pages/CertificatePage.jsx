@@ -1,10 +1,9 @@
 import { Link, useSearchParams } from "react-router"
 import { useDataStore } from "../store/useDataStore.js";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
 import { CircleArrowLeft, FileDown, StepForward, StepBack } from "lucide-react"
-import Loading from "../common/Loading.jsx";
 
 const CertificatePage = () => {
   const { certificates, totalPages, totalData, fetchCertificates} = useDataStore();
