@@ -48,7 +48,7 @@ const CertificatePage = () => {
 
           <span className="text-gray-100 bg-teal-600 border-0 badge">{totalData}</span>
         </div>
-        <div className="mt-8 mb-4 text-center title">
+        <div className="mt-8 mb-4 text-center">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
             Sertifikat
           </h1>

@@ -4,13 +4,15 @@ import { RouterProvider } from "react-router/dom";
 
 import HomePage from "./pages/HomePage.jsx";
 import CertificatePage from "./pages/CertificatePage.jsx";
-import Layouts from "./layouts/Layouts.jsx";
+import Layout from "./layout/Layout.jsx";
 import CustomCursor from "./common/CustomCursor.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layouts />,
+    element: <Layout />,
+    errorElement: <NotFoundPage />,
     children: [
       {
         index: true,
