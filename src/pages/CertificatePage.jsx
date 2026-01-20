@@ -4,9 +4,11 @@ import { useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
 import { CircleArrowLeft, FileDown, StepForward, StepBack } from "lucide-react"
+import { motion } from "framer-motion"
+import CountUp from "../common/CountUp.jsx";
 
 const CertificatePage = () => {
-  const { certificates, totalPages, totalData, fetchCertificates} = useDataStore();
+  const { certificates, totalPages, totalData, fetchCertificates } = useDataStore();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const currentPage = parseInt(searchParams.get("page")) || 1;
@@ -46,7 +48,9 @@ const CertificatePage = () => {
 
           <DarkMode display="hidden" />
 
-          <span className="text-gray-100 bg-teal-600 border-0 badge">{totalData}</span>
+          <span className="text-gray-100 bg-teal-600 border-0 badge">
+            <CountUp to={totalData} />
+          </span>
         </div>
         <div className="mt-8 mb-4 text-center">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
@@ -62,12 +66,20 @@ const CertificatePage = () => {
                 ${activeFilter === filter
                 ? 'bg-teal-600 !text-gray-200'
                 : ''}`}
-              onClick={() => handleFilterChange(filter)}>{filter}</button>
+              onClick={() => handleFilterChange(filter)}
+             
+            
+            >{filter}</button>
           ))}
         </div>
         <div className="grid grid-cols-12 gap-6">
-          {certificates.map((certificate) => (
-            <div className="col-span-12 space-y-2 md:col-span-6 lg:col-span-4" key={certificate._id}>
+          {certificates.map((certificate, index) => (
+            <motion.div className="col-span-12 space-y-2 md:col-span-6 lg:col-span-4" key={certificate._id}
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25, delay: index * 0.2 }}
+            >
               <div className="flex items-start justify-between gap-4">
                 <h1 className="text-xs font-medium md:text-sm dark:text-gray-200 text-slate-800">{certificate.title}</h1>
                 <a href={certificate.fileUrl} target="_blink" className="font-normal text-gray-100 bg-teal-600 border-0 shadow-sm btn btn-sm btn-square">
@@ -77,7 +89,7 @@ const CertificatePage = () => {
               <div className="overflow-hidden border-2 border-teal-600 rounded-lg shadow-md aspect-video">
                 <PdfThumbnail fileUrl={certificate.fileUrl} />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
