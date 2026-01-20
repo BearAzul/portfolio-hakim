@@ -62,14 +62,16 @@ const CertificatePage = () => {
         </div>
         <div className="flex flex-wrap items-center justify-center w-full gap-1 mb-6 md:gap-3 md:flex-nowrap">
           {filters.map((filter, index) => (
-            <button key={index} className={`text-sm text-teal-600 py-2 px-3 rounded-md dark:text-gray-200 shadow-sm cursor-pointer hover:bg-teal-600 border border-teal-600 active:scale-85 transition-all hover:text-gray-200 text-nowrap
+            <motion.button key={index} className={`text-sm text-teal-600 py-2 px-3 rounded-md dark:text-gray-200 shadow-sm cursor-pointer hover:bg-teal-600 border border-teal-600 hover:text-gray-200 text-nowrap
                 ${activeFilter === filter
                 ? 'bg-teal-600 !text-gray-200'
                 : ''}`}
               onClick={() => handleFilterChange(filter)}
-             
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.9, y: 1 }}
+              transition={{type: "spring", stiffness: 300}}
             
-            >{filter}</button>
+            >{filter}</motion.button>
           ))}
         </div>
         <div className="grid grid-cols-12 gap-6">

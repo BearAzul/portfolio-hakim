@@ -56,7 +56,7 @@ const Qualifications = () => {
                 <CardRight
                   key={education._id}
                   title={education.school}
-                  elemen={education.major}
+                  element={education.major}
                   address={education.location}
                   years={education.years}
                 />
@@ -64,7 +64,7 @@ const Qualifications = () => {
                 <CardLeft
                   key={education._id}
                   title={education.school}
-                  elemen={education.major}
+                  element={education.major}
                   address={education.location}
                   years={education.years}
                 />
@@ -77,7 +77,7 @@ const Qualifications = () => {
                 <CardLeft
                   key={experience._id}
                   title={experience.company}
-                  elemen={experience.position}
+                  element={experience.position}
                   address={experience.location}
                   years={experience.years}
                 />
@@ -85,7 +85,7 @@ const Qualifications = () => {
                 <CardRight
                   key={experience._id}
                   title={experience.company}
-                  elemen={experience.position}
+                  element={experience.position}
                   address={experience.location}
                   years={experience.years}
                 />

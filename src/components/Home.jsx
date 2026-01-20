@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="scroll-section transition-all w-full lg:min-h-screen min-h-[auto] bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:py-0 py-20 overflow-hidden"
+      className="scroll-section w-full lg:min-h-screen min-h-[auto] bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:py-0 py-20 overflow-hidden"
     >
       <div className="container mx-auto md:max-w-2xl lg:max-w-5xl">
         <div className="flex flex-col-reverse items-center px-6 md:px-4 md:flex-row gap-y-10">
@@ -49,11 +49,12 @@ const Home = () => {
                     href={social.link}
                     key={index}
                     target="_blank"
-                    className="transition-all hover:text-teal-600 hover:drop-shadow-md w-max"
+                    className="hover:text-teal-600 hover:drop-shadow-md w-max"
                     aria-label={`Lihat ${social.title}`}
-                    initial={{ opacity: 0, y: -30, x: -30 }}
-                    whileInView={{ opacity: 1, y: 0, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.3 }}
+                    initial={{ opacity: 0, y: -50, x: -50 }}
+                    animate={{ opacity: 1, y: 0, x: 0 }}
+                    exit={{ opacity: 1, y: 0, x: 0 }}
+                    transition={{ type: "spring", stiffness: 300, delay: index * 0.3 }}
                     viewport={{ once: true }}
                   >
                     {social.icon}
@@ -83,13 +84,16 @@ const Home = () => {
               <p className="mb-5 text-sm text-justify md:text-base">
                 {profiles?.heroText}
               </p>
-              <a
+              <motion.a
                 href="#about"
-                className="flex items-center px-4 py-2 text-xs text-white transition-all bg-slate-800 dark:bg-teal-600 w-max rounded-xl md:text-sm hover:bg-teal-600 drop-shadow-md active:scale-95"
-              >
+                className="flex items-center px-4 py-2 text-xs text-white bg-slate-800 dark:bg-teal-600 w-max rounded-xl md:text-sm hover:bg-teal-600 drop-shadow-md"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.9, y: 1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              > 
                 Berkenalan?
                 <Send className="size-4 ml-1" />
-              </a>
+              </motion.a>
             </motion.div>
           </div>
           <div className="relative w-full col">

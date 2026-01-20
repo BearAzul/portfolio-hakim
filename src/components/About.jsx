@@ -45,9 +45,9 @@ const About = () => {
         <div className="grid grid-cols-12 gap-3 md:gap-4">
           <div className="col-span-12 md:row-span-3 md:col-span-6">
             <motion.figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
+              transition={{ type: "spring", stiffness: 300 }}
               viewport={{ once: true }}
             >
               <img
@@ -63,8 +63,9 @@ const About = () => {
               data-tip="click me"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: index * 0.3 }}
-              viewport={{ once: true }}>
+              transition={{ delay: index * 0.3, type: "spring", stiffness: 300 }}
+              viewport={{ once: true }}
+            >
               <a href={service.link} className="cursor-pointer card flex flex-col items-center"
               >
                 {service.icon}
@@ -83,11 +84,13 @@ const About = () => {
               <motion.a
                 href={about?.cvUrl}
                 target="_blink"
-                className="p-3 text-xs text-white !transition !duration-500 rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm active:scale-75 flex items-center"
+                className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm flex items-center"
                 aria-label="Download CV"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.9, y: 1 }}
                 viewport={{ once: true }}
               >
                 Download CV

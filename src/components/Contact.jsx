@@ -167,13 +167,16 @@ const Contact = () => {
                 ></textarea>
               </div>
               <div className="mb-4">
-                <button
+                <motion.button
                   type="submit"
-                  className="p-3 text-sm text-white transition duration-500 shadow-md cursor-pointer dark:bg-teal-600 bg-slate-800 rounded-xl hover:bg-teal-600 active:scale-75 flex items-center"
+                  className="p-3 text-sm text-white shadow-md cursor-pointer dark:bg-teal-600 bg-slate-800 rounded-xl hover:bg-teal-600 flex items-center"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.9, y: 1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
                   Send Message
                   <SendHorizontal className="size-4 ml-2" />
-                </button>
+                </motion.button>
               </div>
             </motion.form>
           </div>
