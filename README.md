@@ -13,52 +13,65 @@ Build with:
 Tree:
 ```
 📦 akim-portfolio
+┃
 ├── 📁 .vscode
-│   └── ⚙️ settings.json
+┃   └── ⚙️ settings.json
 ├── 📁 public
-│   ├── 🤖 robots.txt
-│   └── 🌐 sitemap.xml
+┃   ├── 🤖 robots.txt
+┃   └── 🌐 sitemap.xml
 ├── 📁 src
-│   ├── 📁 assets
-│   │   ├── 📁 animations
-│   │   │   ├── 🎬 error.json
-│   │   │   ├── 🎬 error.lottie
-│   │   │   ├── 🎬 Loading_Bar.json
-│   │   │   └── 🎬 lolcat.json
-│   │   └── 📁 img
-│   │       ├── 🖼️ Aplikasi_Toko_Mebel.jpg
-│   │       ├── 🖼️ img_profil_1.png
-│   │       ├── 🖼️ Web_PPDB_RA.png
-│   │       └── 🛠️ [icons: react, node, tailwind, zod, etc.]
-│   ├── 📁 common
-│   │   ├── 📁 MySkills
-│   │   │   ├── 🧩 CardSkill.jsx
-│   │   │   └── 🧩 MySkills.jsx
-│   │   ├── 🖱️ CustomCursor.jsx
-│   │   ├── 🔢 CountUp.jsx
-│   │   ├── 🌓 DarkMode.jsx
-│   │   ├── 📄 PdfThumbnail.jsx
-│   │   └── ⏳ Loading.jsx
-│   ├── 📁 components
-│   │   ├── 👤 About.jsx
-│   │   ├── 📞 Contact.jsx
-│   │   ├── 🚀 Project.jsx
-│   │   └── 🎓 Qualifications.jsx
-│   ├── 📁 layout
-│   │   └── 🏗️ Layout.jsx
-│   ├── 📁 pages
-│   │   ├── 📜 CertificatePage.jsx
-│   │   ├── 🏠 HomePage.jsx
-│   │   └── 🚫 NotFoundPage.jsx
-│   ├── 📁 store
-│   │   └── 🧠 useDataStore.js
-│   ├── 🌐 api.js
-│   ├── ⚛️ App.jsx
-│   ├── 🎨 index.css
-│   └── ⚡ main.jsx
+┃   ├── 📁 assets
+┃   │   ├── 📁 animations
+┃   │   │   ├── 🎬 error.json
+┃   │   │   ├── 🎬 error.lottie
+┃   │   │   ├── 🎬 Loading_Bar.json
+┃   │   │   └── 🎬 lolcat.json
+┃   │   └── 📁 img
+┃   ├── 📁 common
+┃   │   ├── 📁 MySkills
+┃   │   │   ├── 🧩 CardSkill.jsx
+┃   │   │   └── 🧩 MySkills.jsx
+┃   │   ├── 👆 BtnTop.jsx
+┃   │   ├── 🗺️ CardJourney.jsx
+┃   │   ├── 💻 CardProject.jsx
+┃   │   ├── 🔢 CountUp.jsx
+┃   │   ├── 🖱️ CustomCursor.jsx
+┃   │   ├── 🌓 DarkMode.jsx
+┃   │   ├── 🌀 IconAround.jsx
+┃   │   ├── ⏳ Loading.jsx
+┃   │   ├── 📄 PdfThumbnail.jsx
+┃   │   └── 🖱️ ScrollDown.jsx
+┃   ├── 📁 components
+┃   │   ├── 👤 About.jsx
+┃   │   ├── 📞 Contact.jsx
+┃   │   ├── 🐾 Footer.jsx
+┃   │   ├── 🏠 Home.jsx
+┃   │   ├── 🧭 Navbar.jsx
+┃   │   ├── 🚀 Project.jsx
+┃   │   ├── 🎓 Qualifications.jsx
+┃   │   └── 🛠️ Skills.jsx
+┃   ├── 📁 layout
+┃   │   └── 🏗️ Layout.jsx
+┃   ├── 📁 pages
+┃   │   ├── 📜 CertificatePage.jsx
+┃   │   ├── 🏠 HomePage.jsx
+┃   │   └── 🚫 NotFoundPage.jsx
+┃   │
+┃   ├── 📁 store
+┃   │   └── 🧠 useDataStore.js
+┃   ├── 🌐 api.js
+┃   ├── ⚛️ App.jsx
+┃   ├── 🎨 index.css
+┃   └── ⚡ main.jsx
+├── 📥 .dockerignore
+├── 🧹 .eslintrc.cjs
+├── 🚫 .gitignore
 ├── 🐳 Dockerfile
-├── ⚙️ vite.config.js
-├── 📝 package.json
-├── 📝 vercel.json
-└── 📖 README.md
+├── 🖼️ index.html
+├── 📜 LICENSE
+├── 📦 package-lock.json
+├── 📦 package.json
+├── 📖 README.md
+├── ☁️ vercel.json
+└── ⚙️ vite.config.js
 ```
