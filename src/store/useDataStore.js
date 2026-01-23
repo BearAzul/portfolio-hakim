@@ -49,11 +49,12 @@ export const useDataStore = create((set, get) => ({
     }
   },
 
-  fetchCertificates: async (page = 1, level = "Semua") => {
+  fetchCertificates: async (page = 1, level = "Semua", search="") => {
     set({ isCertLoading: true });
     try {
       const params = { page };
       if (level !== "Semua") params.level = level;
+      if (search) params.search = search;
 
       const response = await apiClient.get("/certificates", { params });
 
