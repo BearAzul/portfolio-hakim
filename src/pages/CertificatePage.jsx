@@ -79,7 +79,7 @@ const CertificatePage = () => {
         <div className="mb-6 sm:mb-8 max-w-3xl mx-auto px-1">
           <label htmlFor="search" className="input w-full outline-none border border-teal-600 bg-transparent rounded-md shadow-md">
             <Search className="text-gray-500 dark:text-gray-200" />
-            <input type="text" placeholder="Cari sertifikat ..." name="search" id="search"
+            <input type="search" placeholder="Cari sertifikat ..." name="search" id="search"
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
