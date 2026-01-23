@@ -2,6 +2,7 @@ Web Portfolio Hakim
 
 Build with:
 - React Js
+- React Router
 - Tailwind css
 - Daisy UI
 - Vite
