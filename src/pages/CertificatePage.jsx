@@ -47,7 +47,7 @@ const CertificatePage = () => {
             Kembali
           </Link>
 
-          <DarkMode display="flex" />
+          <DarkMode display="hidden" />
 
           <span className="text-gray-100 bg-teal-600 border-0 badge">
             <CountUp to={totalData} />
