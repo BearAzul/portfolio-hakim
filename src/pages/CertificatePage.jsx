@@ -18,9 +18,9 @@ const CertificatePage = () => {
   const filters = [
     "Semua",
     "Universitas",
-    "Online Course",
-    "Bootcamp",
-    "National",
+    "Kelas Online",
+    "MSIB",
+    "Nasional",
     "Internasional"
   ]
 
