@@ -9,13 +9,13 @@ const About = () => {
 
   const services = [
     {
-      title: "Pengalaman",
+      title: "Pemahaman",
       description: "2+ Tahun",
       icon: <History />,
       link: "#",
     },
     {
-      title: "Selesai/Sukses",
+      title: "Proyek Selesai",
       description: `${projects.length} Proyek`,
       icon: <Briefcase />,
       link: "#project",
@@ -69,7 +69,7 @@ const About = () => {
               <a href={service.link} className="cursor-pointer card flex flex-col items-center"
               >
                 {service.icon}
-                <h1 className="text-center mt-1">{service.title}</h1>
+                <h1 className="text-center mt-1 text-nowrap">{service.title}</h1>
                 <p>{service.description}</p>
               </a>
             </motion.div>
