@@ -5,6 +5,8 @@ import Footer from '../components/Footer.jsx';
 import { useDataStore } from '../store/useDataStore.js';
 import { useEffect } from 'react';
 import BtnTop from '../common/BtnTop.jsx';
+import Support from '../components/Support.jsx';
+import QRCode from '../common/QRCode.jsx';
 
 const Layout = () => {
   const { isLoading, fetchAllData, fetchCertificates } = useDataStore((state) => state);
@@ -20,6 +22,8 @@ const Layout = () => {
     <>
       <Outlet />
       <Footer />
+      <Support />
+      <QRCode />
       <BtnTop />
     </>
   )
