@@ -3,7 +3,7 @@ import { useDataStore } from "../store/useDataStore.js";
 import { useEffect, useState } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
-import { CircleArrowLeft, FileDown, StepForward, StepBack, Search } from "lucide-react"
+import { CircleArrowLeft, Dot, StepForward, StepBack, Search } from "lucide-react"
 import { motion } from "framer-motion"
 import CountUp from "../common/CountUp.jsx";
 
@@ -37,6 +37,11 @@ const CertificatePage = () => {
     if (page < 1 || page > totalPages) return;
     setSearchParams({ page, level: activeFilter });
   };
+
+  const formatToDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: '2-digit' };
+    return new Date(dateString).toLocaleDateString('id-ID', options);
+  }
 
   return (
     <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10 transition-all bg-gray-200 dark:bg-slate-800">
@@ -88,7 +93,7 @@ const CertificatePage = () => {
             />
           </label>
         </div>
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-12 gap-4">
           {certificates.length === 0 ? (
             <div className="col-span-12 text-center py-10">
               <p className="text-slate-800 dark:text-gray-200">Sertifikat tidak ditemukan.</p>
@@ -100,15 +105,33 @@ const CertificatePage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25, delay: index * 0.2 }}
+
               >
-                <div className="flex items-start justify-between gap-4">
-                  <h1 className="text-xs font-medium md:text-sm dark:text-gray-200 text-slate-800">{certificate.title}</h1>
-                  <a href={certificate.fileUrl} target="_blink" className="font-normal text-gray-100 bg-teal-600 border-0 shadow-sm btn btn-sm btn-square">
-                    <FileDown className="size-4 md:size-5" />
-                  </a>
-                </div>
-                <div className="overflow-hidden border-2 border-teal-600 rounded-lg shadow-md aspect-video">
-                  <PdfThumbnail fileUrl={certificate.fileUrl} />
+                <div className="flex flex-col pt-3 px-3 rounded-lg border border-teal-600 h-full shadow-lg dark:bg-slate-900/60 bg-gray-100/60">
+                  <div className="overflow-hidden aspect-[3/2] rounded-lg border border-teal-600">
+                    <PdfThumbnail fileUrl={certificate.fileUrl} />
+                  </div>
+                  <h1 className="text-sm font-semibold dark:text-gray-100 my-2 leading-tight">{certificate.title}</h1>
+                  <div className="flex flex-col gap-3 mt-auto">
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs mt-auto">{certificate.level}</p>
+                      <p className="text-xs font-semibold text-secondary">{certificate.company}</p>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-teal-600">
+                      <p className="text-xs text-gray-500">{formatToDate(certificate.publishDate)}</p>
+                      <a href={!certificate.credential || certificate.credential === "-" ? "#" : certificate.credential} className="link no-underline uppercase font-mono" target="_blank" >
+                        {certificate.credential && certificate.credential !== "-" ? (
+                          <span className="flex items-center text-xs">
+                            <Dot size={32} className="text-accent animate-pulse" />View Credential
+                          </span>
+                        ) : (
+                          <span className="flex items-center text-xs text-gray-400">
+                            <Dot size={32} className="text-error animate-pulse" />No Credential
+                          </span>
+                        )}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))
@@ -117,41 +140,41 @@ const CertificatePage = () => {
 
         {certificates.length !== 0 && (
           <div className="flex items-center justify-center mt-8 join">
-          <button
-            type="button"
-            className="join-item btn btn-sm btn-outline btn-success"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            <StepBack className="size-4" />
-          </button>
+            <button
+              type="button"
+              className="join-item btn btn-sm btn-outline btn-success"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              <StepBack className="size-4" />
+            </button>
 
-          {[...Array(totalPages)].map((_, index) => {
-            const pageNumber = index + 1;
-            return (
-              <button
-                type="button"
-                key={pageNumber}
-                className={`join-item btn btn-outline btn-sm btn-success ${currentPage === pageNumber
-                  ? "btn-active text-primary-content dark:text-neutral"
-                  : "text-neutral dark:text-primary-content"
-                  }`}
-                onClick={() => handlePageChange(pageNumber)}
-              >
-                {pageNumber}
-              </button>
-            );
-          })}
+            {[...Array(totalPages)].map((_, index) => {
+              const pageNumber = index + 1;
+              return (
+                <button
+                  type="button"
+                  key={pageNumber}
+                  className={`join-item btn btn-outline btn-sm btn-success ${currentPage === pageNumber
+                    ? "btn-active text-primary-content dark:text-neutral"
+                    : "text-neutral dark:text-primary-content"
+                    }`}
+                  onClick={() => handlePageChange(pageNumber)}
+                >
+                  {pageNumber}
+                </button>
+              );
+            })}
 
-          <button
-            type="button"
-            className="join-item btn btn-outline btn-sm btn-success"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            <StepForward className="size-4" />
-          </button>
-        </div>
+            <button
+              type="button"
+              className="join-item btn btn-outline btn-sm btn-success"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              <StepForward className="size-4" />
+            </button>
+          </div>
         )}
       </div>
     </section>

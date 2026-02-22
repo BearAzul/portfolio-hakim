@@ -44,7 +44,8 @@ const About = () => {
         </div>
         <div className="grid grid-cols-12 gap-3 md:gap-4">
           <div className="col-span-12 md:row-span-3 md:col-span-6">
-            <motion.figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
+            <div className="hover-3d">
+              <motion.figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -55,7 +56,18 @@ const About = () => {
                 alt="image hakim"
                 className="block object-cover w-full h-full"
               />
-            </motion.figure>
+              </motion.figure>
+              
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            
           </div>
           {services.map((service, index) => (
             <motion.div key={index}
