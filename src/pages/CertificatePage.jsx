@@ -114,14 +114,14 @@ const CertificatePage = () => {
                   <h1 className="text-sm font-semibold dark:text-gray-100 my-2 leading-tight">{certificate.title}</h1>
                   <div className="flex flex-col gap-3 mt-auto">
                     <div className="flex items-center justify-between">
-                      <p className="text-xs mt-auto">{certificate.level}</p>
+                      <p className="text-xs">{certificate.level}</p>
                       <p className="text-xs font-semibold text-secondary">{certificate.company}</p>
                     </div>
                     <div className="flex items-center justify-between border-t border-teal-600">
                       <p className="text-xs text-gray-500">{formatToDate(certificate.publishDate)}</p>
-                      <a href={!certificate.credential || certificate.credential === "-" ? "#" : certificate.credential} className="link no-underline uppercase font-mono" target="_blank" >
+                      <a href={!certificate.credential || certificate.credential === "-" ? "#" : certificate.credential} className="link no-underline uppercase font-mono" target="_blank" aria-label="credential">
                         {certificate.credential && certificate.credential !== "-" ? (
-                          <span className="flex items-center text-xs">
+                          <span className="flex items-center text-xs hover:underline">
                             <Dot size={32} className="text-accent animate-pulse" />View Credential
                           </span>
                         ) : (
