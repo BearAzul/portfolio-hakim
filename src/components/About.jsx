@@ -28,8 +28,6 @@ const About = () => {
     }
   ]
 
-
-
   return (
     <section
       id="about"
@@ -43,20 +41,22 @@ const About = () => {
           <p className="text-xs text-teal-600 md:text-sm">Perkenalkan Saya</p>
         </div>
         <div className="grid grid-cols-12 gap-3 md:gap-4">
-          <div className="col-span-12 md:row-span-3 md:col-span-6">
-            <div className="hover-3d">
-              <motion.figure className="mx-auto overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
+          <div className="col-span-12 md:row-span-3 md:col-span-6 mx-auto">
+            <motion.div
+              className="hover-3d"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 300 }}
               viewport={{ once: true }}
+            >
+              <figure className="overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
             >
               <img
                 src={about?.imageUrl}
                 alt="image hakim"
                 className="block object-cover w-full h-full"
               />
-              </motion.figure>
+              </figure>
               
               <div></div>
               <div></div>
@@ -66,8 +66,7 @@ const About = () => {
               <div></div>
               <div></div>
               <div></div>
-            </div>
-            
+            </motion.div> 
           </div>
           {services.map((service, index) => (
             <motion.div key={index}
