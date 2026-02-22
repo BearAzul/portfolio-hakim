@@ -123,7 +123,7 @@ const Contact = () => {
               transition={{ duration: 0.7, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="group relative z-[1] w-full mb-4">
+              <div className="group relative z-1 w-full mb-4">
                 <label
                   htmlFor="name"
                   className="absolute text-xs md:text-sm -top-[8px] md:-top-[10px] px-1 bg-gray-100 dark:bg-slate-800 dark:text-gray-100 left-5 text-slate-800"
@@ -137,7 +137,7 @@ const Contact = () => {
                   placeholder="Masukkan Nama Anda"
                 />
               </div>
-              <div className="group relative z-[1] w-full mb-4">
+              <div className="group relative z-1 w-full mb-4">
                 <label
                   htmlFor="email"
                   className="absolute text-xs md:text-sm -top-[8px] md:-top-[10px] px-1 bg-gray-100 left-5 text-slate-800 dark:bg-slate-800 dark:text-gray-100"
@@ -151,7 +151,7 @@ const Contact = () => {
                   placeholder="Masukkan Email Valid"
                 />
               </div>
-              <div className="group relative z-[1] w-full mb-4">
+              <div className="group relative z-1 w-full mb-4">
                 <label
                   htmlFor="pesan"
                   className="absolute text-xs md:text-sm -top-[8px] md:-top-[10px] px-1 bg-gray-100 left-5 text-slate-800 dark:bg-slate-800 dark:text-gray-100"

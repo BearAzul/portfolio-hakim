@@ -70,7 +70,7 @@ const CertificatePage = () => {
           {filters.map((filter, index) => (
             <motion.button key={index} className={`text-sm text-teal-600 py-2 px-3 rounded-md dark:text-gray-200 shadow-sm cursor-pointer hover:bg-teal-600 border border-teal-600 hover:text-gray-200 text-nowrap
                 ${activeFilter === filter
-                ? 'bg-teal-600 !text-gray-200'
+                ? 'bg-teal-600 text-gray-200!'
                 : ''}`}
               onClick={() => handleFilterChange(filter)}
               whileHover={{ scale: 1.05, y: -2 }}
@@ -108,7 +108,7 @@ const CertificatePage = () => {
 
               >
                 <div className="flex flex-col pt-3 px-3 rounded-lg border border-teal-600 h-full shadow-lg dark:bg-slate-900/60 bg-gray-100/60">
-                  <div className="overflow-hidden aspect-[3/2] rounded-lg border border-teal-600">
+                  <div className="overflow-hidden aspect-3/2 rounded-lg border border-teal-600">
                     <PdfThumbnail fileUrl={certificate.fileUrl} />
                   </div>
                   <h1 className="text-sm font-semibold dark:text-gray-100 my-2 leading-tight">{certificate.title}</h1>

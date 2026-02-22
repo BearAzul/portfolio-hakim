@@ -26,7 +26,7 @@ const Qualifications = () => {
             Perjalanan pendidikan saya
           </p>
         </div>
-        <div className="relative z-[1] bg-transparent flex items-center justify-center mx-auto rounded w-max text-slate-800 gap-4 dark:text-gray-100 text-center overflow-hidden">
+        <div className="relative z-1 bg-transparent flex items-center justify-center mx-auto rounded w-max text-slate-800 gap-4 dark:text-gray-100 text-center overflow-hidden">
           <button type="button"
             onClick={handleMove}
             className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer flex justify-center items-center gap-2 ${isMove ? "text-slate-800 dark:text-gray-100" : "text-gray-100"
@@ -44,7 +44,7 @@ const Qualifications = () => {
             Pelatihan/Magang
           </button>
           <span
-            className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-[1] rounded ${isMove ? "translate-x-[40%]" : "-translate-x-[60%]"
+            className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-1 rounded ${isMove ? "translate-x-[40%]" : "-translate-x-[60%]"
               }`}
           ></span>
         </div>

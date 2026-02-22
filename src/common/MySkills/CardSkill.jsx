@@ -16,7 +16,7 @@ const CardSkill = ({ skill }) => {
         </div>
         <div className="flex-auto">
           <h2 className="text-xs font-medium lg:text-base text-nowrap">{skill.name}</h2>
-          <p className="text-xs !text-teal-500 dark:text-secondary">{skill.level}</p>
+          <p className="text-xs text-teal-500! dark:text-secondary">{skill.level}</p>
         </div>
       </div>
     );

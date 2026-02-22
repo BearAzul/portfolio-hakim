@@ -3,7 +3,7 @@ import "animate.css"
 const IconSkills = () => {
   return (
     <>
-      <div className="absolute w-[40px] lg:w-[55px] -top-0 lg:-top-[65px] left-1/2 lg:-translate-x-[50px] -translate-x-[120px]">
+      <div className="absolute w-[40px] lg:w-[55px] top-0 lg:-top-[65px] left-1/2 lg:-translate-x-[50px] -translate-x-[120px]">
         <img
           src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
           alt="icon html"
