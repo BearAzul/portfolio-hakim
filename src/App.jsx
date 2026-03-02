@@ -7,6 +7,7 @@ import CertificatePage from "./pages/CertificatePage.jsx";
 import Layout from "./layout/Layout.jsx";
 import CustomCursor from "./common/CustomCursor.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import DetailProjectPage from "./pages/DetailProjectPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/certificates",
         element: <CertificatePage />
+      },
+      {
+        path: "/projects/:id",
+        element: <DetailProjectPage />
       }
     ]
   },

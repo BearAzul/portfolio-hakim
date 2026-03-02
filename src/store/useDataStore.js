@@ -12,10 +12,12 @@ export const useDataStore = create((set, get) => ({
     softSkills: [],
   },
   certificates: [],
+  detailproject: {},
   totalPages: 1,
   totalData: 0,
   isLoading: false,
   isCertLoading: false,
+  isLoadingProject: false,
 
   fetchAllData: async () => {
     set({ isLoading: true });
@@ -48,8 +50,18 @@ export const useDataStore = create((set, get) => ({
       set({ isLoading: false });
     }
   },
-
-  fetchCertificates: async (page = 1, level = "Semua", search="") => {
+  getProjectById: async (id) => {
+    set({ isLoadingProject: true });
+    try {
+      const response = await apiClient.get(`/projects/${id}`);
+      set({ detailproject: response.data });
+    } catch (error) {
+      console.log(`Error get detail project with id-${id}:`, error);
+    } finally {
+      set({ isLoadingProject: false });
+    }
+  },
+  fetchCertificates: async (page = 1, level = "Semua", search = "") => {
     set({ isCertLoading: true });
     try {
       const params = { page };

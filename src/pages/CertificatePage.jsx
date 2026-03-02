@@ -1,7 +1,6 @@
 import { Link, useSearchParams } from "react-router"
 import { useDataStore } from "../store/useDataStore.js";
 import { useEffect, useState } from "react";
-import DarkMode from "../common/DarkMode.jsx";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
 import { CircleArrowLeft, Dot, StepForward, StepBack, Search } from "lucide-react"
 import { motion } from "framer-motion"
@@ -44,15 +43,13 @@ const CertificatePage = () => {
   }
 
   return (
-    <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10 transition-all bg-gray-200 dark:bg-slate-800">
+    <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800">
             <CircleArrowLeft className="size-5 mr-2" />
             Kembali
           </Link>
-
-          <DarkMode display="hidden" />
 
           <span className="text-gray-100 bg-teal-600 border-0 badge">
             <CountUp to={totalData} />

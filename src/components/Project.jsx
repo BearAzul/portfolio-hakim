@@ -18,7 +18,7 @@ const Project = () => {
             Beberapa proyek terakhir
           </p>
         </div>
-        <div className="gap-6 columns-1 md:columns-2 lg:columns-3">
+        <div className="gap-6 columns-1 sm:columns-2 lg:columns-3">
           {projects.map((project) => (
             <CardProject project={project} key={project._id} />
           ))}
