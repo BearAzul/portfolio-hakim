@@ -1,5 +1,6 @@
 import CardProject from "../common/CardProject.jsx";
 import { useDataStore } from "../store/useDataStore.js";
+import { motion } from "framer-motion"
 
 const Project = () => {
   const { projects } = useDataStore((state) => state);
@@ -18,9 +19,23 @@ const Project = () => {
             Beberapa proyek terakhir
           </p>
         </div>
-        <div className="gap-6 columns-1 sm:columns-2 lg:columns-3">
-          {projects.map((project) => (
-            <CardProject project={project} key={project._id} />
+        <div className="gap-6 grid grid-cols-12">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project._id}
+              className="col-span-12 sm:col-span-6 lg:col-span-4"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                delay: index * 0.1
+              }}
+            >
+              <CardProject project={project} />
+            </motion.div>
           ))}
         </div>
       </div>

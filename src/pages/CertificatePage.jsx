@@ -46,9 +46,14 @@ const CertificatePage = () => {
     <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800">
-            <CircleArrowLeft className="size-5 mr-2" />
-            Kembali
+          <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800 gap-2">
+            <motion.div
+              whileHover={{ x: -3 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
+              <CircleArrowLeft className="size-5" />
+            </motion.div>
+            <span>Kembali</span>
           </Link>
 
           <span className="text-gray-100 bg-teal-600 border-0 badge">
@@ -102,7 +107,6 @@ const CertificatePage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25, delay: index * 0.2 }}
-
               >
                 <div className="flex flex-col pt-3 px-3 rounded-lg border border-teal-600 h-full shadow-lg dark:bg-slate-900/60 bg-gray-100/60">
                   <div className="overflow-hidden aspect-3/2 rounded-lg border border-teal-600">

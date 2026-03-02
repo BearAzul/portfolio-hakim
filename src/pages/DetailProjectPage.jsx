@@ -24,9 +24,14 @@ const DetailProjectPage = () => {
   return (
     <section id="detailpage" className="flex items-start justify-center w-full min-h-screen py-10">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
-        <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800">
-          <CircleArrowLeft className="size-5 mr-2" />
-          Kembali
+        <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800 gap-2">
+          <motion.div
+            whileHover={{ x: -3 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          >
+             <CircleArrowLeft className="size-5" />
+          </motion.div>
+          <span>Kembali</span>
         </Link>
         <h1 className="text-2xl font-semibold mt-6 mb-2">{detailproject.title}</h1>
         <p className="flex items-center text-sm text-gray-400 mb-6">{detailproject.projectType} <Dot /> {formatToDate(detailproject.projectDate)}</p>
@@ -47,7 +52,7 @@ const DetailProjectPage = () => {
 
           <div className="col-span-12 md:col-span-6 lg:col-span-4 row-span-2">
             <h2 className="mb-2 uppercase text-sm font-semibold">Detail Proyek</h2>
-            <div className={`border ${detailproject.status === "Done" ? "w-max" : "w-full"} border-gray-700 rounded-lg`}>
+            <div className={`border ${detailproject.status === "Done" ? "w-max" : "w-full"} dark:border-gray-700 rounded-lg border-gray-200`}>
               <table className="table text-gray-400">
                 <tbody>
                   <tr>

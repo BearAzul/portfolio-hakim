@@ -6,7 +6,7 @@ import { MoveRight } from "lucide-react"
 const CardProject = ({ project }) => {
 
   return (
-    <div className="mb-6 border rounded-lg shadow-md border-slate-800 dark:border-accent break-inside-avoid"
+    <div className="border rounded-lg shadow-md border-slate-800 dark:border-accent"
     >
       <div className="grid grid-cols-12">
         <div className="col-span-12 row-span-2 overflow-hidden transition-all duration-500 ease-in-out border-b dark:border-accent border-slate-800">
