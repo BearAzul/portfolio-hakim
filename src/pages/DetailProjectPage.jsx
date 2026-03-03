@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router"
 import { CircleArrowLeft } from "lucide-react"
 import { useEffect } from "react"
 import { useDataStore } from "../store/useDataStore.js"
-import { Github, ExternalLink, Dot } from "lucide-react"
+import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react"
 import { motion } from "framer-motion"
 import { LoadingProjectById } from "../common/LoadingProject.jsx"
 
@@ -74,7 +74,7 @@ const DetailProjectPage = () => {
                     <td>Link</td>
                     <td>:</td>
                     <td>
-                      {detailproject.status === "Done" ? (
+                      {detailproject.status === "Done" && detailproject.projectType === "Web" && (
                         <div className="space-x-2 flex ">
                           <motion.a href={detailproject.repoUrl} target="_blank" className="btn btn-sm btn-outline btn-secondary"
                             whileHover={{ scale: 1.03 }}
@@ -91,7 +91,23 @@ const DetailProjectPage = () => {
                             <ExternalLink size={14} /> Demo
                           </motion.a>
                         </div>
-                      ) : "Private"}
+                      )}
+
+                      {detailproject.status === "Done" && detailproject.projectType === "Mobile" && (
+                        <div className="space-x-2 flex ">
+                          <motion.a href={detailproject.projectUrl} target="_blank" className="btn btn-sm btn-outline btn-secondary"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                          >
+                            <TabletSmartphone size={14} /> Download
+                          </motion.a>
+                        </div>
+                      )}
+
+                      {detailproject.status === "OnGoing" && (
+                        "Private"
+                      )}
                     </td>
                   </tr>
                 </tbody>
