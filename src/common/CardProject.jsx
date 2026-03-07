@@ -30,7 +30,7 @@ const CardProject = ({ project }) => {
               <Github className="size-4" /> Sources
             </a>
           </div>
-          <h1 className="mt-2 text-sm font-semibold lg:mt-3 dark:text-gray-100">{project.title}</h1>
+          <h1 className="mt-2 text-sm font-semibold lg:mt-3 dark:text-gray-100 notranslate">{project.title}</h1>
           <p className="text-xs mt-2 line-clamp-2">{project.description}</p>
         </div>
         <div className="col-span-12 px-3 pb-3">

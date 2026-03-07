@@ -2,9 +2,10 @@ import { Link, useSearchParams } from "react-router"
 import { useDataStore } from "../store/useDataStore.js";
 import { useEffect, useState } from "react";
 import PdfThumbnail from "../common/PdfThumbnail.jsx";
-import { CircleArrowLeft, Dot, StepForward, StepBack, Search } from "lucide-react"
+import { CircleArrowLeft, StepForward, StepBack, Search } from "lucide-react"
 import { motion } from "framer-motion"
 import CountUp from "../common/CountUp.jsx";
+import BtnLang from "../common/BtnLang.jsx";
 
 const CertificatePage = () => {
   const { certificates, totalPages, totalData, fetchCertificates } = useDataStore();
@@ -56,9 +57,14 @@ const CertificatePage = () => {
             <span>Kembali</span>
           </Link>
 
-          <span className="text-gray-100 bg-teal-600 border-0 badge">
-            <CountUp to={totalData} />
-          </span>
+          <div className="flex items-center gap-4">
+            <BtnLang />
+            <span className="text-gray-100 bg-teal-600 border-0 badge">
+              <CountUp to={totalData} />
+            </span>
+          </div>
+
+        
         </div>
         <div className="mt-8 mb-4 text-center">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
@@ -118,16 +124,24 @@ const CertificatePage = () => {
                       <p className="text-xs">{certificate.level}</p>
                       <p className="text-xs font-semibold text-secondary">{certificate.company}</p>
                     </div>
-                    <div className="flex items-center justify-between border-t border-teal-600">
+                    <div className="flex py-2 items-center justify-between border-t border-teal-600">
                       <p className="text-xs text-gray-500">{formatToDate(certificate.publishDate)}</p>
-                      <a href={!certificate.credential || certificate.credential === "-" ? "#" : certificate.credential} className="link no-underline uppercase font-mono" target="_blank" aria-label="credential">
+                      <a href={!certificate.credential || certificate.credential === "-" ? "#" : certificate.credential} className="link link-hover uppercase font-mono" target="_blank" aria-label="credential">
                         {certificate.credential && certificate.credential !== "-" ? (
-                          <span className="flex items-center text-xs hover:underline">
-                            <Dot size={32} className="text-accent animate-pulse" />View Credential
+                          <span className="flex items-center text-xs gap-2">
+                            <div className="inline-grid *:[grid-area:1/1]">
+                              <div className="status status-success animate-ping"></div>
+                              <div className="status status-success"></div>
+                            </div>
+                            View Credential
                           </span>
                         ) : (
-                          <span className="flex items-center text-xs text-gray-400">
-                            <Dot size={32} className="text-error animate-pulse" />No Credential
+                          <span className="flex items-center text-xs !no-underline text-gray-400 gap-2">
+                            <div className="inline-grid *:[grid-area:1/1]">
+                              <div className="status status-error animate-ping"></div>
+                              <div className="status status-error"></div>
+                            </div>
+                            No Credential
                           </span>
                         )}
                       </a>

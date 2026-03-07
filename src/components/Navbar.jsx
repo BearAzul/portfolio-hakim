@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import BtnLang from "../common/BtnLang.jsx";
 
 const Header = () => {
   const [showNav, setVisible] = useState(false);
@@ -98,12 +99,13 @@ const Header = () => {
               href="#home"
               className="flex items-center gap-1 py-4 md:gap-2 text-slate-800 dark:text-gray-100"
             >
-              <p className="font-bold text-md md:text-xl">
+              <p className="font-bold text-md md:text-xl notranslate">
                 Akim<span className="text-teal-500">Dev.</span>
               </p>
             </a>
           </div>
-          <div className="flex items-center px-6 md:px-4 text-slate-800 dark:text-gray-100">
+          <div className="flex items-center gap-3 px-6 md:px-4 text-slate-800 dark:text-gray-100">
+            <BtnLang />
             <nav
               className={`bg-gray-100 dark:border-teal-600 dark:border dark:lg:border-none dark:bg-slate-800 dark:lg:bg-transparent absolute py-2 shadow-xl rounded max-w-[160px] w-full right-4 top-20 lg:bg-transparent xl:top-full lg:static lg:block lg:shadow-none lg:max-w-full transition duration-500 ${showNav ? "" : "hidden"
                 }`}
@@ -126,7 +128,7 @@ const Header = () => {
 
             <button
               type="button"
-              className="text-lg transition duration-500 lg:hidden ms-4 w-[20px]"
+              className="text-lg transition duration-500 lg:hidden w-[20px]"
               onClick={toggleNav}
               aria-label="Toggle Menu"
             >

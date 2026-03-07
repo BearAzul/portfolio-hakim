@@ -17,7 +17,7 @@ export const CardRight = ({ title, element, address, years }) => {
         viewport={{ once: true }}
       >
 
-        <h1 className="text-base font-semibold lg:text-lg">
+        <h1 className="text-base font-semibold lg:text-lg notranslate">
           {title}
         </h1>
 
@@ -51,14 +51,14 @@ export const CardLeft = ({ title, element, address, years }) => {
         viewport={{ once: true }}
       >
 
-        <h1 className="text-base font-semibold lg:text-lg">
+        <h1 className="text-base font-semibold lg:text-lg notranslate">
           {title}
         </h1>
 
         <p className="text-sm text-teal-600 dark:text-teal-400">
           {element}
         </p>
-        <p className="mb-4 text-xs">{address}</p>
+        <p className="mb-4 text-xs notranslate">{address}</p>
         <p className="text-sm flex items-center gap-2">
           <CalendarCheck className="size-4" />
           {years}

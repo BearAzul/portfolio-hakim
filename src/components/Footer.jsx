@@ -27,8 +27,8 @@ const Footer = () => {
 
     <footer className="flex items-center w-full pt-10 pb-4 transition-all bg-slate-800 dark:bg-slate-950">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
-        <div className="max-w-xl mx-auto mb-4 text-center title">
-          <h1 className="mb-2 font-bold text-white md:text-xl">
+        <div className="max-w-xl mx-auto mb-4 text-center">
+          <h1 className="mb-2 font-bold text-white md:text-xl notranslate">
             Akim
             <span className="text-teal-600">Dev.</span>
           </h1>

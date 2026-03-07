@@ -71,7 +71,7 @@ const Home = () => {
               <h1 className="mb-3 text-2xl font-semibold md:text-4xl drop-shadow-md">
                 Adya Abdu Azizul Hakim 🙌
               </h1>
-              <div className="flex items-center justify-start gap-2 mb-2 text-sm md:text-base">
+              <div className="flex items-center justify-start gap-2 mb-2 text-sm md:text-base notranslate">
                 <hr className="w-1/7 sm:w-1/3 border-slate-800 dark:border-gray-100" />
                 <TypeAnimation
                   sequence={finalSequence}

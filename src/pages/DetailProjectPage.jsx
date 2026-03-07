@@ -5,6 +5,7 @@ import { useDataStore } from "../store/useDataStore.js"
 import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react"
 import { motion } from "framer-motion"
 import { LoadingProjectById } from "../common/LoadingProject.jsx"
+import BtnLang from "../common/BtnLang.jsx"
 
 const DetailProjectPage = () => {
   const { id } = useParams()
@@ -24,16 +25,20 @@ const DetailProjectPage = () => {
   return (
     <section id="detailpage" className="flex items-start justify-center w-full min-h-screen py-10">
       <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
-        <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800 gap-2">
-          <motion.div
-            whileHover={{ x: -3 }}
-            transition={{ type: "spring", stiffness: 300, damping: 10 }}
-          >
-             <CircleArrowLeft className="size-5" />
-          </motion.div>
-          <span>Kembali</span>
-        </Link>
-        <h1 className="text-2xl font-semibold mt-6 mb-2">{detailproject.title}</h1>
+        <div className="flex justify-between items-center">
+          <Link to="/" className="font-medium dark:text-gray-100 flex items-center text-slate-800 gap-2">
+            <motion.div
+              whileHover={{ x: -3 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
+              <CircleArrowLeft className="size-5" />
+            </motion.div>
+            <span>Kembali</span>
+          </Link>
+
+          <BtnLang />
+        </div>
+        <h1 className="text-2xl font-semibold mt-6 mb-2 notranslate">{detailproject.title}</h1>
         <p className="flex items-center text-sm text-gray-400 mb-6">{detailproject.projectType} <Dot /> {formatToDate(detailproject.projectDate)}</p>
 
         <div className="grid grid-cols-12 gap-4">
