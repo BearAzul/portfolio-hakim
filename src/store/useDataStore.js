@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import apiClient from "../api.js";
+import apiClient from "../api/api.js";
 
 export const useDataStore = create((set, get) => ({
   profiles: {},

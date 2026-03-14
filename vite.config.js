@@ -15,7 +15,6 @@ export default defineConfig({
   ],
   assetsInclude: ["**/*.zip", "**/*.pdf"],
   server: {
-    port:3000,
     proxy: {
       "/api": {
         target: "https://portfolio-manage.vercel.app",

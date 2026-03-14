@@ -1,15 +1,18 @@
 import { Link, useParams } from "react-router"
 import { CircleArrowLeft } from "lucide-react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDataStore } from "../store/useDataStore.js"
 import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react"
 import { motion } from "framer-motion"
 import { LoadingProjectById } from "../common/LoadingProject.jsx"
 import BtnLang from "../common/BtnLang.jsx"
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import ControlsZoom from "../common/ControlsZoom.jsx"
 
 const DetailProjectPage = () => {
   const { id } = useParams()
   const { getProjectById, detailproject, isLoadingProject } = useDataStore()
+  const [imageHover, setImageHover] = useState(null)
 
   useEffect(() => {
     getProjectById(id)
@@ -42,13 +45,39 @@ const DetailProjectPage = () => {
         <p className="flex items-center text-sm text-gray-400 mb-6">{detailproject.projectType} <Dot /> {formatToDate(detailproject.projectDate)}</p>
 
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12">
+          <div className="col-span-12 md:hidden">
             <figure className="hover-gallery rounded-lg aspect-3/2 cursor-pointer">
               {detailproject.projectImage?.map((img, index) => (
                 <img key={index} src={img || `https://placehold.co/${200 + (index * 100)}`} alt="image project" className="h-full w-full object-cover" />
               ))}
             </figure>
           </div>
+
+          <div className="col-span-12 hidden md:inline-block">
+            <figure className="rounded-lg aspect-video overflow-hidden shadow-md relative">
+              <TransformWrapper>
+                {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                  <>
+                    <ControlsZoom />
+                    <TransformComponent>
+                      <img src={imageHover || detailproject.projectImage?.[0]} alt={detailproject.title} className="block object-cover w-full h-full" />
+                    </TransformComponent>
+                  </>
+                )}
+              </TransformWrapper>
+            </figure>
+
+          </div>
+
+          {detailproject?.projectImage?.slice(1).map((img, index) => (
+            <div className={`col-span-3 hidden md:inline-block ${imageHover === img ? "image-full" : ""} cursor-pointer`} key={index}>
+              <figure className="rounded-md aspect-video overflow-hidden shadow-md" onMouseEnter={() => setImageHover(img)}>
+                <img src={img || "https://placehold.co/300"} alt={detailproject?.title + (index + 1)} className="object-cover block w-full h-full" />
+              </figure>
+              <div></div>
+            </div>
+          ))}
+
 
           <div className="col-span-12 md:col-span-6 lg:col-span-8 lg:mr-8">
             <h2 className="mb-2 uppercase text-sm font-semibold">Tentang Project</h2>
@@ -125,11 +154,9 @@ const DetailProjectPage = () => {
             {detailproject.technologies?.map((tech, index) => (
               <div className="badge badge-soft badge-sm badge-primary dark:badge-secondary m-0.5" key={index}>{tech}</div>
             ))}
-
           </div>
+
         </div>
-
-
       </div>
     </section>
   )
