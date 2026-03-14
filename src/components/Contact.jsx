@@ -77,7 +77,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="scroll-section flex items-center py-20 overflow-hidden transition-all bg-gray-100 dark:bg-slate-800 lg:min-h-screen lg:py-0"
+      className="scroll-section flex items-center pb-10 overflow-hidden transition-all bg-gray-100 dark:bg-slate-800 lg:min-h-screen"
     >
       <div className="container mx-auto md:max-w-2xl lg:max-w-5xl">
         <div className="flex flex-col items-start justify-center gap-8 px-6 md:flex-row md:px-4">
