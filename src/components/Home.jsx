@@ -110,7 +110,7 @@ const Home = () => {
             </motion.div>
 
             <motion.svg
-              className="w-[210px] lg:w-[310px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+              className="w-[210px] lg:w-[310px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 pointer-events-none"
               fill="transparent"
               viewBox="0 0 506 506"
               xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ const Home = () => {
             </motion.svg>
 
             <motion.svg
-              className="w-[220px] lg:w-[320px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+              className="w-[220px] lg:w-[320px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 pointer-events-none"
               fill="transparent"
               viewBox="0 0 506 506"
               xmlns="http://www.w3.org/2000/svg"

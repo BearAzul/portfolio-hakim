@@ -8,10 +8,6 @@ import Layout from "./layout/Layout.jsx";
 import CustomCursor from "./common/CustomCursor.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import DetailProjectPage from "./pages/DetailProjectPage.jsx";
-import Footer from "./components/Footer.jsx";
-import Support from "./components/Support.jsx";
-import QRCode from "./common/QRCode.jsx";
-import BtnTop from "./common/BtnTop.jsx";
 
 const router = createBrowserRouter([
   {
@@ -64,12 +60,8 @@ const App = () => {
         <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/103102235?v=4" type="image/x-icon" />
       </Helmet>
       <CustomCursor />
-      <RouterProvider router={router} />
 
-      <Footer />
-      <Support />
-      <QRCode />
-      <BtnTop />
+      <RouterProvider router={router} />
     </>
   );
 };

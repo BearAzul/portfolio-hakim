@@ -1,19 +1,30 @@
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
-const Transition = ({ children }) => {
+const Transition = (Component) => {
   return (
-    <AnimatePresence>
+    <>
+      <Component />
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: { delay: 1, duration: 0.5, ease: "easeInOut" }
+        className="fixed top-0 left-0 w-full h-screen dark:bg-teal-600 bg-gray-300"
+        style={{
+          transformOrigin: "bottom"
         }}
-        className='h-screen w-screen fixed dark:bg-slate-800 bg-gray-300 top-0 pointer-events-none'
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 1 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      />
+      <motion.div
+        className="fixed top-0 left-0 w-full h-screen dark:bg-teal-600 bg-gray-300"
+        style={{
+          transformOrigin: "top"
+        }}
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </>
   )
 }
 
