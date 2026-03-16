@@ -1,12 +1,8 @@
 
 import { Outlet } from 'react-router'
 import Loading from '../common/Loading.jsx';
-import Footer from '../components/Footer.jsx';
 import { useDataStore } from '../store/useDataStore.js';
 import { useEffect } from 'react';
-import BtnTop from '../common/BtnTop.jsx';
-import Support from '../components/Support.jsx';
-import QRCode from '../common/QRCode.jsx';
 
 const Layout = () => {
   const { isLoading, fetchAllData, fetchCertificates } = useDataStore((state) => state);
@@ -18,15 +14,7 @@ const Layout = () => {
 
   if (isLoading) return <Loading />
 
-  return (
-    <>
-      <Outlet />
-      <Footer />
-      <Support />
-      <QRCode />
-      <BtnTop />
-    </>
-  )
+  return <Outlet />
 }
 
 export default Layout

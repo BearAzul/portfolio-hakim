@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 const stairAnimation = {
   initial: {
@@ -19,7 +19,7 @@ const reverseIndex = (index) => {
 
 const StairEffect = () => {
   return (
-
+    <AnimatePresence>
       <div>
         <div className="w-screen h-screen fixed flex pointer-events-none top-0 left-0 right-0 z-40">
           {[...Array(6)].map((_, index) => (
@@ -46,6 +46,7 @@ const StairEffect = () => {
           }}
         />
       </div>
+    </AnimatePresence>
   )
 }
 

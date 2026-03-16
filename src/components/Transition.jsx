@@ -9,11 +9,9 @@ const Transition = ({ children }) => {
           opacity: 1,
           transition: { delay: 1, duration: 0.5, ease: "easeInOut" }
         }}
-        className='fixed bg-teal-600 pointer-events-none inset-0'
+        className='h-screen w-screen fixed dark:bg-slate-800 bg-gray-300 top-0 pointer-events-none'
       >
-        <div className="relative z-0">
-          {children}
-        </div>
+        {children}
       </motion.div>
     </AnimatePresence>
   )
