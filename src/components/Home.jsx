@@ -90,19 +90,17 @@ const Home = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.9, y: 1 }}
                 transition={{ type: "spring", stiffness: 300 }}
-              > 
+              >
                 Berkenalan?
                 <Send className="size-4 ml-1" />
               </motion.a>
             </motion.div>
           </div>
-          <div className="relative w-full col">
-            <motion.div className="img-blob w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] mx-auto rounded-full overflow-hidden border-8 border-slate-800 dark:border-teal-600 drop-shadow-md"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+          <div className="relative w-full">
+            <motion.div className="w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] mx-auto rounded-full overflow-hidden border-2 border-slate-800 dark:border-teal-600 drop-shadow-md"
+              initial={{ opacity: 0 }}
+              animate={{opacity: 1, transition: { delay: 0.3, duration: 0.5, ease: "easeIn"}}}
               viewport={{ once: true }}
-
             >
               <img
                 src={profiles?.profileImageUrl}
@@ -110,6 +108,64 @@ const Home = () => {
                 className="block object-cover w-full transition duration-500 hover:scale-125"
               />
             </motion.div>
+
+            <motion.svg
+              className="w-[210px] lg:w-[310px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+              fill="transparent"
+              viewBox="0 0 506 506"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.circle
+                cx="253"
+                cy="253"
+                r="250"
+                stroke="oklch(60% 0.118 184.704)"
+                strokeWidth={4}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{
+                  strokeDasharray: "24 10 0 0"
+                }}
+                animate={{
+                  strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+                  rotate: [120, 360]
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            </motion.svg>
+
+            <motion.svg
+              className="w-[220px] lg:w-[320px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+              fill="transparent"
+              viewBox="0 0 506 506"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.circle
+                cx="253"
+                cy="253"
+                r="250"
+                stroke="oklch(60% 0.118 184.704)"
+                strokeWidth={4}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{
+                  strokeDasharray: "24 10 0 0"
+                }}
+                animate={{
+                  strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22",],
+                  rotate: [120, 360]
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            </motion.svg>
 
             <IconSkills />
           </div>

@@ -41,7 +41,7 @@ const About = () => {
           <p className="text-xs text-teal-600 md:text-sm">Perkenalkan Saya</p>
         </div>
         <div className="grid grid-cols-12 gap-3 md:gap-4">
-          <div className="col-span-12 md:row-span-3 md:col-span-6 mx-auto">
+          <div className="col-span-12 md:row-span-3 md:col-span-6 mx-auto relative">
             <motion.div
               className="hover-3d"
               initial={{ opacity: 0, x: -40 }}
@@ -50,12 +50,12 @@ const About = () => {
               viewport={{ once: true }}
             >
               <figure className="overflow-hidden rounded-lg aspect-square lg:size-[300px] drop-shadow-md"
-            >
-              <img
-                src={about?.imageUrl}
-                alt="image hakim"
-                className="block object-cover w-full h-full"
-              />
+              >
+                <img
+                  src={about?.imageUrl}
+                  alt="image hakim"
+                  className="block object-cover w-full h-full"
+                />
               </figure>
               
               <div></div>
@@ -65,8 +65,8 @@ const About = () => {
               <div></div>
               <div></div>
               <div></div>
-              <div></div>
-            </motion.div> 
+              <div></div>  
+            </motion.div>     
           </div>
           {services.map((service, index) => (
             <motion.div key={index}
