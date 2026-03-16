@@ -67,7 +67,7 @@ const CertificatePage = () => {
             </span>
           </div>
 
-        
+
         </div>
         <div className="mt-8 mb-4 text-center">
           <h1 className="text-xl font-semibold dark:text-gray-100 md:text-3xl text-slate-800">
@@ -129,25 +129,24 @@ const CertificatePage = () => {
                     </div>
                     <div className="flex py-2 items-center justify-between border-t border-teal-600">
                       <p className="text-xs text-gray-500">{formatToDate(certificate.publishDate)}</p>
-                      <a href={!certificate.credential || certificate.credential === "-" ? "#" : certificate.credential} className="link link-hover uppercase font-mono" target="_blank" aria-label="credential">
-                        {certificate.credential && certificate.credential !== "-" ? (
-                          <span className="flex items-center text-xs gap-2">
-                            <div className="inline-grid *:[grid-area:1/1]">
-                              <div className="status status-success animate-ping"></div>
-                              <div className="status status-success"></div>
-                            </div>
-                            View Credential
-                          </span>
-                        ) : (
-                          <span className="flex items-center text-xs !no-underline text-gray-400 gap-2">
-                            <div className="inline-grid *:[grid-area:1/1]">
-                              <div className="status status-error animate-ping"></div>
-                              <div className="status status-error"></div>
-                            </div>
-                            No Credential
-                          </span>
-                        )}
-                      </a>
+                      {certificate.credential && certificate.credential !== "-" ? (
+                        <a href={certificate.credential} className="link link-hover uppercase font-mono text-xs" target="_blank" aria-label="credential">
+                          <div className="inline-grid *:[grid-area:1/1] mr-2">
+                            <div className="status status-success animate-ping"></div>
+                            <div className="status status-success"></div>
+                          </div>
+                          View Credential
+                        </a>
+                      ) : (
+                        <button type="button" className="link text-xs !no-underline text-gray-400 font-mono uppercase" disabled={true} aria-label="no credential">
+                          <div className="inline-grid *:[grid-area:1/1] mr-2">
+                            <div className="status status-error animate-ping"></div>
+                            <div className="status status-error"></div>
+                          </div>
+                          No Credential
+                        </button>
+                      )}
+
                     </div>
                   </div>
                 </div>
