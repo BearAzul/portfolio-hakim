@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useDataStore } from "../store/useDataStore.js"
 import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react"
 import { motion } from "framer-motion"
-import { LoadingProjectById } from "../common/LoadingProject.jsx"
+import { LoadingProjectById } from "../components/skeletons/LoadingProject.jsx"
 import BtnLang from "../common/BtnLang.jsx"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import ControlsZoom from "../common/ControlsZoom.jsx"
@@ -139,7 +139,7 @@ const DetailProjectPage = () => {
                         </div>
                       )}
 
-                      {detailproject.status === "OnGoing" && (
+                      {detailproject.status !== "Done" && (
                         "Private"
                       )}
                     </td>

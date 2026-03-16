@@ -6,9 +6,10 @@ import { CircleArrowLeft, StepForward, StepBack, Search } from "lucide-react"
 import { motion } from "framer-motion"
 import CountUp from "../common/CountUp.jsx";
 import BtnLang from "../common/BtnLang.jsx";
+import LoadingCertificate from "../components/skeletons/LoadingCertificate.jsx";
 
 const CertificatePage = () => {
-  const { certificates, totalPages, totalData, fetchCertificates } = useDataStore();
+  const { certificates, totalPages, totalData, fetchCertificates, isCertLoading } = useDataStore();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -42,6 +43,8 @@ const CertificatePage = () => {
     const options = { year: 'numeric', month: 'long', day: '2-digit' };
     return new Date(dateString).toLocaleDateString('id-ID', options);
   }
+
+  if (isCertLoading) return <LoadingCertificate />
 
   return (
     <section id="certificate" className="flex items-start justify-center w-full min-h-screen py-10">
