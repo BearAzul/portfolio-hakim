@@ -2,7 +2,7 @@ import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
 import { History, Briefcase, FileBadge, FileUser } from "lucide-react"
-
+import { Link } from "react-router"
 
 const About = () => {
   const { about, totalData, projects } = useDataStore((state) => state);
@@ -57,7 +57,7 @@ const About = () => {
                   className="block object-cover w-full h-full"
                 />
               </figure>
-              
+
               <div></div>
               <div></div>
               <div></div>
@@ -65,8 +65,8 @@ const About = () => {
               <div></div>
               <div></div>
               <div></div>
-              <div></div>  
-            </motion.div>     
+              <div></div>
+            </motion.div>
           </div>
           {services.map((service, index) => (
             <motion.div key={index}
@@ -77,12 +77,12 @@ const About = () => {
               transition={{ delay: index * 0.3, type: "spring", stiffness: 300 }}
               viewport={{ once: true }}
             >
-              <a href={service.link} className="cursor-pointer card flex flex-col items-center"
+              <Link to={service.link} className="cursor-pointer card flex flex-col items-center"
               >
                 {service.icon}
                 <h1 className="text-center mt-1 text-nowrap">{service.title}</h1>
                 <p>{service.description}</p>
-              </a>
+              </Link>
             </motion.div>
           ))}
           <div className="col-span-12 md:col-span-6">

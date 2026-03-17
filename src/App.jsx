@@ -1,35 +1,12 @@
 import { Helmet } from "react-helmet-async"
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
-
-import HomePage from "./pages/HomePage.jsx";
-import CertificatePage from "./pages/CertificatePage.jsx";
-import Layout from "./layout/Layout.jsx";
 import CustomCursor from "./common/CustomCursor.jsx";
-import NotFoundPage from "./pages/NotFoundPage.jsx";
-import DetailProjectPage from "./pages/DetailProjectPage.jsx";
+import Footer from "./components/Footer.jsx";
+import Support from "./components/Support.jsx";
+import QRCode from "./common/QRCode.jsx";
+import BtnTop from "./common/BtnTop.jsx";
+import AnimatedRoutes from "./Routes/AnimatedRoutes.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <NotFoundPage />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />
-      },
-      {
-        path: "/certificates",
-        element: <CertificatePage />
-      },
-      {
-        path: "/projects/:id",
-        element: <DetailProjectPage />
-      }
-    ]
-  },
-]);
+
 
 const App = () => {
   return (
@@ -61,7 +38,12 @@ const App = () => {
       </Helmet>
       <CustomCursor />
 
-      <RouterProvider router={router} />
+      <AnimatedRoutes />
+
+      <Footer />
+      <Support />
+      <QRCode />
+      <BtnTop />
     </>
   );
 };

@@ -4,6 +4,7 @@ import "animate.css"
 import './index.css'
 import { HelmetProvider } from "react-helmet-async"
 import { pdfjs } from 'react-pdf';
+import { BrowserRouter } from "react-router"
 
 import App from './App.jsx';
 
@@ -11,8 +12,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
+    <BrowserRouter>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 )

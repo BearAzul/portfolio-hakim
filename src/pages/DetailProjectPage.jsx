@@ -8,6 +8,7 @@ import { LoadingProjectById } from "../components/skeletons/LoadingProject.jsx"
 import BtnLang from "../common/BtnLang.jsx"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import ControlsZoom from "../common/ControlsZoom.jsx"
+import DarkMode from "../common/DarkMode.jsx"
 
 const DetailProjectPage = () => {
   const { id } = useParams()
@@ -38,6 +39,8 @@ const DetailProjectPage = () => {
             </motion.div>
             <span>Kembali</span>
           </Link>
+
+          <DarkMode display="hidden" />
 
           <BtnLang />
         </div>

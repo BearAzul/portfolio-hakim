@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { useDataStore } from "../store/useDataStore.js";
 import { Instagram, Github, Linkedin, MessageCircle } from "lucide-react"
 
 const Footer = () => {
-  const { profiles } = useDataStore((state) => state);
+  const { profiles, fetchAllData } = useDataStore((state) => state);
 
   const socials = [
     {
@@ -22,6 +23,10 @@ const Footer = () => {
       link: profiles?.socials?.whatsapp,
     },
   ]
+
+  useEffect(() => {
+    fetchAllData()
+  },[])
 
   return (
 

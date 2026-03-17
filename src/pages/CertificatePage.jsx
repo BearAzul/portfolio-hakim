@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import CountUp from "../common/CountUp.jsx";
 import BtnLang from "../common/BtnLang.jsx";
 import LoadingCertificate from "../components/skeletons/LoadingCertificate.jsx";
+import DarkMode from "../common/DarkMode.jsx";
 
 const CertificatePage = () => {
   const { certificates, totalPages, totalData, fetchCertificates, isCertLoading } = useDataStore();
@@ -59,6 +60,8 @@ const CertificatePage = () => {
             </motion.div>
             <span>Kembali</span>
           </Link>
+
+          <DarkMode display="hidden" />
 
           <div className="flex items-center gap-4">
             <BtnLang />

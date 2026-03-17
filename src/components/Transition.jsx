@@ -1,30 +1,20 @@
 import { motion } from "framer-motion"
+import StairsEffect from "./StairsEffect.jsx"
 
-const Transition = (Component) => {
+const Transition = ({ children }) => {
   return (
-    <>
-      <Component />
+    <div className="relative">
+      <StairsEffect />
       <motion.div
-        className="fixed top-0 left-0 w-full h-screen dark:bg-teal-600 bg-gray-300"
-        style={{
-          transformOrigin: "bottom"
+        initial={{ opacity: 1 }}
+        animate={{
+          opacity: 0,
+          transition: { delay: 1, duration: 0.5, ease: "easeInOut" }
         }}
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 0 }}
-        exit={{ scaleY: 1 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        className="h-screen w-screen fixed bg-gray-200 dark:bg-slate-800 top-0 pointer-events-none z-[90]"
       />
-      <motion.div
-        className="fixed top-0 left-0 w-full h-screen dark:bg-teal-600 bg-gray-300"
-        style={{
-          transformOrigin: "top"
-        }}
-        initial={{ scaleY: 1 }}
-        animate={{ scaleY: 0 }}
-        exit={{ scaleY: 0 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      />
-    </>
+      {children}
+    </div>
   )
 }
 
