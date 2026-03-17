@@ -32,6 +32,15 @@ const StairsEffect = () => {
           />
         ))}
       </div>
+
+      <motion.div
+        className="h-screen w-screen fixed pointer-events-none bg-gray-200 dark:bg-slate-800 top-0"
+        initial={{ opacity: 1 }}
+        animate={{
+          opacity: 0,
+          transition: { delay: 1, duration: 0.4, ease: "easeInOut" }
+        }}
+      />
     </>
   )
 }
