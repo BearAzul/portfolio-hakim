@@ -36,7 +36,7 @@ const AnimatedRoutes = () => {
           }
         />
         <Route
-          path="/*"
+          path="*"
           element={
             <Transition>
               <NotFoundPage />

@@ -68,23 +68,37 @@ const About = () => {
               <div></div>
             </motion.div>
           </div>
-          {services.map((service, index) => (
-            <motion.div key={index}
-              className="col-span-4 md:col-span-2 lg:tooltip tooltip-success"
-              data-tip="click me"
-              initial={{ opacity: 0, y: -30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.3, type: "spring", stiffness: 300 }}
-              viewport={{ once: true }}
-            >
-              <Link to={service.link} className="cursor-pointer card flex flex-col items-center"
-              >
+          {services.map((service, index) => {
+            const isInternal = service.link.startsWith("/");
+            const content = (
+              <>
                 {service.icon}
                 <h1 className="text-center mt-1 text-nowrap">{service.title}</h1>
                 <p>{service.description}</p>
-              </Link>
-            </motion.div>
-          ))}
+              </>
+            );
+
+            return (
+              <motion.div key={index}
+                className="col-span-4 md:col-span-2 lg:tooltip tooltip-success"
+                data-tip="click me"
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.3, type: "spring", stiffness: 300 }}
+                viewport={{ once: true }}
+              >
+                {isInternal ? (
+                  <Link to={service.link} className="cursor-pointer card flex flex-col items-center">
+                    {content}
+                  </Link>
+                ) : (
+                  <a href={service.link} className="cursor-pointer card flex flex-col items-center">
+                    {content}
+                  </a>
+                )}
+              </motion.div>
+            )
+          })}
           <div className="col-span-12 md:col-span-6">
             <p className="text-sm text-justify text-slate-800 md:text-base dark:text-gray-100">
               {about?.description}
