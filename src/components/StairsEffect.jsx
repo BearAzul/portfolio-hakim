@@ -28,13 +28,13 @@ const StairsEffect = () => {
               ease: "easeInOut",
               delay: reverseIndex(i) * 0.1
             }}
-            className="h-full w-full dark:bg-teal-600 bg-slate-800 relative border-t-4 dark:border-gray-200 border-teal-600"
+            className="h-full w-full dark:bg-teal-600 bg-slate-800 relative border-t-4 dark:border-gray-100 border-teal-600"
           />
         ))}
       </div>
 
       <motion.div
-        className="h-screen w-screen fixed pointer-events-none bg-gray-200 dark:bg-slate-800 top-0"
+        className="h-screen w-screen fixed pointer-events-none bg-gray-100 dark:bg-slate-800 top-0"
         initial={{ opacity: 1 }}
         animate={{
           opacity: 0,

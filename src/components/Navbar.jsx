@@ -1,16 +1,47 @@
 import { useState, useEffect } from "react";
 import DarkMode from "../common/DarkMode.jsx";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import BtnLang from "../common/BtnLang.jsx";
+import { motion, AnimatePresence } from "framer-motion"
 
 const Header = () => {
   const [showNav, setVisible] = useState(false);
   const [windowScroll, setScroll] = useState(false);
   const [activeMenu, setActiveMenu] = useState("#");
 
-  const toggleNav = () => {
-    setVisible(!showNav);
+  const toggleNav = () => setVisible(!showNav);
+  const closeNav = () => setVisible(false);
+
+  const menuVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+      y: -20,
+      transition: { duration: 0.2 }
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      y: -20,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0 }
   };
 
   const handleScroll = () => {
@@ -107,8 +138,7 @@ const Header = () => {
           <div className="flex items-center gap-3 px-6 md:px-4 text-slate-800 dark:text-gray-100">
             <BtnLang />
             <nav
-              className={`bg-gray-100 dark:border-teal-600 dark:border dark:lg:border-none dark:bg-slate-800 dark:lg:bg-transparent absolute py-2 shadow-xl rounded max-w-[160px] w-full right-4 top-20 lg:bg-transparent xl:top-full lg:static lg:block lg:shadow-none lg:max-w-full transition duration-500 ${showNav ? "" : "hidden"
-                }`}
+              className="hidden lg:inline-block"
             >
               <ul className="grid gap-4 lg:flex lg:gap-0">
                 {menus.map((menu, index) => (
@@ -128,12 +158,42 @@ const Header = () => {
 
             <button
               type="button"
-              className="text-lg transition duration-500 lg:hidden w-[20px]"
+              className="text-lg lg:hidden w-[20px] cursor-pointer"
               onClick={toggleNav}
               aria-label="Toggle Menu"
             >
               {showNav ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
+
+
+            <AnimatePresence>
+              {showNav && (
+                <motion.nav
+                  variants={menuVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="absolute top-full right-0 mt-4 max-w-[160px] w-full bg-gray-100 dark:bg-slate-800 border border-teal-600 shadow-lg rounded-md overflow-hidden lg:hidden z-[60] py-2"
+                >
+                  <ul className="grid gap-4">
+                    {menus.map((menu, index) => (
+                      <motion.li
+                        variants={itemVariants}
+                        key={index}
+                      >
+                        <a
+                          href={menu.link}
+                          onClick={closeNav}
+                          className={`py-1 m-4 text-sm animate-underline text-slate-800 dark:text-gray-200 ${activeMenu === menu.link ? "navActive" : ""}`}
+                        >
+                          {menu.title}
+                        </a>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.nav>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

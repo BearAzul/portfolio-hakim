@@ -11,7 +11,7 @@ const Transition = ({ children }) => {
           opacity: 0,
           transition: { delay: 1, duration: 0.4, ease: "easeInOut" }
         }}
-        className="h-screen w-screen fixed bg-gray-200 dark:bg-slate-800 top-0 pointer-events-none z-[90]"
+        className="h-screen w-screen fixed bg-gray-100 dark:bg-slate-800 top-0 pointer-events-none z-[90]"
       />
       {children}
     </div>
