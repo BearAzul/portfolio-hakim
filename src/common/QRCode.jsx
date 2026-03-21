@@ -1,5 +1,5 @@
 import { X, ScanQrCode } from 'lucide-react';
-import QRDana from "../assets/img/qr_code_dana.jpeg"
+import QRDana from "../assets/img/qr_code_10k.jpeg"
 
 const QRCode = () => {
   const downloadQRCode = () => { 
