@@ -28,7 +28,7 @@ const StairsEffect = () => {
               ease: "easeInOut",
               delay: reverseIndex(i) * 0.1
             }}
-            className="h-full w-full dark:bg-teal-600 bg-slate-800 relative border-t-4 dark:border-gray-100 border-teal-600"
+            className="h-full w-full dark:bg-teal-600 bg-slate-800 relative"
           />
         ))}
       </div>
