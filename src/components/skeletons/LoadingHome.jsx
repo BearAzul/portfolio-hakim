@@ -4,7 +4,7 @@ const LoadingHome = () => {
   return (
     <>
       <DarkMode display="hidden" />
-      <header className="container mx-auto md:max-w-2xl lg:max-w-5xl px-6 dark:bg-slate-800 bg-gray-100">
+      <header className="container mx-auto md:max-w-2xl lg:max-w-5xl px-4 dark:bg-slate-800 bg-gray-100">
         <div className="flex items-center justify-between py-4">
           <div className="skeleton w-30 h-8"></div>
 
@@ -28,9 +28,9 @@ const LoadingHome = () => {
       <section
         className="w-full py-20 dark:bg-slate-800 bg-gray-100"
       >
-        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-6">
+        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-4">
           <div className="flex items-center justify-between lg:flex-row flex-col-reverse gap-10 lg:gap-0">
-            <div className="flex items-center gap-6 flex-1 w-full">
+            <div className="flex items-center lg:gap-6 gap-4 flex-1 w-full">
               <div className="space-y-1">
                 <div className="skeleton size-8"></div>
                 <div className="skeleton size-8"></div>
@@ -40,8 +40,8 @@ const LoadingHome = () => {
               <div className="space-y-1">
                 <div className="skeleton lg:w-80 w-60 h-8"></div>
                 <div className="skeleton lg:w-60 w-40 h-6 my-4"></div>
-                <div className="skeleton lg:w-100 w-80 h-4"></div>
-                <div className="skeleton lg:w-80 w-60 h-4"></div>
+                <div className="skeleton lg:w-100 w-full h-4"></div>
+                <div className="skeleton lg:w-80 w-55 h-4"></div>
                 <div className="skeleton lg:w-60 w-40 h-4"></div>
                 <div className="skeleton lg:w-40 w-20 h-4"></div>
 
@@ -56,7 +56,7 @@ const LoadingHome = () => {
         </div>
       </section>
       <section className="w-full py-20 dark:bg-slate-800 bg-gray-100">
-        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-6">
+        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-4">
 
           <div className="skeleton w-50 h-8 mx-auto mb-1"></div>
           <div className="skeleton w-30 h-4 mx-auto mb-10"></div>
@@ -86,7 +86,7 @@ const LoadingHome = () => {
         </div>
       </section>
       <section className="w-full py-20 dark:bg-slate-800 bg-gray-100">
-        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-6">
+        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-4">
 
           <div className="skeleton w-50 h-8 mx-auto mb-1"></div>
           <div className="skeleton w-30 h-4 mx-auto mb-10"></div>
@@ -105,7 +105,7 @@ const LoadingHome = () => {
                 <div className="divider divider-horizontal h-35 absolute -top-2 -left-6 -z-[1]"></div>
               </div>
               <div className="flex-1">
-                <div className="skeleton w-70 h-30"></div>
+                <div className="skeleton lg:w-70 w-full h-30"></div>
               </div>
             </div>
 
@@ -116,7 +116,7 @@ const LoadingHome = () => {
                 <div className="divider divider-horizontal h-35 absolute -top-2 -left-6 -z-[1]"></div>
               </div>
               <div className="flex-1">
-                <div className="skeleton w-70 h-30 lg:ml-auto"></div>
+                <div className="skeleton lg:w-70 w-full h-30 lg:ml-auto"></div>
               </div>
             </div>
 
@@ -192,7 +192,7 @@ const LoadingHome = () => {
         </div>
       </section>
       <section className="w-full py-20 dark:bg-slate-800 bg-gray-100">
-        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-6">
+        <div className="container mx-auto md:max-w-2xl lg:max-w-5xl px-4">
 
           <div className="skeleton w-50 h-8 mx-auto mb-1"></div>
           <div className="skeleton w-30 h-4 mx-auto mb-10"></div>

@@ -11,7 +11,7 @@ import LoadingHome from "../components/skeletons/LoadingHome.jsx"
 const HomePage = () => {
   const { isLoading } = useDataStore()
 
-  if(isLoading) return <LoadingHome />
+  if(true) return <LoadingHome />
 
   return (
     <>
