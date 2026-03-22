@@ -5,8 +5,13 @@ import Qualification from "../components/Qualifications.jsx"
 import Skills from "../components/Skills.jsx"
 import Projects from "../components/Project.jsx"
 import Contact from "../components/Contact.jsx"
+import { useDataStore } from "../store/useDataStore.js"
+import LoadingHome from "../components/skeletons/LoadingHome.jsx"
 
 const HomePage = () => {
+  const { isLoading } = useDataStore()
+
+  if(isLoading) return <LoadingHome />
 
   return (
     <>
