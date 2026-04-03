@@ -199,7 +199,7 @@ const LoadingHome = () => {
 
           <div className="grid grid-cols-12 gap-4">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div className="lg:col-span-4 sm:col-span-6 col-span-12 p-2">
+              <div className="lg:col-span-4 sm:col-span-6 col-span-12 p-2" key={i}>
                 <div className="skeleton aspect-video"></div>
                 <div className="skeleton w-50 h-6 mt-3"></div>
                 <div className="skeleton w-60 h-4 mt-2"></div>

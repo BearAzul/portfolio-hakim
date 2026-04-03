@@ -14,7 +14,7 @@ const ScrollDown = (props) => {
       viewport={{ once: true }}
     >
       <div className="flex flex-col items-center justify-end px-2 pt-1 pb-2 border border-teal-600 rounded-full">
-        <p className="p-0 m-0 text-xs text-center animate-bounce">I</p>
+        <p className="p-0 m-0 text-xs text-center animate-bounce">|</p>
       </div>
       <div className="flex items-center space-x-2">
         <p className="text-sm font-medium md:text-base">{props.query}</p>
