@@ -106,8 +106,8 @@ const Header = () => {
   ]
   return (
     <motion.header
-      className={`bg-gray-100 lg:fixed sticky top-0 left-0 w-full flex items-center justify-center z-10 dark:bg-slate-800 ${windowScroll
-        ? "bg-slate-100/40 backdrop-blur-sm shadow-lg dark:bg-slate-800/40 lg:left-1/2 lg:-translate-x-1/2 w-full max-w-xs sm:max-w-2xl lg:max-w-5xl rounded-lg mx-auto"
+      className={`fixed top-0 left-0 w-full flex items-center justify-center z-10 bg-transparent/40 ${windowScroll
+        ? "backdrop-blur-sm shadow-lg bg-transparent/40 left-1/2 -translate-x-1/2 w-full max-w-xs sm:max-w-2xl lg:max-w-5xl rounded-lg mx-auto"
         : ""
         }`}
       initial={{ y: -100, x: 0 }}
