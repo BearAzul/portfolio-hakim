@@ -7,7 +7,6 @@ import BtnTop from "./common/BtnTop.jsx";
 import AnimatedRoutes from "./Routes/AnimatedRoutes.jsx";
 
 
-
 const App = () => {
   return (
     <>

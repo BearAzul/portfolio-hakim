@@ -2,10 +2,14 @@ import ScrollDown from "../common/ScrollDown.jsx";
 import { useDataStore } from "../store/useDataStore.js";
 import { motion } from "framer-motion";
 import { History, Briefcase, FileBadge, FileUser } from "lucide-react"
+import { useState } from "react";
 import { Link } from "react-router"
+import PopupCV from "../common/PopupCV.jsx";
 
 const About = () => {
   const { about, totalData, projects } = useDataStore((state) => state);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const services = [
     {
@@ -106,11 +110,9 @@ const About = () => {
           </div>
           <div className="col-span-12 md:col-span-6">
             <div className="flex items-center justify-between w-full">
-              <motion.a
-                href={about?.cvUrl}
-                target="_blink"
-                className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-600 w-max md:text-sm flex items-center"
-                aria-label="Download CV"
+              <motion.button
+                onClick={() => setIsOpen(true)}
+                className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-700 w-max md:text-sm flex items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -118,14 +120,15 @@ const About = () => {
                 whileTap={{ scale: 0.9, y: 1 }}
                 viewport={{ once: true }}
               >
-                Download CV
+                Lihat CV
                 <FileUser className="size-5 ml-2" />
-              </motion.a>
+              </motion.button>
               <ScrollDown link="#qualification" query="Pendidikan" />
             </div>
           </div>
         </div>
       </div>
+      <PopupCV open={()=> setIsOpen(true)} close={()=> setIsOpen(false)} isOpen={isOpen} cv={about?.cvUrl} />
     </section>
   );
 };

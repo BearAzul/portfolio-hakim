@@ -72,7 +72,7 @@ const DetailProjectPage = () => {
 
           </div>
 
-          {detailproject?.projectImage?.slice(1).map((img, index) => (
+          {detailproject?.projectImage?.map((img, index) => (
             <div className={`col-span-3 hidden md:inline-block ${imageHover === img ? "image-full" : ""} cursor-pointer`} key={index}>
               <figure className="rounded-md aspect-video overflow-hidden shadow-md" onMouseEnter={() => setImageHover(img)}>
                 <img src={img || "https://placehold.co/300"} alt={detailproject?.title + (index + 1)} className="object-cover block w-full h-full" />
