@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { X, Download } from "lucide-react" // Tambah icon Download agar lebih keren
+import { X, Download } from "lucide-react"
 
 const PopupCV = ({ cv, isOpen, close }) => {
   const handleDownload = async (e) => {

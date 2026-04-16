@@ -128,7 +128,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <PopupCV open={()=> setIsOpen(true)} close={()=> setIsOpen(false)} isOpen={isOpen} cv={about?.cvUrl} />
+      <PopupCV close={()=> setIsOpen(false)} isOpen={isOpen} cv={about?.cvUrl} />
     </section>
   );
 };
