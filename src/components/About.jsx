@@ -112,7 +112,7 @@ const About = () => {
             <div className="flex items-center justify-between w-full">
               <motion.button
                 onClick={() => setIsOpen(true)}
-                className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-700 w-max md:text-sm flex items-center"
+                className="p-3 text-xs text-white rounded-lg shadow-md bg-slate-800 dark:bg-teal-600 hover:bg-teal-700 w-max md:text-sm flex items-center cursor-pointer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 300 }}

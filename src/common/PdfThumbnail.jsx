@@ -2,9 +2,6 @@ import { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import { LoaderCircle } from "lucide-react"
 
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
-
 const PdfThumbnail = ({ fileUrl }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
