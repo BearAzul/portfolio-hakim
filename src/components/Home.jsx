@@ -37,9 +37,9 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="scroll-section w-full lg:min-h-screen min-h-auto bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:py-20 pb-20 py-35 overflow-hidden"
+      className="scroll-section w-full min-h-auto bg-gray-100 dark:bg-slate-800 flex items-center justify-center lg:pt-50 pb-20 py-35 overflow-hidden"
     >
-      <div className="container mx-auto md:max-w-2xl lg:max-w-5xl">
+      <div className="container mx-auto md:max-w-2xl lg:max-w-5xl relative">
         <div className="flex flex-col-reverse items-center px-6 md:px-4 md:flex-row gap-y-10">
           <div className="flex items-center w-full">
             <div className="w-1/6 md:w-1/4">

@@ -35,9 +35,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="scroll-section flex items-center justify-center w-full pt-20 transition-all bg-gray-100 dark:bg-slate-800 lg:min-h-screen"
+      className="scroll-section flex items-center justify-center w-full py-20 transition-all bg-gray-100 dark:bg-slate-800"
     >
-      <div className="container px-6 mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl md:px-4">
+      <div className="container px-6 mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl md:px-4 relative">
         <div className="text-center title">
           <h1 className="text-xl font-semibold md:text-3xl text-slate-800 dark:text-gray-100">
             Tentang Saya

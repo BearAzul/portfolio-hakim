@@ -10,7 +10,7 @@ export const CardRight = ({ title, element, address, years }) => {
         <span className="block w-[2px] h-[145px] bg-slate-400"></span>
       </div>
       <motion.div
-        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100"
+        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100 dark:bg-slate-800 bg-gray-100"
         initial={{ opacity: 0, scale: 0.9, y: -50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
@@ -44,7 +44,7 @@ export const CardLeft = ({ title, element, address, years }) => {
         <span className="block w-[2px] h-[145px] bg-slate-400"></span>
       </div>
       <motion.div
-        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100"
+        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100 dark:bg-slate-800 bg-gray-100"
         initial={{ opacity: 0, scale: 0.9, y: -50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, delay: 0.3 }}

@@ -10,7 +10,7 @@ const Project = () => {
       id="project"
       className="scroll-section transition-all bg-gray-100 dark:bg-slate-800 w-full flex items-center justify-center min-h-auto lg:min-h-screen py-20"
     >
-      <div className="container px-6 mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl md:px-4">
+      <div className="container px-6 mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl md:px-4 relative">
         <div className="text-center title">
           <h1 className="text-xl font-semibold md:text-3xl text-slate-800 dark:text-gray-100">
             Proyek

@@ -10,6 +10,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import ControlsZoom from "../common/ControlsZoom.jsx"
 import DarkMode from "../common/DarkMode.jsx"
 import { li } from "framer-motion/client"
+import { DotPattern } from "../components/ui/DotPattern.jsx"
 
 const DetailProjectPage = () => {
   const { id } = useParams()
@@ -32,7 +33,8 @@ const DetailProjectPage = () => {
       id="detailpage"
       className="flex items-start justify-center w-full min-h-screen py-10"
     >
-      <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
+      <DotPattern />
+      <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4 relative">
         <div className="flex justify-between items-center">
           <Link
             to="/"
@@ -129,7 +131,7 @@ const DetailProjectPage = () => {
               Detail Proyek
             </h2>
             <div
-              className={`border ${detailproject.status === "Done" ? "w-max" : "w-full"} dark:border-gray-700 rounded-lg border-gray-200`}
+              className={`border ${detailproject.status === "Done" ? "w-max" : "w-full"} dark:border-gray-700 rounded-lg border-gray-200 dark:bg-slate-800 bg-gray-100`}
             >
               <table className="table text-gray-400">
                 <tbody>

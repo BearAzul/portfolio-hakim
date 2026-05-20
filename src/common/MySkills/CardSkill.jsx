@@ -4,7 +4,7 @@ import { CircleCheck } from "lucide-react";
 const CardSkill = ({ skill }) => {
   if (skill.imageUrl) {
     return (
-      <div className="flex items-center gap-3 p-2 transition duration-300 border border-gray-400 rounded-lg shadow-md md:px-3 hover:bg-slate-900 hover:border-teal-600 hover:text-white">
+      <div className="flex items-center gap-3 p-2 transition duration-300 border border-gray-400 rounded-lg shadow-md md:px-3 hover:bg-slate-900 hover:border-teal-600 hover:text-white dark:bg-slate-800 bg-gray-100">
         <div className="flex-none">
           <figure className="md:w-[30px] w-[20px] overflow-hidden rounded-sm">
             <img

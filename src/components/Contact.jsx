@@ -77,9 +77,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="scroll-section flex items-center pb-10 overflow-hidden transition-all bg-gray-100 dark:bg-slate-800 lg:min-h-screen"
+      className="scroll-section flex items-center py-20 overflow-hidden transition-all bg-gray-100 dark:bg-slate-800"
     >
-      <div className="container mx-auto md:max-w-2xl lg:max-w-5xl">
+      <div className="container mx-auto md:max-w-2xl lg:max-w-5xl relative">
         <div className="flex flex-col items-start justify-center gap-8 px-6 md:flex-row md:px-4">
           <div className="w-full text-center col text-slate-800 dark:text-gray-100 md:w-3/4 lg:w-1/2">
             <h1 className="mb-4 font-semibold md:text-lg">Hubungi Saya</h1>
@@ -87,7 +87,7 @@ const Contact = () => {
               {socials.map((social, index) => (
                 <motion.div
                   key={index}
-                  className="card flex flex-col items-center"
+                  className="card flex flex-col items-center dark:bg-slate-800 bg-gray-100"
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay: index * 0.3 }}
@@ -104,7 +104,7 @@ const Contact = () => {
                     aria-label="contact"
                   >
                     <span>Write Me</span>
-                   <ArrowRight className="size-4"/>
+                    <ArrowRight className="size-4" />
                   </a>
                 </motion.div>
               ))}
@@ -123,7 +123,7 @@ const Contact = () => {
               transition={{ duration: 0.7, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="group relative z-1 w-full mb-4">
+              <div className="group relative z-1 w-full mb-4 dark:bg-slate-800 bg-gray-100">
                 <label
                   htmlFor="name"
                   className="absolute text-xs md:text-sm -top-[8px] md:-top-[10px] px-1 bg-gray-100 dark:bg-slate-800 dark:text-gray-100 left-5 text-slate-800"
@@ -137,7 +137,7 @@ const Contact = () => {
                   placeholder="Masukkan Nama Anda"
                 />
               </div>
-              <div className="group relative z-1 w-full mb-4">
+              <div className="group relative z-1 w-full mb-4 dark:bg-slate-800 bg-gray-100">
                 <label
                   htmlFor="email"
                   className="absolute text-xs md:text-sm -top-[8px] md:-top-[10px] px-1 bg-gray-100 left-5 text-slate-800 dark:bg-slate-800 dark:text-gray-100"
@@ -151,7 +151,7 @@ const Contact = () => {
                   placeholder="Masukkan Email Valid"
                 />
               </div>
-              <div className="group relative z-1 w-full mb-4">
+              <div className="group relative z-1 w-full mb-4 dark:bg-slate-800 bg-gray-100">
                 <label
                   htmlFor="pesan"
                   className="absolute text-xs md:text-sm -top-[8px] md:-top-[10px] px-1 bg-gray-100 left-5 text-slate-800 dark:bg-slate-800 dark:text-gray-100"

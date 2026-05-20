@@ -1,20 +1,22 @@
-import Header from "../components/Navbar.jsx"
-import Home from "../components/Home.jsx"
-import About from "../components/About.jsx"
-import Qualification from "../components/Qualifications.jsx"
-import Skills from "../components/Skills.jsx"
-import Projects from "../components/Project.jsx"
-import Contact from "../components/Contact.jsx"
-import { useDataStore } from "../store/useDataStore.js"
-import LoadingHome from "../components/skeletons/LoadingHome.jsx"
+import Header from "../components/Navbar.jsx";
+import Home from "../components/Home.jsx";
+import About from "../components/About.jsx";
+import Qualification from "../components/Qualifications.jsx";
+import Skills from "../components/Skills.jsx";
+import Projects from "../components/Project.jsx";
+import Contact from "../components/Contact.jsx";
+import { useDataStore } from "../store/useDataStore.js";
+import LoadingHome from "../components/skeletons/LoadingHome.jsx";
+import { DotPattern } from "../components/ui/DotPattern.jsx";
 
 const HomePage = () => {
-  const { isLoading } = useDataStore()
+  const { isLoading } = useDataStore();
 
-  if(isLoading) return <LoadingHome />
+  if (isLoading) return <LoadingHome />;
 
   return (
     <>
+      <DotPattern />
       <Header />
       <Home />
       <About />
@@ -23,7 +25,7 @@ const HomePage = () => {
       <Projects />
       <Contact />
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
