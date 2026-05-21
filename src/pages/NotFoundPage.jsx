@@ -4,6 +4,7 @@ import DarkMode from "../common/DarkMode.jsx";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "framer-motion"
 import { DotPattern } from "../components/ui/DotPattern.jsx";
+import CatLaugh from "../assets/animations/cat_laugh.lottie"
 
 const NotFoundPage = () => {
   return (
@@ -31,7 +32,7 @@ const NotFoundPage = () => {
         </div>
 
         <div className="block mx-auto text-center h-80 w-80 sm:w-100 sm:h-100">
-          <DotLottieReact src="/assets/animations/cat_laugh.lottie" loop autoplay />
+          <DotLottieReact src={CatLaugh} loop autoplay />
         </div>
         <p className="font-semibold sm:text-base text-sm text-center">
           Yahahahaaa, Apa yang lu cari bro? Gak ada apa-apa disini, pergi sana!
