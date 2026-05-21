@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <link rel="canonical" href={currentUrl} />
-      <met property="og:url" content={currentUrl} />
+      <meta property="og:url" content={currentUrl} />
 
       <CustomCursor />
 
