@@ -13,7 +13,7 @@ export default defineConfig({
       dest: path.join(__dirname, "dist", "~partytown"),
     }),
   ],
-  assetsInclude: ["**/*.zip", "**/*.pdf"],
+  assetsInclude: ["**/*.zip", "**/*.pdf", "**/*.lottie"],
   server: {
     proxy: {
       "/api": {
