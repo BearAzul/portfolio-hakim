@@ -214,6 +214,7 @@ const CertificatePage = () => {
               className="join-item btn btn-sm btn-outline btn-success"
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
+              aria-label="previous"
             >
               <StepBack className="size-4" />
             </button>
@@ -230,6 +231,7 @@ const CertificatePage = () => {
                       : "text-neutral dark:text-primary-content"
                   }`}
                   onClick={() => handlePageChange(pageNumber)}
+                  aria-label="current-page"
                 >
                   {pageNumber}
                 </button>
@@ -241,6 +243,7 @@ const CertificatePage = () => {
               className="join-item btn btn-outline btn-sm btn-success"
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
+              aria-label="next"
             >
               <StepForward className="size-4" />
             </button>
