@@ -43,7 +43,7 @@ const CardProject = ({ project }) => {
               className="flex items-center justify-between py-1.5 px-3 rounded-md text-sm shadow-md border bg-gray-200 border-gray-50 dark:bg-slate-900 dark:border-zinc-900 hover:bg-gray-50 dark:hover:bg-zinc-900"
 
             >
-              <span className="text-center w-full">Learn More</span> <MoveRight size={18} />
+              <span className="text-center w-full">Lihat Selengkapnya</span> <MoveRight size={18} />
             </Link>
           </motion.button>
 
