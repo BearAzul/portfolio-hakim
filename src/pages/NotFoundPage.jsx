@@ -31,7 +31,7 @@ const NotFoundPage = () => {
         </div>
 
         <div className="block mx-auto text-center h-80 w-80 sm:w-100 sm:h-100">
-          <DotLottieReact src="/src/assets/animations/cat_laugh.lottie" loop autoplay />
+          <DotLottieReact src="/assets/animations/cat_laugh.lottie" loop autoplay />
         </div>
         <p className="font-semibold sm:text-base text-sm text-center">
           Yahahahaaa, Apa yang lu cari bro? Gak apa-apa disini, pergi sana!
