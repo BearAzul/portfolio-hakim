@@ -12,7 +12,7 @@ const NotFoundPage = () => {
       className="flex items-start justify-center w-full h-dvh py-10 bg-gray-200 dark:bg-slate-800"
     >
       <DotPattern />
-      <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4">
+      <div className="container px-6 mx-auto md:max-w-2xl lg:max-w-5xl md:px-4 relative">
         <div className="flex items-center justify-between">
           <Link
             to="/"
