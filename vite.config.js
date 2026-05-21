@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { partytownVite } from "@qwik.dev/partytown/utils";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
@@ -9,9 +8,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    partytownVite({
-      dest: path.join(__dirname, "dist", "~partytown"),
-    }),
   ],
   assetsInclude: ["**/*.zip", "**/*.pdf", "**/*.lottie"],
   resolve: {
