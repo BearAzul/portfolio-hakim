@@ -34,7 +34,7 @@ const NotFoundPage = () => {
           <DotLottieReact src="/assets/animations/cat_laugh.lottie" loop autoplay />
         </div>
         <p className="font-semibold sm:text-base text-sm text-center">
-          Yahahahaaa, Apa yang lu cari bro? Gak apa-apa disini, pergi sana!
+          Yahahahaaa, Apa yang lu cari bro? Gak ada apa-apa disini, pergi sana!
         </p>
       </div>
     </section>
