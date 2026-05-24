@@ -44,7 +44,7 @@ const Qualifications = () => {
             Pengalaman
           </button>
           <span
-            className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-1 rounded ${isMove ? "translate-x-[40%]" : "-translate-x-[60%]"
+            className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-1 rounded ${isMove ? "translate-x-[50%]" : "-translate-x-[50%]"
               }`}
           ></span>
         </div>
@@ -79,6 +79,7 @@ const Qualifications = () => {
                   element={experience.position}
                   address={experience.location}
                   years={experience.years}
+                  category={experience.category}
                 />
               ) : (
                 <CardRight
@@ -87,6 +88,7 @@ const Qualifications = () => {
                   element={experience.position}
                   address={experience.location}
                   years={experience.years}
+                  category={experience.category}
                 />
               )
             ))}

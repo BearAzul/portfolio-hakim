@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CalendarCheck } from "lucide-react";
 
-export const CardRight = ({ title, element, address, years }) => {
+export const CardRight = ({ title, element, address, years, category }) => {
   return (
     <div className="flex items-start justify-center gap-4 text-slate-800!">
       <div className="hidden w-full p-3 md:block grow">&nbsp;</div>
@@ -16,26 +16,28 @@ export const CardRight = ({ title, element, address, years }) => {
         transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
         viewport={{ once: true }}
       >
-
         <h1 className="text-base font-semibold lg:text-lg notranslate">
           {title}
         </h1>
 
-        <p className="text-sm text-teal-600 dark:text-teal-400">
-          {element}
-        </p>
+        <p className="text-sm text-teal-600 dark:text-teal-400">{element}</p>
         <p className="mb-4 text-xs notranslate">{address}</p>
 
-        <p className="text-sm flex items-center gap-2">
-          <CalendarCheck className="size-4" />
-          {years}
-        </p>
+        <div className="flex items-center justify-between">
+          <span className="text-sm flex items-center gap-2">
+            <CalendarCheck className="size-4" />
+            {years}
+          </span>
+          {!!category && (
+            <span className="badge badge-sm badge-error shadow-sm capitalize font-medium text-gray-100">{category}</span>
+          )}
+        </div>
       </motion.div>
     </div>
   );
 };
 
-export const CardLeft = ({ title, element, address, years }) => {
+export const CardLeft = ({ title, element, address, years, category }) => {
   return (
     <div className="flex items-start justify-center md:flex-row-reverse  gap-4 text-slate-800!">
       <div className="hidden md:block grow w-full p-3.5">&nbsp;</div>
@@ -50,21 +52,24 @@ export const CardLeft = ({ title, element, address, years }) => {
         transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
         viewport={{ once: true }}
       >
-
         <h1 className="text-base font-semibold lg:text-lg notranslate">
           {title}
         </h1>
 
-        <p className="text-sm text-teal-600 dark:text-teal-400">
-          {element}
-        </p>
+        <p className="text-sm text-teal-600 dark:text-teal-400">{element}</p>
         <p className="mb-4 text-xs notranslate">{address}</p>
-        <p className="text-sm flex items-center gap-2">
-          <CalendarCheck className="size-4" />
-          {years}
-        </p>
+        <div className="flex items-center justify-between">
+          <span className="text-sm flex items-center gap-2">
+            <CalendarCheck className="size-4" />
+            {years}
+          </span>
+          {!!category && (
+            <span className="badge badge-sm badge-error shadow-sm capitalize font-medium text-gray-100">
+              {category}
+            </span>
+          )}
+        </div>
       </motion.div>
     </div>
   );
 };
-
