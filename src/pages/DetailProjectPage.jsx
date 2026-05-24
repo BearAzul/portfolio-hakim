@@ -1,32 +1,32 @@
-import { Link, useParams } from "react-router"
-import { CircleArrowLeft } from "lucide-react"
-import { useEffect, useState } from "react"
-import { useDataStore } from "../store/useDataStore.js"
-import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react"
-import { motion } from "framer-motion"
-import { LoadingProjectById } from "../components/skeletons/LoadingProject.jsx"
-import BtnLang from "../common/BtnLang.jsx"
+import { Link, useParams } from "react-router";
+import { CircleArrowLeft } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useDataStore } from "../store/useDataStore.js";
+import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react";
+import { motion } from "framer-motion";
+import { LoadingProjectById } from "../components/skeletons/LoadingProject.jsx";
+import BtnLang from "../common/BtnLang.jsx";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import ControlsZoom from "../common/ControlsZoom.jsx"
-import DarkMode from "../common/DarkMode.jsx"
-import { li } from "framer-motion/client"
-import { DotPattern } from "../components/ui/DotPattern.jsx"
+import ControlsZoom from "../common/ControlsZoom.jsx";
+import DarkMode from "../common/DarkMode.jsx";
+import { li } from "framer-motion/client";
+import { DotPattern } from "../components/ui/DotPattern.jsx";
 
 const DetailProjectPage = () => {
-  const { id } = useParams()
-  const { getProjectById, detailproject, isLoadingProject } = useDataStore()
-  const [imageHover, setImageHover] = useState(null)
+  const { id } = useParams();
+  const { getProjectById, detailproject, isLoadingProject } = useDataStore();
+  const [imageHover, setImageHover] = useState(null);
 
   useEffect(() => {
-    getProjectById(id)
-  }, [id, getProjectById])
+    getProjectById(id);
+  }, [id, getProjectById]);
 
-  if (isLoadingProject) return <LoadingProjectById />
+  if (isLoadingProject) return <LoadingProjectById />;
 
   const formatToDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long' };
-    return new Date(dateString).toLocaleDateString('id-ID', options);
-  }
+    const options = { year: "numeric", month: "long" };
+    return new Date(dateString).toLocaleDateString("id-ID", options);
+  };
 
   return (
     <section
@@ -118,10 +118,14 @@ const DetailProjectPage = () => {
             <h2 className="mb-2 uppercase text-sm font-semibold">
               Tentang Proyek
             </h2>
-            <p className="text-justify text-sm mb-4">{detailproject.description}</p>
+            <p className="text-justify text-sm mb-4">
+              {detailproject.description}
+            </p>
             <ul className="list-disc text-sm pl-4 text-start">
-              {detailproject.features?.map((feature, index)=> (
-                <li key={index} className="mb-2 text-justify">{feature}</li>
+              {detailproject.features?.map((feature, index) => (
+                <li key={index} className="mb-2 text-justify">
+                  {feature}
+                </li>
               ))}
             </ul>
           </div>
@@ -131,7 +135,7 @@ const DetailProjectPage = () => {
               Detail Proyek
             </h2>
             <div
-              className={`border ${detailproject.status === "Done" ? "w-max" : "w-full"} dark:border-gray-700 rounded-lg border-gray-200 dark:bg-slate-800 bg-gray-100`}
+              className={`border ${detailproject.status === "Done" && detailproject.isPublic ? "w-max" : "w-full"} dark:border-gray-700 rounded-lg border-gray-200 dark:bg-slate-800 bg-gray-100`}
             >
               <table className="table text-gray-400">
                 <tbody>
@@ -154,9 +158,8 @@ const DetailProjectPage = () => {
                     <td>Link</td>
                     <td>:</td>
                     <td>
-                      {detailproject.status === "Done" &&
-                        detailproject.projectType === "Web" && (
-                          <div className="space-x-2 flex ">
+                      <div className="space-x-2 flex">
+                        {detailproject.isPublic && (
                             <motion.a
                               href={detailproject.repoUrl}
                               target="_blank"
@@ -167,6 +170,10 @@ const DetailProjectPage = () => {
                             >
                               <Github size={14} /> Sources
                             </motion.a>
+                          )}
+
+                        {detailproject.status === "Done" &&
+                          detailproject.projectType === "Web" ? (
                             <motion.a
                               href={detailproject.projectUrl}
                               target="_blank"
@@ -177,13 +184,8 @@ const DetailProjectPage = () => {
                             >
                               <ExternalLink size={14} /> Demo
                             </motion.a>
-                          </div>
-                        )}
-
-                      {detailproject.status === "Done" &&
-                        detailproject.projectType === "Mobile" && (
-                          <div className="space-x-2 flex ">
-                            <motion.a
+                          ) :(
+                             <motion.a
                               href={detailproject.projectUrl}
                               target="_blank"
                               className="btn btn-sm btn-outline btn-secondary"
@@ -193,10 +195,10 @@ const DetailProjectPage = () => {
                             >
                               <TabletSmartphone size={14} /> Download
                             </motion.a>
-                          </div>
-                        )}
+                          )}
 
-                      {detailproject.status !== "Done" && "Private"}
+                          {detailproject.isPublic !== true && detailproject.status !== "Done" && "Private"}
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -221,6 +223,6 @@ const DetailProjectPage = () => {
       </div>
     </section>
   );
-}
+};
 
-export default DetailProjectPage
+export default DetailProjectPage;
