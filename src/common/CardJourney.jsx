@@ -10,7 +10,7 @@ export const CardRight = ({ title, element, address, years, category }) => {
         <span className="block w-[2px] h-[145px] bg-slate-400"></span>
       </div>
       <motion.div
-        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100 dark:bg-slate-800 bg-gray-100"
+        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100 dark:bg-slate-800 bg-gray-100 relative"
         initial={{ opacity: 0, scale: 0.9, y: -50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
@@ -23,15 +23,16 @@ export const CardRight = ({ title, element, address, years, category }) => {
         <p className="text-sm text-teal-600 dark:text-teal-400">{element}</p>
         <p className="mb-4 text-xs notranslate">{address}</p>
 
-        <div className="flex items-center justify-between">
-          <span className="text-sm flex items-center gap-2">
-            <CalendarCheck className="size-4" />
-            {years}
+        <span className="text-sm flex items-center gap-2">
+          <CalendarCheck className="size-4" />
+          {years}
+        </span>
+        
+        {!!category && (
+          <span className="badge badge-sm badge-error shadow-sm capitalize font-medium text-gray-100 absolute -top-2.5 right-2.5">
+            {category}
           </span>
-          {!!category && (
-            <span className="badge badge-sm badge-error shadow-sm capitalize font-medium text-gray-100">{category}</span>
-          )}
-        </div>
+        )}
       </motion.div>
     </div>
   );
@@ -46,7 +47,7 @@ export const CardLeft = ({ title, element, address, years, category }) => {
         <span className="block w-[2px] h-[145px] bg-slate-400"></span>
       </div>
       <motion.div
-        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100 dark:bg-slate-800 bg-gray-100"
+        className="w-full p-3 border border-gray-400 rounded-lg shadow-md grow hover:border-teal-400 dark:text-gray-100 dark:bg-slate-800 bg-gray-100 relative"
         initial={{ opacity: 0, scale: 0.9, y: -50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
@@ -58,17 +59,16 @@ export const CardLeft = ({ title, element, address, years, category }) => {
 
         <p className="text-sm text-teal-600 dark:text-teal-400">{element}</p>
         <p className="mb-4 text-xs notranslate">{address}</p>
-        <div className="flex items-center justify-between">
-          <span className="text-sm flex items-center gap-2">
-            <CalendarCheck className="size-4" />
-            {years}
+        <span className="text-sm flex items-center gap-2">
+          <CalendarCheck className="size-4" />
+          {years}
+        </span>
+
+        {!!category && (
+          <span className="badge badge-sm badge-error shadow-sm capitalize font-medium text-gray-100 absolute -top-2.5 right-2.5">
+            {category}
           </span>
-          {!!category && (
-            <span className="badge badge-sm badge-error shadow-sm capitalize font-medium text-gray-100">
-              {category}
-            </span>
-          )}
-        </div>
+        )}
       </motion.div>
     </div>
   );
