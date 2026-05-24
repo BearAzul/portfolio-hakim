@@ -41,7 +41,7 @@ const Qualifications = () => {
               }`}
           >
             <BriefcaseBusiness />
-            Pelatihan/Magang
+            Pengalaman
           </button>
           <span
             className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-1 rounded ${isMove ? "translate-x-[40%]" : "-translate-x-[60%]"
