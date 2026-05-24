@@ -116,7 +116,7 @@ const DetailProjectPage = () => {
 
           <div className="col-span-12 md:col-span-6 lg:col-span-8 lg:mr-8">
             <h2 className="mb-2 uppercase text-sm font-semibold">
-              Tentang Project
+              Tentang Proyek
             </h2>
             <p className="text-justify text-sm mb-4">{detailproject.description}</p>
             <ul className="list-disc text-sm pl-4 text-start">
@@ -206,11 +206,11 @@ const DetailProjectPage = () => {
 
           <div className="col-span-12 md:col-span-6 lg:col-span-8">
             <h2 className="text-sm uppercase mb-2 font-semibold">
-              Tech Stack:
+              Teknologi dan Alat:
             </h2>
             {detailproject.technologies?.map((tech, index) => (
               <div
-                className="badge badge-soft badge-sm badge-primary dark:badge-secondary m-0.5"
+                className="badge badge-soft badge-sm badge-primary dark:badge-warning m-0.5 !backdrop-blur-md"
                 key={index}
               >
                 {tech}
