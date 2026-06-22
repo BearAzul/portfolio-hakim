@@ -23,7 +23,7 @@ const CardProject = ({ project }) => {
         </div>
         <div className="relative col-span-12 p-3 space-y-2">
           <div className="absolute flex items-center justify-center gap-2 -translate-x-1/2 -top-4 left-1/2">
-            {project.status === "Done" && project.projectType === "Web" ? (
+            {project.status === "Done" && project.projectType === "Web" && (
               <a
                 href={project.projectUrl}
                 target="_blank"
@@ -33,7 +33,9 @@ const CardProject = ({ project }) => {
               >
                 <ExternalLink className="size-4" /> Demo
               </a>
-            ) : (
+            )}
+
+            {project.status === "Done" && project.projectType === "Mobile" && (
               <a
                 href={project.projectUrl}
                 target="_blank"

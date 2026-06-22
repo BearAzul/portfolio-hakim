@@ -160,20 +160,20 @@ const DetailProjectPage = () => {
                     <td>
                       <div className="space-x-2 flex">
                         {detailproject.isPublic && (
-                            <motion.a
-                              href={detailproject.repoUrl}
-                              target="_blank"
-                              className="btn btn-sm btn-outline btn-secondary"
-                              whileHover={{ scale: 1.03 }}
-                              whileTap={{ scale: 0.9 }}
-                              transition={{ type: "spring", stiffness: 300 }}
-                            >
-                              <Github size={14} /> Sources
-                            </motion.a>
-                          )}
+                          <motion.a
+                            href={detailproject.repoUrl}
+                            target="_blank"
+                            className="btn btn-sm btn-outline btn-secondary"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                          >
+                            <Github size={14} /> Sources
+                          </motion.a>
+                        )}
 
                         {detailproject.status === "Done" &&
-                          detailproject.projectType === "Web" ? (
+                          detailproject.projectType === "Web" && (
                             <motion.a
                               href={detailproject.projectUrl}
                               target="_blank"
@@ -184,8 +184,11 @@ const DetailProjectPage = () => {
                             >
                               <ExternalLink size={14} /> Demo
                             </motion.a>
-                          ) :(
-                             <motion.a
+                          )}
+
+                        {detailproject.status === "Done" &&
+                          detailproject.projectType === "Mobile" && (
+                            <motion.a
                               href={detailproject.projectUrl}
                               target="_blank"
                               className="btn btn-sm btn-outline btn-secondary"
@@ -197,7 +200,9 @@ const DetailProjectPage = () => {
                             </motion.a>
                           )}
 
-                          {detailproject.isPublic !== true && detailproject.status !== "Done" && "Private"}
+                        {detailproject.isPublic !== true &&
+                          detailproject.status !== "Done" &&
+                          "Private"}
                       </div>
                     </td>
                   </tr>
