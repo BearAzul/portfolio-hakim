@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useDataStore } from "../store/useDataStore.js";
 import { GraduationCap, BriefcaseBusiness } from "lucide-react";
 
-
 const Qualifications = () => {
   const [isMove, setIsMove] = useState(false);
   const handleMove = () => {
@@ -27,71 +26,79 @@ const Qualifications = () => {
           </p>
         </div>
         <div className="relative z-1 bg-transparent flex items-center justify-center mx-auto rounded w-max text-slate-800 gap-4 dark:text-gray-100 text-center overflow-hidden">
-          <button type="button"
+          <button
+            type="button"
             onClick={handleMove}
-            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer flex justify-center items-center gap-2 ${isMove ? "text-slate-800 dark:text-gray-100" : "text-gray-100"
-              }`}
+            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer flex justify-center items-center gap-2 ${
+              isMove ? "text-slate-800 dark:text-gray-100" : "text-gray-100"
+            }`}
           >
             <GraduationCap />
             Pendidikan
           </button>
-          <button type="button"
+          <button
+            type="button"
             onClick={handleMove}
-            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer flex justify-center items-center gap-2 ${isMove ? "text-gray-100" : "text-slate-800 dark:text-gray-100"
-              }`}
+            className={`transition duration-300 text-center text-sm lg:text-lg py-1 px-3 cursor-pointer flex justify-center items-center gap-2 ${
+              isMove ? "text-gray-100" : "text-slate-800 dark:text-gray-100"
+            }`}
           >
             <BriefcaseBusiness />
             Pengalaman
           </button>
           <span
-            className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-1 rounded ${isMove ? "translate-x-[50%]" : "-translate-x-[50%]"
-              }`}
+            className={`transition duration-300 absolute top-1/2 -translate-y-1/2 left-0 w-full h-full block bg-teal-600 -z-1 rounded ${
+              isMove ? "translate-x-[50%]" : "-translate-x-[50%]"
+            }`}
           ></span>
         </div>
-        <div className="container max-w-2xl mx-auto">
+        <div className="container mx-auto relative">
+          <div className="block absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-400 md:-translate-x-1/2" />
           <div className={`${isMove ? "hidden" : "block"} h-full`}>
-            {educations && educations.map((education, index) => (
-              index % 2 === 0 ? (
-                <CardRight
-                  key={education._id}
-                  title={education.school}
-                  element={education.major}
-                  address={education.location}
-                  years={education.years}
-                />
-              ) : (
-                <CardLeft
-                  key={education._id}
-                  title={education.school}
-                  element={education.major}
-                  address={education.location}
-                  years={education.years}
-                />
-              )
-            ))}
+            {educations &&
+              educations.map((education, index) =>
+                index % 2 === 0 ? (
+                  <CardRight
+                    key={education._id}
+                    title={education.school}
+                    element={education.major}
+                    address={education.location}
+                    years={education.years}
+                  />
+                ) : (
+                  <CardLeft
+                    key={education._id}
+                    title={education.school}
+                    element={education.major}
+                    address={education.location}
+                    years={education.years}
+                  />
+                ),
+              )}
           </div>
           <div className={`${isMove ? "block" : "hidden"} h-full`}>
-            {experiences && experiences.map((experience, index) => (
-              index % 2 === 0 ? (
-                <CardLeft
-                  key={experience._id}
-                  title={experience.company}
-                  element={experience.position}
-                  address={experience.location}
-                  years={experience.years}
-                  category={experience.category}
-                />
-              ) : (
-                <CardRight
-                  key={experience._id}
-                  title={experience.company}
-                  element={experience.position}
-                  address={experience.location}
-                  years={experience.years}
-                  category={experience.category}
-                />
-              )
-            ))}
+            {experiences &&
+              experiences.map((experience, index) =>
+                index % 2 === 0 ? (
+                  <CardLeft
+                    key={experience._id}
+                    title={experience.company}
+                    element={experience.position}
+                    address={experience.location}
+                    years={experience.years}
+                    category={experience.category}
+                  />
+                ) : (
+                  <CardRight
+                    key={experience._id}
+                    title={experience.company}
+                    element={experience.position}
+                    address={experience.location}
+                    years={experience.years}
+                    category={experience.category}
+                  />
+                ),
+              )}
           </div>
         </div>
       </div>
