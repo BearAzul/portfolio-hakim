@@ -122,6 +122,14 @@ body {
   display: none !important;
 }
 
+.swiper-pagination-bullet {
+  @apply !bg-neutral-300 !opacity-100 transition-all duration-300 !rounded-full !size-2;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-primary dark:!bg-accent !w-8;
+}
+
 
 #about {
   .card {

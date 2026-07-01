@@ -1,16 +1,47 @@
+import {
+  ArrowRight,
+  Laptop,
+  Monitor,
+  MonitorSmartphone,
+  Smartphone,
+} from "lucide-react";
 import CardProject from "../common/CardProject.jsx";
 import { useDataStore } from "../store/useDataStore.js";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { Link } from "react-router";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import { useState } from "react";
 
 const Project = () => {
   const { projects } = useDataStore((state) => state);
+
+  const [activeFilter, setActiveFilter] = useState("Semua");
+
+  const filteredProjects = projects.filter((project) => {
+    if (activeFilter === "Semua") return true;
+    return project.projectType === activeFilter;
+  });
+
+  const getButtonClass = (filterType) => {
+    const baseClass =
+      "btn btn-sm shadow-sm btn-square md:btn-wide md:w-max md:px-4 transition-all duration-300";
+    if (activeFilter === filterType) {
+      return `${baseClass} btn-primary dark:btn-accent`;
+    }
+    return `${baseClass} btn-soft btn-primary dark:btn-accent opacity-70 hover:opacity-100`;
+  };
 
   return (
     <section
       id="project"
       className="scroll-section transition-all bg-gray-100 dark:bg-slate-800 w-full flex items-center justify-center min-h-auto lg:min-h-screen py-20"
     >
-      <div className="container px-6 mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl md:px-4 relative">
+      <div className="container px-6 mx-auto space-y-6 md:max-w-2xl lg:max-w-5xl md:px-4 relative">
         <div className="text-center title">
           <h1 className="text-xl font-semibold md:text-3xl text-slate-800 dark:text-gray-100">
             Proyek
@@ -19,24 +50,86 @@ const Project = () => {
             Beberapa proyek terakhir
           </p>
         </div>
-        <div className="gap-6 grid grid-cols-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project._id}
-              className="col-span-12 sm:col-span-6 lg:col-span-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                delay: index * 0.1
-              }}
+
+        <div className="flex items-center gap-1 justify-between">
+          <div className="flex items-center gap-2">
+            <button
+              className={getButtonClass("Semua")}
+              onClick={() => setActiveFilter("Semua")}
             >
-              <CardProject project={project} />
-            </motion.div>
-          ))}
+              <MonitorSmartphone className="size-5" />
+              <span className="hidden sm:inline">Semua</span>
+            </button>
+            <button
+              className={getButtonClass("Web")}
+              onClick={() => setActiveFilter("Web")}
+            >
+              <Monitor className="size-5" />
+              <span className="hidden sm:inline">Desktop</span>
+            </button>
+            <button
+              className={getButtonClass("Mobile")}
+              onClick={() => setActiveFilter("Mobile")}
+            >
+              <Smartphone className="size-5" />
+              <span className="hidden sm:inline">Mobile</span>
+            </button>
+          </div>
+          <Link
+            to="/projects"
+            className="hover:underline underline-offset-5 text-sm flex items-center gap-2"
+          >
+            Lihat Semua Proyek <ArrowRight className="size-5" />
+          </Link>
+        </div>
+        <div className="w-full relative pb-10">
+          <Swiper
+            key={activeFilter}
+            modules={[Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={filteredProjects.length > 3}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: Math.min(2, filteredProjects.length || 1),
+              },
+              1024: {
+                slidesPerView: Math.min(3, filteredProjects.length || 1),
+              },
+            }}
+            className="w-full h-full !pb-12"
+          >
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project, index) => (
+                <SwiperSlide key={project._id} className="h-auto">
+                  <motion.div
+                    className="h-full"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20,
+                      delay: index * 0.1,
+                    }}
+                  >
+                    <CardProject project={project} />
+                  </motion.div>
+                </SwiperSlide>
+              ))
+            ) : (
+              <p className="text-center text-sm text-gray-500 w-full py-10">
+                Belum ada proyek di kategori ini.
+              </p>
+            )}
+          </Swiper>
         </div>
       </div>
     </section>
