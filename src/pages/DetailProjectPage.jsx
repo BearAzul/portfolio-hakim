@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router";
-import { CircleArrowLeft } from "lucide-react";
+import { Ban, CircleArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDataStore } from "../store/useDataStore.js";
 import { Github, ExternalLink, Dot, TabletSmartphone } from "lucide-react";
@@ -159,21 +159,20 @@ const DetailProjectPage = () => {
                     <td>:</td>
                     <td>
                       <div className="space-x-2 flex">
-                        {detailproject.isPublic && (
-                          <motion.a
-                            href={detailproject.repoUrl}
-                            target="_blank"
-                            className="btn btn-sm btn-outline btn-secondary"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.9 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
-                            <Github size={14} /> Sources
-                          </motion.a>
-                        )}
+                        {detailproject.isPublicSource && (
+                            <motion.a
+                              href={detailproject.repoUrl}
+                              target="_blank"
+                              className="btn btn-sm btn-outline btn-secondary"
+                              whileHover={{ scale: 1.03 }}
+                              whileTap={{ scale: 0.9 }}
+                              transition={{ type: "spring", stiffness: 300 }}
+                            >
+                              <Github size={14} /> Sources
+                            </motion.a>
+                          )}
 
-                        {detailproject.status === "Done" &&
-                          detailproject.projectType === "Web" && (
+                        {detailproject.isPublic && detailproject.projectType === "Web" && (
                             <motion.a
                               href={detailproject.projectUrl}
                               target="_blank"
@@ -186,8 +185,7 @@ const DetailProjectPage = () => {
                             </motion.a>
                           )}
 
-                        {detailproject.status === "Done" &&
-                          detailproject.projectType === "Mobile" && (
+                        {detailproject.isPublic && detailproject.projectType === "Mobile" && (
                             <motion.a
                               href={detailproject.projectUrl}
                               target="_blank"
@@ -200,9 +198,7 @@ const DetailProjectPage = () => {
                             </motion.a>
                           )}
 
-                        {detailproject.isPublic !== true &&
-                          detailproject.status !== "Done" &&
-                          "Private"}
+                        {!detailproject.isPublic && !detailproject.isPublicSource && "Private"}
                       </div>
                     </td>
                   </tr>

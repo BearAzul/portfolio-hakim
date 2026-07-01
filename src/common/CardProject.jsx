@@ -1,4 +1,4 @@
-import { ExternalLink, Github, TabletSmartphone } from "lucide-react";
+import { Ban, ExternalLink, Github, TabletSmartphone } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { MoveRight } from "lucide-react";
@@ -23,19 +23,19 @@ const CardProject = ({ project }) => {
         </div>
         <div className="relative col-span-12 p-3 space-y-2">
           <div className="absolute flex items-center justify-center gap-2 -translate-x-1/2 -top-4 left-1/2">
-            {project.status === "Done" && project.projectType === "Web" && (
-              <a
-                href={project.projectUrl}
-                target="_blank"
-                className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100 flex items-center gap-1 lg:tooltip lg:tooltip-left lg:tooltip-neutral"
-                aria-label="link btn"
-                data-tip="click me"
-              >
-                <ExternalLink className="size-4" /> Demo
-              </a>
-            )}
+            { project.isPublic && project.projectType === "Web" && (
+                <a
+                  href={project.projectUrl}
+                  target="_blank"
+                  className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100 flex items-center gap-1 lg:tooltip lg:tooltip-left lg:tooltip-neutral"
+                  aria-label="link btn"
+                  data-tip="click me"
+                >
+                  <ExternalLink className="size-4" /> Demo
+                </a>
+              )}
 
-            {project.status === "Done" && project.projectType === "Mobile" && (
+            {project.isPublic && project.projectType === "Mobile" && (
               <a
                 href={project.projectUrl}
                 target="_blank"
@@ -45,9 +45,9 @@ const CardProject = ({ project }) => {
               >
                 <TabletSmartphone className="size-4" /> Download
               </a>
-            )}
+              )}
 
-            {project.isPublic && (
+            {project.isPublicSource && (
               <a
                 href={project.repoUrl}
                 target="_blank"
@@ -59,12 +59,12 @@ const CardProject = ({ project }) => {
               </a>
             )}
 
-            {project.status === "On-Going" && (
+            {!project.isPublic  && !project.isPublicSource && (
               <span
                 className="px-2 py-1 text-sm transition-all bg-gray-100 border rounded-lg text-nowrap border-slate-800 hover:bg-slate-800 hover:text-gray-200 dark:bg-slate-800 dark:text-gray-200 dark:border-gray-200 dark:hover:text-slate-800 dark:hover:bg-gray-100 flex items-center gap-1 lg:tooltip lg:tooltip-right lg:tooltip-neutral"
                 aria-label="repo btn"
               >
-                Private
+               <Ban className="size-4" /> Private
               </span>
             )}
           </div>
