@@ -29,17 +29,17 @@ const Project = () => {
 
   const getButtonClass = (filterType) => {
     const baseClass =
-      "btn btn-sm shadow-sm btn-square md:btn-wide md:w-max md:px-4 transition-all duration-300";
+      "btn btn-sm shadow-sm btn-square md:btn-wide md:w-max md:px-4";
     if (activeFilter === filterType) {
       return `${baseClass} btn-primary dark:btn-accent`;
     }
-    return `${baseClass} btn-soft btn-primary dark:btn-accent opacity-70 hover:opacity-100`;
+    return `${baseClass} btn-soft btn-primary dark:btn-accent`;
   };
 
   return (
     <section
       id="project"
-      className="scroll-section transition-all bg-gray-100 dark:bg-slate-800 w-full flex items-center justify-center min-h-auto lg:min-h-screen py-20"
+      className="scroll-section transition-colors bg-gray-100 dark:bg-slate-800 w-full flex items-center justify-center min-h-auto lg:min-h-screen py-20"
     >
       <div className="container px-6 mx-auto space-y-6 md:max-w-2xl lg:max-w-5xl md:px-4 relative">
         <div className="text-center title">
@@ -51,29 +51,49 @@ const Project = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-1 justify-between">
+        <div className="flex items-end gap-1 justify-between">
           <div className="flex items-center gap-2">
-            <button
-              className={getButtonClass("Semua")}
+            <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter("Semua")}
+              className={getButtonClass("Semua")}
             >
               <MonitorSmartphone className="size-5" />
               <span className="hidden sm:inline">Semua</span>
-            </button>
-            <button
-              className={getButtonClass("Web")}
+            </motion.button>
+
+            <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter("Web")}
+              className={getButtonClass("Web")}
             >
               <Monitor className="size-5" />
               <span className="hidden sm:inline">Desktop</span>
-            </button>
-            <button
-              className={getButtonClass("Mobile")}
+            </motion.button>
+
+            <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter("Mobile")}
+              className={getButtonClass("Mobile")}
             >
               <Smartphone className="size-5" />
               <span className="hidden sm:inline">Mobile</span>
-            </button>
+            </motion.button>
           </div>
           <Link
             to="/projects"
