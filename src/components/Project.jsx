@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   ArrowRight,
   Laptop,
   Monitor,
@@ -15,11 +16,12 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Project = () => {
   const { projects } = useDataStore((state) => state);
 
+  const swiperRef = useRef(null);
   const [activeFilter, setActiveFilter] = useState("Semua");
 
   const filteredProjects = projects.filter((project) => {
@@ -95,16 +97,27 @@ const Project = () => {
               <span className="hidden sm:inline">Mobile</span>
             </motion.button>
           </div>
-          <Link
-            to="/projects"
-            className="hover:underline underline-offset-5 text-sm flex items-center gap-2"
-          >
-            Lihat Semua Proyek <ArrowRight className="size-5" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              className="btn btn-sm btn-circle btn-primary"
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
+              <ArrowLeft />
+            </button>
+            <button
+              type="button"
+              className="btn btn-sm btn-circle btn-primary"
+              onClick={() => swiperRef.current?.slideNext()}
+            >
+              <ArrowRight />
+            </button>
+          </div>
         </div>
         <div className="w-full relative pb-10">
           <Swiper
             key={activeFilter}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
             modules={[Pagination, Autoplay]}
             spaceBetween={24}
             slidesPerView={1}
