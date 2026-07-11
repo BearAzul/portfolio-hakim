@@ -38,7 +38,7 @@ const Skills = () => {
       id="skills"
       className="scroll-section min-h-auto py-20 w-full overflow-hidden bg-gray-100 dark:bg-slate-800"
     >
-      <div className="container mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl relative px-6">
+      <div className="container mx-auto space-y-10 md:max-w-2xl lg:max-w-5xl relative px-6 lg:px-0">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

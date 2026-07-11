@@ -16,29 +16,31 @@ const SkillSidebar = ({ categories, activeTabId, setActiveTabId }) => {
             type="button"
             key={item._id}
             onClick={() => setActiveTabId(item._id)}
-            className={`group relative flex items-center gap-6 lg:gap-0 justify-between w-full px-5 py-4 text-left rounded-xl border text-nowrap
+            className={`group relative flex items-center gap-6 lg:gap-0 justify-between w-full text-left rounded-xl border text-nowrap pr-5
               ${
                 isActive
                   ? "bg-gray-100 dark:bg-slate-900 shadow-md border-teal-600/50 dark:border-teal-500/30"
                   : "bg-transparent border-transparent hover:bg-gray-200/50 dark:hover:bg-slate-900/50"
               }`}
           >
-            {isActive && (
-              <motion.div
-                layoutId="activeTabIndicator"
-                className="absolute left-0 top-1/4 bottom-1/4 w-1.5 rounded-r-full bg-teal-500"
-              />
-            )}
+            <div className="relative overflow-hidden pl-5 py-4 ">
+              {isActive && (
+                <motion.div
+                  layoutId="activeTabIndicator"
+                  className="absolute left-0 top-1/4 bottom-1/4 w-1.5 rounded-r-full bg-teal-500"
+                />
+              )}
 
-            <span
-              className={`font-semibold tracking-wide transition-colors ${
-                isActive
-                  ? "text-teal-700 dark:text-teal-400"
-                  : "text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200"
-              }`}
-            >
-              {item.name}
-            </span>
+              <span
+                className={`font-semibold tracking-wide transition-colors w-full ${
+                  isActive
+                    ? "text-teal-700 dark:text-teal-400"
+                    : "text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200"
+                }`}
+              >
+                {item.name}
+              </span>
+            </div>
 
             <span
               className={`btn btn-xs btn-square ${
