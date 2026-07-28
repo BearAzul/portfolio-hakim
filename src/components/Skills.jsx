@@ -11,9 +11,16 @@ const Skills = () => {
   const [activeTabId, setActiveTabId] = useState(null);
 
   useEffect(() => {
-    if (categories && categories.length > 0 && !activeTabId) {
+  if (categories && categories.length > 0 && !activeTabId) {
+    const frontendCategory = categories.find(
+      (c) => c.name.toLowerCase() === "frontend",
+    );
+    if (frontendCategory) {
+      setActiveTabId(frontendCategory._id);
+    } else {
       setActiveTabId(categories[0]._id);
     }
+  }
   }, [categories, activeTabId]);
 
   const activeCategory = categories?.find((c) => c._id === activeTabId);
@@ -28,7 +35,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Jeda 0.1 detik antar item
+        staggerChildren: 0.1,
       },
     },
   };

@@ -12,10 +12,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Grid } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/grid";
 import "swiper/css/pagination";
+
 import { useRef, useState } from "react";
 
 const Project = () => {
@@ -118,10 +120,8 @@ const Project = () => {
           <Swiper
             key={activeFilter}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay, Grid]}
             spaceBetween={24}
-            slidesPerView={1}
-            loop={filteredProjects.length > 3}
             autoplay={{
               delay: 3500,
               disableOnInteraction: false,
@@ -130,11 +130,26 @@ const Project = () => {
               clickable: true,
             }}
             breakpoints={{
+              0: {
+                slidesPerView: 1,
+                grid: {
+                  rows: 2,
+                  fill: "row"
+                },
+              },
               640: {
-                slidesPerView: Math.min(2, filteredProjects.length || 1),
+                slidesPerView: 2,
+                grid: {
+                  rows: 2,
+                  fill: "row",
+                },
               },
               1024: {
-                slidesPerView: Math.min(3, filteredProjects.length || 1),
+                slidesPerView: 3,
+                grid: {
+                  rows: 2,
+                  fill: "row",
+                },
               },
             }}
             className="w-full h-full !pb-12"
